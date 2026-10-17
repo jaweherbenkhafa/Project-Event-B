@@ -1,0 +1,24 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{Runway~assignment\_Contexte}
+\CONTEXT{Runway~assignment\_Contexte}{landing~and~take-off~sequences\_Contexte}{}
+\SETS{
+	\Set{RW\_STATUES}{}
+	\Set{RWL\_STATUES}{}
+}
+\CONSTANTS{
+	\Constant{Available}{}
+	\Constant{Unavailable}{}
+	\Constant{ON}{}
+	\Constant{OFF}{}
+}
+\AXIOMS{
+	\Axiom{axm1}{false}{$partition(RW\_STATUES,\{Available\},\{Unavailable\})$}{\\etats de piste }
+	\Axiom{axm2}{false}{$Minute \subseteq{} \intg{}$}{}
+	\Axiom{axm3}{true}{$Hours \subseteq{} \intg{}$}{}
+	\Axiom{axm4}{false}{$sep \in{} \intg{} $}{}
+	\Axiom{axm5}{false}{$partition(RWL\_STATUES,\{ON\},\{OFF\})$}{\\etats des feux de pistes }
+}
+\END
+\end{document}

@@ -1,0 +1,178 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{M0}
+\MACHINE{M0}{}{C0}{}
+\VARIABLES{
+	\Variable{aircrafts\_in\_airport}{}
+	\Variable{statusof}{}
+	\Variable{curr\_RW\_status}{}
+	\Variable{curr\_RWL\_status}{}
+	\Variable{active\_aircrafts}{}
+	\Variable{aircraft\_runway}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$aircrafts\_in\_airport \subseteq{} AIRCRAFTS$}{}
+	\Invariant{inv2}{false}{$statusof \in{} aircrafts\_in\_airport\tfun{} STATUS$}{}
+	\Invariant{inv3}{false}{$curr\_RW\_status \in{} RUNWAY \tfun{} RW\_STATUES$}{}
+	\Invariant{inv4}{false}{$curr\_RWL\_status \in{} RUNWAY\tfun{} RWL\_STATUES $}{}
+	\Invariant{inv5}{false}{$\\\forall{} r \qdot{} r \in{} RUNWAY \limp{}\\(curr\_RW\_status(r) = Unavailable \limp{} curr\_RWL\_status(r) = ON)$}{}
+	\Invariant{inv6}{false}{$active\_aircrafts \subseteq{} aircrafts\_in\_airport$}{}
+	\Invariant{inv7}{false}{$\forall{} a \qdot{} a \in{} active\_aircrafts \limp{} statusof(a) \in{} \{Landing, TakingOff\}$}{}
+	\Invariant{inv8}{false}{$aircraft\_runway \in{} active\_aircrafts \tfun{}  RUNWAY$}{}
+	\Invariant{inv9}{false}{$\\\forall{} a,b \qdot{}  \\a \in{} active\_aircrafts \land{} b \in{} active\_aircrafts \land{} a \neq{} b \limp{}  \\aircraft\_runway(a) \neq{} aircraft\_runway(b)$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act13}{$aircrafts\_in\_airport \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act16}{$statusof \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act17}{$curr\_RW\_status \bcmeq{} RUNWAY \cprod{} \{Available\}$}{true}{}
+		\Action{act18}{$curr\_RWL\_status \bcmeq{} RUNWAY \cprod{} \{OFF\}$}{true}{}
+		\Action{act19}{$active\_aircrafts\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act20}{$aircraft\_runway \bcmeq{}\emptyset{}$}{true}{}
+	}
+}
+\EVT{Landing\_Preparing}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd4}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd5}{false}{$statusof(aircraft) = Blocked$}{true}{}
+		\Guard{grd7}{false}{$aircraft \notin{} active\_aircrafts$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyL$}{true}{}
+	}
+}
+\EVT{Start\_Landing}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd11}{false}{$runway \in{} RUNWAY$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = ReadyL$}{true}{}
+		\Guard{grd8}{false}{$runway \notin{} ran(aircraft\_runway)$}{true}{}
+		\Guard{grd9}{false}{$curr\_RW\_status(runway) = Available$}{true}{}
+		\Guard{grd10}{false}{$curr\_RWL\_status(runway) = OFF$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} Landing$}{true}{}
+		\Action{act5}{$curr\_RW\_status(runway) \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} ON$}{true}{}
+		\Action{act4}{$active\_aircrafts \bcmeq{} active\_aircrafts \bunion{} \{aircraft\}$}{true}{}
+		\Action{act6}{$aircraft\_runway(aircraft) \bcmeq{} runway$}{true}{}
+	}
+}
+\EVT{Terminating\_Landing}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd6}{false}{$runway \in{} RUNWAY$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = Landing$}{true}{}
+		\Guard{grd4}{false}{$curr\_RW\_status(runway) = Unavailable$}{true}{}
+		\Guard{grd5}{false}{$curr\_RWL\_status(runway) = ON$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TerminatedL$}{true}{}
+		\Action{act3}{$curr\_RW\_status(runway) \bcmeq{} Available$}{true}{}
+		\Action{act4}{$curr\_RWL\_status(runway) \bcmeq{} OFF$}{true}{}
+		\Action{act5}{$active\_aircrafts \bcmeq{} active\_aircrafts \setminus{} \{aircraft\}$}{true}{}
+		\Action{act6}{$aircraft\_runway \bcmeq{} \{aircraft\} \domsub{} aircraft\_runway$}{true}{}
+	}
+}
+\EVT{Takeoff\_Preparing}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =TerminatedL$}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(statusof)$}{true}{}
+		\Guard{grd4}{false}{$aircraft \notin{} active\_aircrafts$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyT$}{true}{}
+	}
+}
+\EVT{Start\_takingoff}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =ReadyT$}{true}{}
+		\Guard{grd9}{false}{$runway \in{} RUNWAY$}{true}{}
+		\Guard{grd10}{false}{$runway \notin{} ran(aircraft\_runway)$}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(statusof)$}{true}{}
+		\Guard{grd7}{false}{$curr\_RW\_status(runway) = Available$}{true}{}
+		\Guard{grd8}{false}{$curr\_RWL\_status(runway) = OFF$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TakingOff$}{true}{}
+		\Action{act2}{$curr\_RW\_status(runway) \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} ON$}{true}{}
+		\Action{act4}{$active\_aircrafts \bcmeq{} active\_aircrafts \bunion{} \{aircraft\}$}{true}{}
+		\Action{act5}{$aircraft\_runway(aircraft) \bcmeq{} runway$}{true}{}
+	}
+}
+\EVT{Terminating\_takingoff}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd6}{false}{$runway \in{} RUNWAY$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =TakingOff$}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(statusof)$}{true}{}
+		\Guard{grd4}{false}{$curr\_RW\_status(runway) = Unavailable$}{true}{}
+		\Guard{grd5}{false}{$curr\_RWL\_status(runway) = ON$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{}Departing$}{true}{}
+		\Action{act4}{$curr\_RWL\_status(runway) \bcmeq{} OFF$}{true}{}
+		\Action{act3}{$curr\_RW\_status(runway) \bcmeq{} Available$}{true}{}
+		\Action{act2}{$active\_aircrafts \bcmeq{} active\_aircrafts \setminus{} \{aircraft\}$}{true}{}
+		\Action{act5}{$aircraft\_runway \bcmeq{} \{aircraft\} \domsub{} aircraft\_runway$}{true}{}
+	}
+}
+\EVT{Airport\_Departing}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =Departing$}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(statusof)$}{true}{}
+		\Guard{grd4}{false}{$aircraft \notin{} active\_aircrafts$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_airport \bcmeq{}aircrafts\_in\_airport \setminus{} \{aircraft\} $}{true}{}
+		\Action{act2}{$statusof \bcmeq{} \{aircraft\} \domsub{} statusof$}{true}{}
+	}
+}
+\EVT{AddAircraft}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} AIRCRAFTS$}{true}{}
+		\Guard{grd3}{false}{$aircraft \notin{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd4}{false}{$aircraft \notin{} dom(statusof)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_airport\bcmeq{} aircrafts\_in\_airport \bunion{} \{aircraft\}$}{true}{}
+		\Action{act2}{$statusof(aircraft) \bcmeq{} Blocked$}{true}{}
+	}
+}
+}
+\END
+\end{document}

@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="abs/Op-WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="x,y" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeMin" org.eventb.core.label="curTimeMin" org.eventb.core.predicate="curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curM+curH∗60"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="abs" org.eventb.core.label="abs" org.eventb.core.predicate="x∈ℕ∧y∈ℕ" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+                <org.eventb.theory.core.scOperatorArgument name="x" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="y" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeSec" org.eventb.core.label="curTimeSec" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="+" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#+" org.eventb.theory.core.formula="curTimeMin(curM,curH)∗60+curS"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="isqrt" org.eventb.core.label="isqrt" org.eventb.core.predicate="n∈ℕ∧n≥0" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="(∀k⦂ℤ·(k∈ℕ∧k∗k≤n)∨¬k∈ℕ∨¬k∗k≤n)∧{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}⇒b≥x)">
+                <org.eventb.theory.core.scOperatorArgument name="n" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="max({k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k})"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees x,y)" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+                        <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+                        <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p3,p4">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="p3,p4">
+                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p7">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="p3,p4">
+                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="x∈ℕ∧y∈ℕ⇒bool(x≥y)∈{TRUE,FALSE}∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="bool(x≥y)∈{TRUE,FALSE}">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ⇒bool(x≥y)∈{TRUE,FALSE}∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="bool(x≥y)∈{TRUE,FALSE}∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="y∈ℕ">
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ⇒bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="x∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="curTimeS/Op-WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="curM,curH,curS" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeM" org.eventb.core.label="curTimeM" org.eventb.core.predicate="curM∈0 ‥ 59∧curH≥0" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curM+curH∗60"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="abs" org.eventb.core.label="abs" org.eventb.core.predicate="x∈ℕ∧y∈ℕ" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+                <org.eventb.theory.core.scOperatorArgument name="x" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="y" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeS" org.eventb.core.label="curTimeS" org.eventb.core.predicate="curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="+" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#+" org.eventb.theory.core.formula="curTimeM(curM,curH)∗60+curS"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees curS,curM,curH)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prIdent name="curS" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p2,p3,p4">
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="p2"/>
+                            </org.eventb.core.prAnte>
+                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p3">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="p3"/>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59⇒curM∈0 ‥ 59∧curH≥0">
+            <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="curS" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="curH≥0">
+            <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="curM∈0 ‥ 59">
+            <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="curM∈0 ‥ 59∧curH≥0">
+            <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="curS∈0 ‥ 59">
+            <org.eventb.core.prIdent name="curS" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀curS⦂ℤ,curM⦂ℤ,curH⦂ℤ·curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59⇒curM∈0 ‥ 59∧curH≥0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="curTimeSec/Op-WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="curM,curH,curS" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeMin" org.eventb.core.label="curTimeMin" org.eventb.core.predicate="curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curM+curH∗60"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="abs" org.eventb.core.label="abs" org.eventb.core.predicate="x∈ℕ∧y∈ℕ" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+                <org.eventb.theory.core.scOperatorArgument name="x" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="y" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeSec" org.eventb.core.label="curTimeSec" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="+" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#+" org.eventb.theory.core.formula="curTimeMin(curM,curH)∗60+curS"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="isqrt" org.eventb.core.label="isqrt" org.eventb.core.predicate="n∈ℕ∧n≥0" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="(∀k⦂ℤ·(k∈ℕ∧k∗k≤n)∨¬k∈ℕ∨¬k∗k≤n)∧{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}⇒b≥x)">
+                <org.eventb.theory.core.scOperatorArgument name="n" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="max({k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k})"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees curS,curM,curH)" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+                        <org.eventb.core.prIdent name="curS" org.eventb.core.type="ℤ"/>
+                        <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+                        <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p3,p4,p5,p6,p7,p8">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="p4"/>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p5">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p5"/>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p6">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="p6"/>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p7">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="p7"/>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="curH∈ℕ">
+            <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="curH≥0">
+            <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="curM∈0 ‥ 59">
+            <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="curS∈0 ‥ 59">
+            <org.eventb.core.prIdent name="curS" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀curS⦂ℤ,curM⦂ℤ,curH⦂ℤ·curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59)⇒curM∈ℕ∧curH∈ℕ∧curM∈0 ‥ 59∧curH≥0"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59⇒curM∈ℕ∧curH∈ℕ∧curM∈0 ‥ 59∧curH≥0">
+            <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="curS" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="curS∈ℕ">
+            <org.eventb.core.prIdent name="curS" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="curM∈ℕ∧curH∈ℕ∧curM∈0 ‥ 59∧curH≥0">
+            <org.eventb.core.prIdent name="curH" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀curS⦂ℤ,curM⦂ℤ,curH⦂ℤ·curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59⇒curM∈ℕ∧curH∈ℕ∧curM∈0 ‥ 59∧curH≥0"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="curM∈ℕ">
+            <org.eventb.core.prIdent name="curM" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="isqrt/Op-WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="n" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeMin" org.eventb.core.label="curTimeMin" org.eventb.core.predicate="curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curM+curH∗60"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="abs" org.eventb.core.label="abs" org.eventb.core.predicate="x∈ℕ∧y∈ℕ" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+                <org.eventb.theory.core.scOperatorArgument name="x" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="y" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeSec" org.eventb.core.label="curTimeSec" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="+" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#+" org.eventb.theory.core.formula="curTimeMin(curM,curH)∗60+curS"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="isqrt" org.eventb.core.label="isqrt" org.eventb.core.predicate="n∈ℕ∧n≥0" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="(∀k⦂ℤ·(k∈ℕ∧k∗k≤n)∨¬k∈ℕ∨¬k∗k≤n)∧{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}⇒b≥x)">
+                <org.eventb.theory.core.scOperatorArgument name="n" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="max({k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k})"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees n)" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+                                        <org.eventb.core.prIdent name="n" org.eventb.core.type="ℤ"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="p5,p6">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'">
+                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p9"/>
+                                                                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+                                                                        <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p5">
+                                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p10">
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'">
+                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p9"/>
+                                                                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+                                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="p5">
+                                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.1.0.1"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.1.0"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀n⦂ℤ·n∈ℕ∧n≥0⇒(∃k⦂ℤ·k∈ℕ∧k∗k≤n)∧(∃b⦂ℤ·∀x⦂ℤ·x∈ℕ∧x∗x≤n⇒b≥x)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="(∃k⦂ℤ·k∈ℕ∧k∗k≤n)∧(∃b⦂ℤ·∀x⦂ℤ·x∈ℕ∧x∗x≤n⇒b≥x)">
+            <org.eventb.core.prIdent name="n" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="n∈ℕ∧n≥0⇒(∃k⦂ℤ·k∈ℕ∧k∗k≤n)∧(∃b⦂ℤ·∀x⦂ℤ·x∈ℕ∧x∗x≤n⇒b≥x)">
+            <org.eventb.core.prIdent name="n" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="n∈ℕ">
+            <org.eventb.core.prIdent name="n" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="n≥0">
+            <org.eventb.core.prIdent name="n" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀n⦂ℤ·n∈ℕ∧n≥0⇒(∃k⦂ℤ·¬¬(k∈ℕ∧k∗k≤n))∧(∃b⦂ℤ·∀x⦂ℤ·x∈ℕ∧x∗x≤n⇒b≥x)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀n⦂ℤ·n∈ℕ∧n≥0⇒¬(∀k⦂ℤ·¬(k∈ℕ∧k∗k≤n))∧(∃b⦂ℤ·∀x⦂ℤ·x∈ℕ∧x∗x≤n⇒b≥x)"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∃b⦂ℤ·∀x⦂ℤ·x∈ℕ∧x∗x≤n⇒b≥x">
+            <org.eventb.core.prIdent name="n" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∃k⦂ℤ·k∈ℕ∧k∗k≤n">
+            <org.eventb.core.prIdent name="n" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀n⦂ℤ·n∈ℕ∧n≥0⇒{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}⇒b≥x)"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="thm1/S-THM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="x,y" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeMin" org.eventb.core.label="curTimeMin" org.eventb.core.predicate="curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curM+curH∗60"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="abs" org.eventb.core.label="abs" org.eventb.core.predicate="x∈ℕ∧y∈ℕ" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+                <org.eventb.theory.core.scOperatorArgument name="x" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="y" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeSec" org.eventb.core.label="curTimeSec" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="+" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#+" org.eventb.theory.core.formula="curTimeMin(curM,curH)∗60+curS"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="isqrt" org.eventb.core.label="isqrt" org.eventb.core.predicate="n∈ℕ∧n≥0" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="(∀k⦂ℤ·(k∈ℕ∧k∗k≤n)∨¬k∈ℕ∨¬k∗k≤n)∧{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}⇒b≥x)">
+                <org.eventb.theory.core.scOperatorArgument name="n" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="max({k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k})"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees x,y)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="p2,p3">
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ∈ in y∈ℕ" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5"/>
+                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p5"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ∈ in x∈ℕ" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6"/>
+                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="abs expansion on goal" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p7" org.eventb.core.prHyps=""/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p7">
+                                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p7"/>
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+                                                        <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="dc (x≥y)" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+                                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p7" org.eventb.core.prHyps=""/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name="(" org.eventb.core.prHyps="p9">
+                                                                <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p9">
+                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+                                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+                                                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="p5,p6,p9">
+                                                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="30000"/>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name=")" org.eventb.core.prHyps="p12">
+                                                                <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p12">
+                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+                                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
+                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+                                                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p5,p6,p14">
+                                                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="30000"/>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prPredRef name=".pred" org.eventb.core.prRef="p9"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prString name=".ThyProject" org.eventb.core.prSValue="TheoryABZ2023"/>
+                                            <org.eventb.core.prString name=".Thy" org.eventb.core.prSValue="Time"/>
+                                            <org.eventb.core.prString name=".Rule" org.eventb.core.prSValue="Time.abs"/>
+                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="x&lt;y">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="x≥y">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="y − x≥0">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="x∈ℕ∧y∈ℕ⇒abs(x,y)≥0">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="x − y≥0">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(⊤))≥0">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="y∈ℕ">
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))≥0">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(⊥))≥0">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="abs(x,y)≥0">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="0≤x">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="0≤y">
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬x≥y">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ⇒abs(x,y)≥0"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="x∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.doCase"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.rmL2"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="thm1/WD-THM" org.eventb.core.prFresh="" org.eventb.core.prHyps=""/>
+    <org.eventb.core.prProof name="thm2/S-THM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="x,y" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeMin" org.eventb.core.label="curTimeMin" org.eventb.core.predicate="curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curM+curH∗60"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="abs" org.eventb.core.label="abs" org.eventb.core.predicate="x∈ℕ∧y∈ℕ" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+                <org.eventb.theory.core.scOperatorArgument name="x" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="y" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeSec" org.eventb.core.label="curTimeSec" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="+" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#+" org.eventb.theory.core.formula="curTimeMin(curM,curH)∗60+curS"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="isqrt" org.eventb.core.label="isqrt" org.eventb.core.predicate="n∈ℕ∧n≥0" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="(∀k⦂ℤ·(k∈ℕ∧k∗k≤n)∨¬k∈ℕ∨¬k∗k≤n)∧{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}⇒b≥x)">
+                <org.eventb.theory.core.scOperatorArgument name="n" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="max({k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k})"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees x,y)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="p2,p3">
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="p2,p3">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ⇒x∗x+y∗y∈ℕ"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="x∗x+y∗y∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="x∈ℕ∧y∈ℕ⇒x∗x+y∗y∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="y∈ℕ">
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="x∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="thm3/S-THM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="x,y" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeMin" org.eventb.core.label="curTimeMin" org.eventb.core.predicate="curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curM+curH∗60"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="abs" org.eventb.core.label="abs" org.eventb.core.predicate="x∈ℕ∧y∈ℕ" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+                <org.eventb.theory.core.scOperatorArgument name="x" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="y" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeSec" org.eventb.core.label="curTimeSec" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="+" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#+" org.eventb.theory.core.formula="curTimeMin(curM,curH)∗60+curS"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="isqrt" org.eventb.core.label="isqrt" org.eventb.core.predicate="n∈ℕ∧n≥0" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="(∀k⦂ℤ·(k∈ℕ∧k∗k≤n)∨¬k∈ℕ∨¬k∗k≤n)∧{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}⇒b≥x)">
+                <org.eventb.theory.core.scOperatorArgument name="n" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="max({k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k})"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees x,y)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p2,p3,p4">
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p2,p3,p4">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="x≥y">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="x − y∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="x∈ℕ∧y∈ℕ∧x≥y⇒x − y∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="y∈ℕ">
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ∧x≥y⇒x − y∈ℕ"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="x∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="thm4/S-THM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="x,y" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeMin" org.eventb.core.label="curTimeMin" org.eventb.core.predicate="curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curM+curH∗60"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="abs" org.eventb.core.label="abs" org.eventb.core.predicate="x∈ℕ∧y∈ℕ" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="bool(x≥y)∈dom({TRUE ↦ x − y,FALSE ↦ y − x})∧{TRUE ↦ x − y,FALSE ↦ y − x}∈BOOL ⇸ ℤ">
+                <org.eventb.theory.core.scOperatorArgument name="x" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="y" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTimeSec" org.eventb.core.label="curTimeSec" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ∧(curM∈0 ‥ 59∧curH≥0∧curS∈0 ‥ 59)" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="+" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#+" org.eventb.theory.core.formula="curTimeMin(curM,curH)∗60+curS"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="isqrt" org.eventb.core.label="isqrt" org.eventb.core.predicate="n∈ℕ∧n≥0" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="(∀k⦂ℤ·(k∈ℕ∧k∗k≤n)∨¬k∈ℕ∨¬k∗k≤n)∧{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}≠(∅ ⦂ ℙ(ℤ))∧(∃b⦂ℤ·∀x⦂ℤ·x∈{k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k}⇒b≥x)">
+                <org.eventb.theory.core.scOperatorArgument name="n" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/TheoryABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#*|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="max({k⦂ℤ·k∈ℕ∧k∗k≤n ∣ k})"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees x,y)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="p2,p3">
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ∈ in goal" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="abs expansion on goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps=""/>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="p6">
+                                        <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p6"/>
+                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ∈ in y∈ℕ" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8"/>
+                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p8"/>
+                                                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ∈ in x∈ℕ" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'">
+                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9"/>
+                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9"/>
+                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="dc (x≥y)" org.eventb.core.prHyps="">
+                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+                                                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps=""/>
+                                                                    </org.eventb.core.prAnte>
+                                                                    <org.eventb.core.prAnte name="(" org.eventb.core.prHyps="p10">
+                                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="p10">
+                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+                                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+                                                                                        <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p8,p9,p10">
+                                                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1;2;3:30000"/>
+                                                                                        </org.eventb.core.prRule>
+                                                                                    </org.eventb.core.prAnte>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                    <org.eventb.core.prAnte name=")" org.eventb.core.prHyps="p13">
+                                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="p13">
+                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+                                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="">
+                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                                                                                        <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p8,p9,p15">
+                                                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="30000"/>
+                                                                                        </org.eventb.core.prRule>
+                                                                                    </org.eventb.core.prAnte>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                    <org.eventb.core.prPredRef name=".pred" org.eventb.core.prRef="p10"/>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prString name=".ThyProject" org.eventb.core.prSValue="TheoryABZ2023"/>
+                                    <org.eventb.core.prString name=".Thy" org.eventb.core.prSValue="Time"/>
+                                    <org.eventb.core.prString name=".Rule" org.eventb.core.prSValue="Time.abs"/>
+                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="x&lt;y">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="abs(x,y)∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="x≥y">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="0≤{TRUE ↦ x − y,FALSE ↦ y − x}(bool(⊤))">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ⇒abs(x,y)∈ℕ"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="x∈ℕ∧y∈ℕ⇒abs(x,y)∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="y∈ℕ">
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="0≤y − x">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="0≤x">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="0≤y">
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬x≥y">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="0≤abs(x,y)">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="0≤{TRUE ↦ x − y,FALSE ↦ y − x}(bool(x≥y))">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="x∈ℕ">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="0≤x − y">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="0≤{TRUE ↦ x − y,FALSE ↦ y − x}(bool(⊥))">
+            <org.eventb.core.prIdent name="x" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="y" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.doCase"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.rmL2"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>

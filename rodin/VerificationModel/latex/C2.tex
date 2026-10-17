@@ -1,0 +1,19 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{C2}
+\CONTEXT{C2}{C1}{}
+\SETS{
+	\Set{BRAND}{}
+}
+\CONSTANTS{
+	\Constant{Separation\_time}{}
+}
+\AXIOMS{
+	\Axiom{axm3}{false}{$Separation\_time \in{} BRAND \tfun{} \natn{}$}{}
+	\Axiom{axm4}{false}{$\forall{}b \qdot{} b \in{} BRAND \limp{} Separation\_time(b) \in{} \natn{}$}{}
+	\Axiom{axm5}{false}{$\forall{}n\qdot{} n \in{} \natn{} \limp{} n \geq{} 1$}{}
+	\Axiom{axm6}{false}{$\forall{}n,k\qdot{} n \in{} \nat{} \land{} k \in{} \natn{} \limp{} n \leq{} n + k$}{}
+}
+\END
+\end{document}

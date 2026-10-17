@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>VerificationModel</name>
+	<comment></comment>
+	<projects>
+		<project>TheoryABZ2023</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.rodinp.core.rodinbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.rodinp.core.rodinnature</nature>
+	</natures>
+</projectDescription>

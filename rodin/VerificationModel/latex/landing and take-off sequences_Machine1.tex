@@ -1,0 +1,141 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{landing~and~take-off~sequences\_Machine1}
+\MACHINE{landing~and~take-off~sequences\_Machine1}{landing~and~take-off~sequences\_Machine}{Runway~assignment\_Contexte}{}
+\VARIABLES{
+	\Variable{aircrafts\_in\_airport}{}
+	\Variable{statusof}{}
+	\Variable{curr\_RW\_status}{}
+	\Variable{curr\_RWL\_status}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$curr\_RW\_status \in{} RW\_STATUES $}{}
+	\Invariant{inv2}{false}{$curr\_RWL\_status \in{} RWL\_STATUES$}{}
+	\Invariant{inv3}{false}{$curr\_RW\_status=Unavailable \limp{} curr\_RWL\_status=ON$}{}
+}
+\EVENTS{
+\INITIALISATION{true}{}{
+	\ACTIONS{false}{
+		\Action{act13}{$aircrafts\_in\_airport \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act16}{$statusof \bcmeq{} \emptyset{}$}{false}{}
+		\Action{act17}{$curr\_RW\_status\bcmeq{}Available$}{true}{}
+		\Action{act18}{$curr\_RWL\_status\bcmeq{}OFF$}{true}{}
+	}
+}
+\EVT{Landing\_Preparing}{true}{ordinary}{Landing\_Preparing}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd4}{false}{$aircraft \in{} aircrafts\_in\_airport$}{false}{}
+		\Guard{grd5}{false}{$statusof(aircraft) = Blocked$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyL$}{false}{}
+	}
+}
+\EVT{Start\_Landing}{true}{ordinary}{Start\_Landing}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = ReadyL$}{false}{}
+		\Guard{grd3}{false}{$curr\_RW\_status = Available$}{true}{}
+		\Guard{grd4}{false}{$curr\_RWL\_status = OFF$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} Landing$}{false}{}
+		\Action{act2}{$curr\_RW\_status \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status \bcmeq{} ON$}{true}{}
+	}
+}
+\EVT{Terminating\_Landing}{true}{ordinary}{Terminating\_Landing}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = Landing$}{false}{}
+		\Guard{grd3}{false}{$curr\_RW\_status = Unavailable$}{true}{}
+		\Guard{grd4}{false}{$curr\_RWL\_status = ON$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TerminatedL$}{false}{}
+		\Action{act2}{$curr\_RW\_status \bcmeq{} Available$}{true}{}
+		\Action{act3}{$curr\_RWL\_status \bcmeq{} OFF$}{true}{}
+	}
+}
+\EVT{Takeoff\_Preparing}{true}{ordinary}{Takeoff\_Preparing}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =TerminatedL$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyT$}{false}{}
+	}
+}
+\EVT{Start\_takingoff}{true}{ordinary}{Start\_takingoff}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =ReadyT$}{false}{}
+		\Guard{grd3}{false}{$curr\_RW\_status = Available$}{true}{}
+		\Guard{grd4}{false}{$curr\_RWL\_status = OFF$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TakingOff$}{false}{}
+		\Action{act2}{$curr\_RW\_status \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status \bcmeq{} ON$}{true}{}
+	}
+}
+\EVT{Terminating\_takingoff}{true}{ordinary}{Terminating\_takingoff}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =TakingOff$}{false}{}
+		\Guard{grd3}{false}{$curr\_RW\_status = Unavailable$}{true}{}
+		\Guard{grd4}{false}{$curr\_RWL\_status = ON$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{}Blocked$}{false}{}
+		\Action{act2}{$curr\_RW\_status \bcmeq{} Available$}{true}{}
+		\Action{act3}{$curr\_RWL\_status \bcmeq{} OFF$}{true}{}
+	}
+}
+\EVT{Airport\_Departing}{true}{ordinary}{Airport\_Departing}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =Blocked$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_airport \bcmeq{}aircrafts\_in\_airport \setminus{} \{aircraft\} $}{false}{}
+		\Action{act2}{$statusof \bcmeq{} \{aircraft\} \domsub{} statusof$}{false}{}
+	}
+}
+\EVT{AddAircraft}{true}{ordinary}{AddAircraft}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} AIRCRAFTS$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_airport\bcmeq{} aircrafts\_in\_airport \bunion{} \{aircraft\}$}{false}{}
+		\Action{act2}{$statusof(aircraft) \bcmeq{} Blocked$}{false}{}
+	}
+}
+}
+\END
+\end{document}

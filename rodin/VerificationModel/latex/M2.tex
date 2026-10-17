@@ -1,0 +1,376 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{M2}
+\MACHINE{M2}{M1}{C1}{}
+\VARIABLES{
+	\Variable{aircrafts\_in\_TMA}{}
+	\Variable{statusof}{}
+	\Variable{curr\_RW\_status}{}
+	\Variable{curr\_RWL\_status}{}
+	\Variable{aircrafts\_ReadyL}{}
+	\Variable{clearanceL}{}
+	\Variable{current\_time}{}
+	\Variable{brandof}{}
+	\Variable{ETA\_H}{}
+	\Variable{ETA\_M}{}
+	\Variable{ETA\_S}{}
+	\Variable{landingQueue}{}
+	\Variable{ThresholdH}{}
+	\Variable{ThresholdM}{}
+	\Variable{ThresholdS}{}
+	\Variable{Pre\_AC\_VOR}{}
+	\Variable{last\_VOR\_time}{}
+	\Variable{entryTMAOf}{}
+	\Variable{plannedRunway}{}
+	\Variable{landingTime}{}
+	\Variable{landingRunway}{}
+	\Variable{lastEntryAircraft}{}
+	\Variable{legOf}{}
+	\Variable{lastLegAircraft}{}
+	\Variable{lastEntryBrand}{}
+	\Variable{lastLegTime}{}
+	\Variable{lastLegBrand}{}
+	\Variable{legIndex}{}
+	\Variable{legEntryTimeH}{}
+	\Variable{legEntryTimeM}{}
+	\Variable{legEntryTimeS}{}
+	\Variable{legPointTime}{}
+	\Variable{lastMergeBrand}{}
+	\Variable{lastMergeTime}{}
+	\Variable{mergeTimeH}{}
+	\Variable{mergeTimeS}{}
+	\Variable{mergeTimeM}{}
+	\Variable{lastEntryTime}{}
+}
+\INVARIANTS{
+	\Invariant{inv2}{false}{$current\_time \in{} \nat{}  $}{}
+	\Invariant{inv8}{false}{$brandof \in{} AIRCRAFTS \pfun{} BRAND$}{}
+	\Invariant{inv38}{false}{$ETA\_H \in{} aircrafts\_in\_TMA  \pfun{}  Hours$}{}
+	\Invariant{inv39}{false}{$ETA\_M \in{} aircrafts\_in\_TMA \pfun{}  Minute$}{}
+	\Invariant{inv40}{false}{$ETA\_S \in{} aircrafts\_in\_TMA \pfun{}   Seconds$}{}
+	\Invariant{inv47}{false}{$landingQueue \in{} RUNWAY \tfun{} seq(AIRCRAFTS)$}{}
+	\Invariant{inv48}{false}{$ThresholdH \in{} aircrafts\_in\_TMA  \pfun{}  Hours$}{}
+	\Invariant{inv49}{false}{$ThresholdM \in{}aircrafts\_in\_TMA  \pfun{}  Minute$}{}
+	\Invariant{inv50}{false}{$ThresholdS \in{} aircrafts\_in\_TMA \pfun{}   Seconds$}{}
+	\Invariant{inv51}{false}{$Pre\_AC\_VOR \in{} RUNWAY \pfun{} aircrafts\_in\_TMA $}{}
+	\Invariant{inv52}{false}{$last\_VOR\_time \in{} RUNWAY \tfun{} \nat{}$}{}
+	\Invariant{inv53}{false}{$entryTMAOf \in{} aircrafts\_in\_TMA \pfun{} ENTRYTMA$}{}
+	\Invariant{inv56}{false}{$plannedRunway \in{} aircrafts\_in\_TMA \pfun{} RUNWAY$}{}
+	\Invariant{inv58}{false}{$landingTime \in{} AIRCRAFTS \pfun{} \nat{}$}{}
+	\Invariant{inv59}{false}{$landingRunway \in{} AIRCRAFTS \pfun{} RUNWAY$}{}
+	\Invariant{inv60}{false}{$\\~\forall{} a \qdot{}\\~       a \in{} dom(clearanceL)\\~       \limp{}\\~       a \in{} dom(plannedRunway)\\~       \land{} clearanceL(a) = plannedRunway(a)$}{}
+	\Invariant{inv61}{false}{$lastEntryAircraft \in{}  ENTRYTMA \pfun{} aircrafts\_in\_TMA$}{}
+	\Invariant{inv63}{false}{$legOf \in{} aircrafts\_in\_TMA \pfun{} SLEGS$}{}
+	\Invariant{inv65}{false}{$lastLegAircraft \in{} SLEGS \pfun{} aircrafts\_in\_TMA$}{}
+	\Invariant{inv66}{false}{$lastEntryTime  \in{} ENTRYTMA \pfun{} \nat{}$}{}
+	\Invariant{inv67}{false}{$lastEntryBrand \in{} ENTRYTMA \pfun{} BRAND$}{}
+	\Invariant{inv68}{false}{$dom(lastEntryTime) = dom(lastEntryBrand)$}{}
+	\Invariant{inv69}{false}{$lastLegTime \in{} SLEGS \pfun{} \nat{} $}{}
+	\Invariant{inv70}{false}{$lastLegBrand \in{} SLEGS \pfun{} BRAND$}{}
+	\Invariant{inv71}{false}{$legIndex       \in{} aircrafts\_in\_TMA \pfun{} 1\upto{}4$}{}
+	\Invariant{inv72}{false}{$legEntryTimeH  \in{} aircrafts\_in\_TMA \pfun{} Hours$}{}
+	\Invariant{inv73}{false}{$legEntryTimeM   \in{} aircrafts\_in\_TMA \pfun{} Minute$}{}
+	\Invariant{inv74}{false}{$legEntryTimeS    \in{} aircrafts\_in\_TMA \pfun{} Seconds$}{}
+	\Invariant{inv75}{false}{$mergeTimeH \in{} aircrafts\_in\_TMA \pfun{} Hours$}{}
+	\Invariant{inv88}{false}{$mergeTimeM \in{} aircrafts\_in\_TMA \pfun{} Minute$}{}
+	\Invariant{inv87}{false}{$mergeTimeS \in{} aircrafts\_in\_TMA \pfun{} Seconds$}{}
+	\Invariant{inv76}{false}{$legPointTime   \in{} aircrafts\_in\_TMA \pfun{} \nat{}$}{}
+	\Invariant{inv77}{false}{$lastMergeBrand \in{} PM \pfun{} BRAND$}{}
+	\Invariant{inv78}{false}{$lastMergeTime  \in{} PM \pfun{} \nat{}$}{}
+	\Invariant{inv79}{false}{$\\\forall{} a, b \qdot{} a \in{} dom(mergeTimeH) \land{} a \in{} dom(mergeTimeS) \land{}a \in{} dom(mergeTimeM) \land{} b \in{} dom(mergeTimeS) \land{} a \neq{} b\\~               \land{} a \in{} dom(legOf) \land{} b \in{} dom(legOf)\\~               \land{} a \in{} dom(brandof) \land{} b \in{} dom(brandof)\\~               \land{} PmsMerge(legPMS(legOf(a))) = PmsMerge(legPMS(legOf(b)))\\~               \land{} curTimeSec(mergeTimeS(a), mergeTimeM(a), mergeTimeH(a))\\~\leq{} curTimeSec(mergeTimeS(b), mergeTimeM(b), mergeTimeH(b))\\\\~       \limp{} curTimeSec(mergeTimeS(b), mergeTimeM(b), mergeTimeH(b)) - curTimeSec(mergeTimeS(a), mergeTimeM(a), mergeTimeH(a)) \geq{} Separation\_time(brandof(a) \mapsto{} brandof(b))$}{}
+	\Invariant{inv80}{false}{$\\\forall{} a \qdot{}  a \in{} dom(mergeTimeH) \land{} a \in{} dom(mergeTimeS) \land{}a \in{} dom(mergeTimeM)\\~         \limp{} PmsMerge(legPMS(legOf(a))) \in{} dom(lastMergeTime)\\~           \land{} curTimeSec(mergeTimeS(a), mergeTimeM(a), mergeTimeH(a)) \leq{} lastMergeTime(PmsMerge(legPMS(legOf(a))))$}{}
+	\Invariant{inv81}{false}{$\\\forall{} a \qdot{} a \in{} dom(mergeTimeH) \land{} a \in{} dom(mergeTimeS) \land{}a \in{} dom(mergeTimeM) \land{} a \in{} dom(brandof)\\~           \land{} curTimeSec(mergeTimeS(a), mergeTimeM(a), mergeTimeH(a)) = lastMergeTime(PmsMerge(legPMS(legOf(a))))\\~         \limp{} brandof(a) = lastMergeBrand(PmsMerge(legPMS(legOf(a))))$}{}
+	\Invariant{inv82}{false}{$\\\forall{} a \qdot{} a \in{} dom(mergeTimeH) \land{} a \in{} dom(mergeTimeS) \land{}a \in{} dom(mergeTimeM) \land{} a \in{} dom(brandof)\\~           \land{} curTimeSec(mergeTimeS(a), mergeTimeM(a), mergeTimeH(a)) < lastMergeTime(PmsMerge(legPMS(legOf(a))))\\~         \limp{} lastMergeTime(PmsMerge(legPMS(legOf(a)))) - curTimeSec(mergeTimeS(a), mergeTimeM(a), mergeTimeH(a))\\~             \geq{} Separation\_time(brandof(a) \mapsto{} lastMergeBrand(PmsMerge(legPMS(legOf(a)))))$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$aircrafts\_in\_TMA \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act2}{$statusof \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act3}{$curr\_RW\_status \bcmeq{} RUNWAY \cprod{} \{Available\}$}{true}{}
+		\Action{act4}{$curr\_RWL\_status \bcmeq{} RUNWAY \cprod{} \{OFF\}$}{true}{}
+		\Action{act6}{$clearanceL\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act7}{$aircrafts\_ReadyL\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act11}{$current\_time \bcmeq{} 0$}{true}{}
+		\Action{act16}{$brandof\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act35}{$ETA\_H\bcmeq{}\emptyset{} $}{true}{}
+		\Action{act36}{$ETA\_S\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act37}{$ETA\_M\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act42}{$landingQueue \bcmeq{} RUNWAY \cprod{} \{emptySeq\}$}{true}{}
+		\Action{act43}{$ThresholdS\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act44}{$ThresholdM \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act45}{$ThresholdH \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act46}{$Pre\_AC\_VOR \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act47}{$last\_VOR\_time \bcmeq{} RUNWAY \cprod{} \{0\}$}{true}{}
+		\Action{act48}{$entryTMAOf \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act50}{$plannedRunway \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act51}{$landingRunway \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act52}{$landingTime \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act53}{$lastEntryAircraft\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act54}{$legOf \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act55}{$legEntryTimeH \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act71}{$legEntryTimeM \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act70}{$legEntryTimeS\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act56}{$lastLegAircraft \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act59}{$lastEntryBrand \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act60}{$lastLegTime\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act61}{$lastLegBrand \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act62}{$legIndex\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act67}{$legPointTime\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act68}{$lastMergeBrand\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act69}{$lastMergeTime \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act72}{$mergeTimeH\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act73}{$mergeTimeM\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act74}{$mergeTimeS\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act75}{$lastEntryTime\bcmeq{}\emptyset{}$}{true}{}
+	}
+}
+\EVT{Entry\_in\_TMA}{false}{ordinary}{Entry\_in\_TMA}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{entrytma}{true}{}
+		\Param{brand}{true}{}
+		\Param{duration\_entry\_merge}{true}{}
+		\Param{previous}{true}{}
+		\Param{speedaircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} AIRCRAFTS \land{} aircraft \notin{} aircrafts\_in\_TMA$}{true}{}
+		\Guard{grd2}{false}{$aircraft \notin{} dom(statusof)$}{true}{}
+		\Guard{grd5}{false}{$current\_time \in{} \nat{}   $}{true}{}
+		\Guard{grd12}{false}{$aircraft \notin{} dom(brandof)$}{true}{}
+		\Guard{grd19}{false}{$previous \in{} \nat{}$}{true}{}
+		\Guard{grd7}{false}{$brand \in{} BRAND$}{true}{}
+		\Guard{grd20}{false}{$speedaircraft=170$}{true}{}
+		\Guard{grd10}{false}{$entrytma \in{} ENTRYTMA$}{true}{}
+		\Guard{grd14}{false}{$duration\_entry\_merge = (20* 3600)/ speedaircraft$}{true}{}
+		\Guard{grd17}{false}{$\\entrytma \in{} dom(lastEntryTime) \limp{}\\~         previous = max(\{0, lastEntryTime(entrytma)\\~          \\~            + Separation\_time(lastEntryBrand(entrytma) \mapsto{} brand)\\~            - current\_time\})$}{true}{}
+		\Guard{grd18}{false}{$entrytma \notin{} dom(lastEntryTime) \limp{} previous = 0$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_TMA\bcmeq{} aircrafts\_in\_TMA \bunion{} \{aircraft\}$}{true}{}
+		\Action{act2}{$statusof(aircraft) \bcmeq{} Blocked$}{true}{}
+		\Action{act13}{$entryTMAOf \bcmeq{} entryTMAOf \bunion{} \{aircraft \mapsto{} entrytma\}$}{true}{}
+		\Action{act7}{$brandof\bcmeq{} brandof \bunion{} \{aircraft \mapsto{} brand\}$}{true}{}
+		\Action{act9}{$ETA\_M\bcmeq{} ETA\_M \bunion{}  \{aircraft \mapsto{} (((previous + current\_time + duration\_entry\_merge) mod 3600) / 60)\}$}{true}{}
+		\Action{act10}{$ETA\_S\bcmeq{} ETA\_S \bunion{}  \{aircraft \mapsto{} ((previous + current\_time + duration\_entry\_merge) mod 3600) mod 60\}$}{true}{}
+		\Action{act11}{$ETA\_H\bcmeq{} ETA\_H \bunion{}  \{aircraft \mapsto{} ((previous + current\_time + duration\_entry\_merge) / 3600) \}$}{true}{}
+		\Action{act16}{$lastEntryTime(entrytma)  \bcmeq{} current\_time + previous$}{true}{}
+		\Action{act17}{$lastEntryBrand(entrytma) \bcmeq{} brand$}{true}{}
+	}
+}
+\EVT{Entry\_Leg}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{leg}{true}{}
+		\Param{previous}{true}{}
+		\Param{legT}{true}{}
+		\Param{etaL}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd2}{false}{$\\aircraft \in{} aircrafts\_in\_TMA \land{} aircraft \in{} dom(entryTMAOf) \land{}\\~         aircraft \in{} dom(brandof)$}{true}{}
+		\Guard{grd3}{false}{$aircraft \notin{} dom(legOf)$}{true}{}
+		\Guard{grd4}{false}{$leg = TMAToLeg(entryTMAOf(aircraft))$}{true}{}
+		\Guard{grd15}{false}{$previous \in{} \nat{} $}{true}{}
+		\Guard{grd10}{false}{$\\aircraft \in{} dom(ETA\_S) \land{} aircraft \in{} dom(ETA\_M) \land{} aircraft \in{} dom(ETA\_H)\\~      \land{} etaL = curTimeSec(ETA\_S(aircraft), ETA\_M(aircraft), ETA\_H(aircraft))\\~      \land{} current\_time \geq{} etaL$}{true}{}
+		\Guard{grd5}{false}{$leg \in{} SLEGS$}{true}{}
+		\Guard{grd8}{false}{$leg \notin{} dom(lastLegTime) \limp{} legT = current\_time$}{true}{}
+		\Guard{grd12}{false}{$\\leg \in{} dom(lastLegTime)\\~       \land{} current\_time \geq{} lastLegTime(leg)\\~                        + Separation\_time(lastLegBrand(leg) \mapsto{} brandof(aircraft))\\~       \limp{} legT = current\_time$}{true}{}
+		\Guard{grd13}{false}{$\\leg \in{} dom(lastLegTime)\\~       \land{} current\_time < lastLegTime(leg)\\~                        + Separation\_time(lastLegBrand(leg) \mapsto{} brandof(aircraft))\\~       \limp{} legT = lastLegTime(leg)\\~                + Separation\_time(lastLegBrand(leg) \mapsto{} brandof(aircraft))$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$legOf \bcmeq{} legOf \bunion{} \{aircraft \mapsto{} leg\}$}{true}{}
+		\Action{act8}{$legEntryTimeH\bcmeq{} legEntryTimeH \bunion{}  \{aircraft \mapsto{} (legT / 3600) \}$}{true}{}
+		\Action{act7}{$legEntryTimeM\bcmeq{} legEntryTimeM \bunion{}  \{aircraft \mapsto{} ((legT mod 3600) / 60)\}$}{true}{}
+		\Action{act9}{$legEntryTimeS\bcmeq{} legEntryTimeS \bunion{}  \{aircraft \mapsto{} ((legT mod 3600) mod 60)\}$}{true}{}
+		\Action{act3}{$lastLegTime(leg)\bcmeq{} legT$}{true}{}
+		\Action{act4}{$lastLegBrand(leg) \bcmeq{} brandof(aircraft)$}{true}{}
+		\Action{act5}{$legIndex \bcmeq{} legIndex \bunion{} \{aircraft \mapsto{} 1\}$}{true}{}
+		\Action{act6}{$legPointTime \bcmeq{} legPointTime \bunion{} \{aircraft \mapsto{} legT\}$}{true}{}
+	}
+}
+\EVT{Direct\_To}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{leg}{true}{}
+		\Param{tlm}{true}{}
+		\Param{pm}{true}{}
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$\\aircraft \in{} aircrafts\_in\_TMA \\~        \land{} aircraft \in{} dom(legOf) \land{} aircraft \in{} dom(legEntryTimeH) \land{} aircraft \in{} dom(legEntryTimeS)\land{}aircraft \in{} dom(legEntryTimeM) \land{}aircraft \in{} dom(brandof)$}{true}{}
+		\Guard{grd2}{false}{$leg = legOf(aircraft) \land{} pm = PmsMerge(legPMS(leg))$}{true}{}
+		\Guard{grd6}{false}{$aircraft \in{} dom(legIndex) \land{} aircraft \notin{} dom(mergeTimeH) \land{} aircraft \notin{} dom(mergeTimeS) \land{} aircraft \notin{} dom(mergeTimeM) $}{true}{}
+		\Guard{grd7}{false}{$\\current\_time \geq{} curTimeSec(legEntryTimeS(aircraft), legEntryTimeM(aircraft), legEntryTimeH(aircraft))\\~      $}{true}{}
+		\Guard{grd3}{false}{$tlm = (distanceLegMerge(leg) * 3600) / speed\_aircraft(brandof(aircraft))$}{true}{}
+		\Guard{grd4}{false}{$\\~\forall{} b \qdot{} b \in{} dom(legIndex) \land{} b \in{} dom(legOf) \land{} b \in{} dom(legEntryTimeH) \land{} b \in{} dom(legEntryTimeS) \land{} b \in{} dom(legEntryTimeM) \land{} legOf(b) = leg\\~            \limp{} curTimeSec(legEntryTimeS(b), legEntryTimeM(b), legEntryTimeH(b)) \geq{} curTimeSec(legEntryTimeS(aircraft), legEntryTimeM(aircraft), legEntryTimeH(aircraft))$}{true}{}
+		\Guard{grd5}{false}{$\\pm \notin{} dom(lastMergeTime)\\~        \lor{} current\_time + tlm \geq{} lastMergeTime(pm)\\~                               + Separation\_time(lastMergeBrand(pm) \mapsto{} brandof(aircraft)) + 10$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$mergeTimeH \bcmeq{} mergeTimeH \bunion{} \{aircraft \mapsto{} (current\_time + tlm) / 3600\}$}{true}{}
+		\Action{act9}{$mergeTimeM \bcmeq{} mergeTimeM \bunion{} \{aircraft \mapsto{} ((current\_time + tlm) mod 3600) / 60\}$}{true}{}
+		\Action{act8}{$mergeTimeS \bcmeq{} mergeTimeS \bunion{} \{aircraft \mapsto{} ((current\_time + tlm) mod 3600) mod 60\}$}{true}{}
+		\Action{act2}{$lastMergeTime(pm)  \bcmeq{} current\_time + tlm$}{true}{}
+		\Action{act3}{$lastMergeBrand(pm) \bcmeq{} brandof(aircraft)$}{true}{}
+		\Action{act4}{$legIndex \bcmeq{} \{aircraft\} \domsub{} legIndex$}{true}{}
+		\Action{act5}{$legPointTime \bcmeq{} \{aircraft\} \domsub{} legPointTime$}{true}{}
+	}
+}
+\EVT{Move\_On\_Leg}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{leg}{true}{}
+		\Param{tlm}{true}{}
+		\Param{tseg}{true}{}
+		\Param{k}{true}{}
+		\Param{aircraft}{true}{}
+		\Param{pm}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$\\aircraft \in{} dom(legOf) \land{} aircraft \in{} dom(legIndex)\\~        \land{} aircraft \in{} dom(legPointTime) \land{} aircraft \in{} dom(brandof)$}{true}{}
+		\Guard{grd2}{false}{$leg = legOf(aircraft) \land{} pm = PmsMerge(legPMS(leg))$}{true}{}
+		\Guard{grd3}{false}{$k = legIndex(aircraft) \land{} k < 4$}{true}{}
+		\Guard{grd4}{false}{$tlm  = (distanceLegMerge(leg) * 3600) / speed\_aircraft(brandof(aircraft))$}{true}{}
+		\Guard{grd5}{false}{$tseg = (2 * 3600) / speed\_aircraft(brandof(aircraft))$}{true}{}
+		\Guard{grd6}{false}{$current\_time \geq{} legPointTime(aircraft) + tseg$}{true}{}
+		\Guard{grd7}{false}{$\\~pm \in{} dom(lastMergeTime)\\~        \land{} current\_time + tlm < lastMergeTime(pm)\\~                               + Separation\_time(lastMergeBrand(pm) \mapsto{} brandof(aircraft)) + 10$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$legIndex(aircraft) \bcmeq{} k + 1$}{true}{}
+		\Action{act2}{$legPointTime(aircraft) \bcmeq{} legPointTime(aircraft) + tseg$}{true}{}
+	}
+}
+\EVT{Schedule\_Arrival}{false}{ordinary}{Schedule\_Arrival}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{pm}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = Blocked$}{true}{}
+		\Guard{grd2}{false}{$\\aircraft \in{} dom(mergeTimeH) \land{}aircraft \in{} dom(mergeTimeS) \land{} aircraft \in{} dom(mergeTimeM)\land{} aircraft \in{} dom(legOf)\\~        \land{} aircraft \notin{} dom(plannedRunway)$}{true}{}
+		\Guard{grd3}{false}{$pm = PmsMerge(legPMS(legOf(aircraft))) \land{} runway = pmRunway(pm)$}{true}{}
+		\Guard{grd4}{false}{$\\\forall{} b \qdot{} b \in{}  dom(mergeTimeH)\land{} b \in{}  dom(mergeTimeS) \land{} b \in{}  dom(mergeTimeM)\land{} b \in{} dom(legOf) \land{} b \neq{} aircraft\\~              \land{} PmsMerge(legPMS(legOf(b))) = pm\\~              \land{} curTimeSec(mergeTimeS(b), mergeTimeM(b), mergeTimeH(b)) < curTimeSec(mergeTimeS(aircraft), mergeTimeM(aircraft), mergeTimeH(aircraft))\\~        \limp{} b \in{} dom(plannedRunway)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft)\bcmeq{} ScheduledL$}{true}{}
+		\Action{act2}{$\\landingQueue(runway) \bcmeq{} landingQueue(runway)\\~                               \bunion{} \{seqSize(landingQueue(runway)) + 1 \mapsto{} aircraft\}$}{true}{}
+		\Action{act6}{$plannedRunway \bcmeq{} plannedRunway \bunion{} \{aircraft \mapsto{} runway\}$}{true}{}
+	}
+}
+\EVT{Reach\_Merge\_Fix}{false}{ordinary}{Reach\_Merge\_Fix}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$\\~aircraft \in{} aircrafts\_in\_TMA \land{} aircraft \in{} dom(statusof)\\~        \land{} statusof(aircraft) = ScheduledL$}{true}{}
+		\Guard{grd2}{false}{$\\aircraft \in{} dom(plannedRunway)\\~        \land{} aircraft \in{} dom(mergeTimeS) \land{} aircraft \in{} dom(mergeTimeM) \land{} aircraft \in{} dom(mergeTimeH)$}{true}{}
+		\Guard{grd3}{false}{$current\_time \geq{} curTimeSec(mergeTimeS(aircraft), mergeTimeM(aircraft), mergeTimeH(aircraft))$}{true}{}
+		\Guard{grd4}{false}{$\\landingQueue(plannedRunway(aircraft)) \neq{} emptySeq\\~        \land{} landingQueue(plannedRunway(aircraft))(1) = aircraft$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft)\bcmeq{} ReadyL$}{true}{}
+		\Action{act2}{$aircrafts\_ReadyL\bcmeq{} aircrafts\_ReadyL \bunion{} \{aircraft\}$}{true}{}
+	}
+}
+\EVT{Landing\_Verification}{false}{ordinary}{Landing\_Verification}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{duration\_final}{true}{}
+		\Param{landing\_instant}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = ReadyL$}{true}{}
+		\Guard{grd9}{false}{$aircraft \notin{} dom(clearanceL) \land{} runway \in{} RUNWAY$}{true}{}
+		\Guard{grd45}{false}{$aircraft \in{} dom(plannedRunway) \land{} runway = plannedRunway(aircraft)$}{true}{}
+		\Guard{grd46}{false}{$landingQueue(runway) \neq{} emptySeq \land{} landingQueue(runway)(1) = aircraft$}{true}{}
+		\Guard{grd35}{false}{$aircraft \in{} dom(mergeTimeM) \land{} aircraft \in{} dom(mergeTimeS) \land{} aircraft \in{} dom(mergeTimeH)$}{true}{}
+		\Guard{grd39}{false}{$ duration\_final = 260$}{true}{}
+		\Guard{grd47}{false}{$current\_time\geq{} curTimeSec(mergeTimeS(aircraft), mergeTimeM(aircraft), mergeTimeH(aircraft))$}{true}{}
+		\Guard{grd26}{false}{$\\landing\_instant =current\_time \\~                          + duration\_final$}{true}{}
+		\Guard{grd40}{false}{$\\\forall{} b \qdot{} b \in{} dom(clearanceL) \land{} clearanceL(b) = runway \land{} b \neq{} aircraft\\~              \land{} b \in{} dom(ThresholdH) \land{} b \in{} dom(ThresholdM) \land{} b \in{} dom(ThresholdS)\\~              \land{} b \in{} dom(brandof) \land{} aircraft \in{} dom(brandof)\\~              \land{} curTimeSec(ThresholdS(b), ThresholdM(b), ThresholdH(b)) \leq{} landing\_instant\\~        \limp{} landing\_instant - curTimeSec(ThresholdS(b), ThresholdM(b), ThresholdH(b))\\~            \geq{} Separation\_time(brandof(b) \mapsto{} brandof(aircraft))$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ExecutedL$}{true}{}
+		\Action{act5}{$clearanceL \bcmeq{} clearanceL \bunion{} \{aircraft \mapsto{} runway\}$}{true}{}
+		\Action{act10}{$landingQueue(runway) \bcmeq{} seqDelete(landingQueue(runway), landingQueue(runway)\converse{}(aircraft))$}{true}{}
+		\Action{act11}{$ThresholdH(aircraft) \bcmeq{} landing\_instant / 3600$}{true}{}
+		\Action{act12}{$ThresholdM(aircraft) \bcmeq{} (landing\_instant mod 3600) / 60$}{true}{}
+		\Action{act13}{$ThresholdS(aircraft) \bcmeq{} (landing\_instant mod 3600) mod 60$}{true}{}
+	}
+}
+\EVT{Touchdown}{false}{ordinary}{Touchdown}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = ExecutedL$}{true}{}
+		\Guard{grd2}{false}{$ runway \in{} RUNWAY \land{} curr\_RW\_status(runway) = Available \land{} curr\_RWL\_status(runway) = OFF$}{true}{}
+		\Guard{grd4}{false}{$aircraft \in{} dom(clearanceL)$}{true}{}
+		\Guard{grd3}{false}{$runway = clearanceL(aircraft)$}{true}{}
+		\Guard{grd7}{false}{$current\_time \geq{} curTimeSec(ThresholdS(aircraft),ThresholdM(aircraft),ThresholdH(aircraft))$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} Landing$}{true}{}
+		\Action{act2}{$curr\_RW\_status(runway) \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} ON$}{true}{}
+	}
+}
+\EVT{Terminating\_Landing}{false}{ordinary}{Terminating\_Landing}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{durationL}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = Landing$}{true}{}
+		\Guard{grd2}{false}{$runway \in{} RUNWAY \land{} curr\_RW\_status(runway) = Unavailable \land{} curr\_RWL\_status(runway) = ON $}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} aircrafts\_ReadyL$}{true}{}
+		\Guard{grd5}{false}{$aircraft \in{} dom(clearanceL)$}{true}{}
+		\Guard{grd4}{false}{$runway = clearanceL(aircraft)$}{true}{}
+		\Guard{grd15}{false}{$durationL \in{} 60\upto{}90$}{true}{}
+		\Guard{grd14}{false}{$current\_time \geq{} (curTimeSec(ThresholdS(aircraft),ThresholdM(aircraft),ThresholdH(aircraft)) + durationL)$}{true}{}
+		\Guard{grd17}{false}{$current\_time \in{} \nat{}$}{true}{}
+		\Guard{grd22}{false}{$aircraft \in{} dom(brandof)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TerminatedL$}{true}{}
+		\Action{act3}{$curr\_RW\_status(runway) \bcmeq{} Available$}{true}{}
+		\Action{act4}{$curr\_RWL\_status(runway) \bcmeq{} OFF$}{true}{}
+		\Action{act7}{$aircrafts\_ReadyL \bcmeq{} aircrafts\_ReadyL \setminus{} \{aircraft\}$}{true}{}
+		\Action{act8}{$clearanceL \bcmeq{} \{aircraft\} \domsub{} clearanceL$}{true}{}
+		\Action{act14}{$ETA\_H \bcmeq{} \{aircraft\} \domsub{} ETA\_H$}{true}{}
+		\Action{act15}{$ETA\_S \bcmeq{} \{aircraft\} \domsub{} ETA\_S$}{true}{}
+		\Action{act16}{$ETA\_M \bcmeq{} \{aircraft\} \domsub{} ETA\_M$}{true}{}
+		\Action{act19}{$ThresholdH \bcmeq{} \{aircraft\} \domsub{} ThresholdH$}{true}{}
+		\Action{act20}{$ThresholdM \bcmeq{} \{aircraft\} \domsub{} ThresholdM$}{true}{}
+		\Action{act21}{$ThresholdS \bcmeq{} \{aircraft\} \domsub{} ThresholdS$}{true}{}
+	}
+}
+\EVT{tick\_tock}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{tm}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$tm=60$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$current\_time\bcmeq{} current\_time+tm$}{true}{}
+	}
+}
+\EVT{Taxiway\_Exit}{false}{ordinary}{Taxiway\_Exit}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = TerminatedL$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_TMA \bcmeq{} aircrafts\_in\_TMA \setminus{} \{aircraft\} $}{true}{}
+		\Action{act2}{$statusof \bcmeq{} \{aircraft\} \domsub{} statusof$}{true}{}
+	}
+}
+}
+\END
+\end{document}

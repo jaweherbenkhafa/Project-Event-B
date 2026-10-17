@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="STATUS" org.eventb.core.type="ℙ(STATUS)"/>
+        <org.eventb.core.poIdentifier name="RUNWAY" org.eventb.core.type="ℙ(RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="RW_STATUES" org.eventb.core.type="ℙ(RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="AIRCRAFTS" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="RWL_STATUES" org.eventb.core.type="ℙ(RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="Blocked" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Available" org.eventb.core.type="RW_STATUES"/>
+        <org.eventb.core.poIdentifier name="OFF" org.eventb.core.type="RWL_STATUES"/>
+        <org.eventb.core.poIdentifier name="ON" org.eventb.core.type="RWL_STATUES"/>
+        <org.eventb.core.poIdentifier name="Landing" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Takingoff" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Unavailable" org.eventb.core.type="RW_STATUES"/>
+        <org.eventb.core.poIdentifier name="ExecutedL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ScheduledL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ExecutedT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ReadyL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ReadyT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="TerminatedL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="TerminatedT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poPredicate name="Unavailablf" org.eventb.core.predicate="finite(AIRCRAFTS)" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#E"/>
+        <org.eventb.core.poPredicate name="Unavailablg" org.eventb.core.predicate="finite(RUNWAY)∧card(RUNWAY)≥1" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#m"/>
+        <org.eventb.core.poPredicate name="Unavailablh" org.eventb.core.predicate="partition(STATUS,{Blocked},{ScheduledL},{ReadyL},{ExecutedL},{Landing},{TerminatedL},{ReadyT},{ExecutedT},{Takingoff},{TerminatedT})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#D"/>
+        <org.eventb.core.poPredicate name="Unavailabli" org.eventb.core.predicate="partition(RW_STATUES,{Available},{Unavailable})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#Q"/>
+        <org.eventb.core.poPredicate name="Unavailablj" org.eventb.core.predicate="partition(RWL_STATUES,{ON},{OFF})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#R"/>
+        <org.eventb.core.poPredicate name="Unavailablk" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ1⇒x=x mod y+x ÷ y∗y" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#Z"/>
+        <org.eventb.core.poPredicate name="Unavailabll" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ·a∈ℕ∧b∈ℕ∧a≤b⇒a ÷ 60≤b ÷ 60" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#["/>
+        <org.eventb.core.poPredicate name="Unavailablm" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ,c⦂ℤ·a∈ℕ∧b∈ℕ∧c∈ℕ∧a≤b⇒a+c≤b+c" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#\\"/>
+        <org.eventb.core.poPredicate name="Unavailabln" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ,c⦂ℤ·a∈ℕ∧b∈ℕ∧c∈ℕ1∧a≤b⇒c∗a≤c∗b" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#^"/>
+        <org.eventb.core.poIdentifier name="WAYPOINT" org.eventb.core.type="ℙ(WAYPOINT)"/>
+        <org.eventb.core.poIdentifier name="WTC" org.eventb.core.type="ℙ(WTC)"/>
+        <org.eventb.core.poIdentifier name="PM" org.eventb.core.type="ℙ(PM)"/>
+        <org.eventb.core.poIdentifier name="SLEGS" org.eventb.core.type="ℙ(SLEGS)"/>
+        <org.eventb.core.poIdentifier name="ENTRYTMA" org.eventb.core.type="ℙ(ENTRYTMA)"/>
+        <org.eventb.core.poIdentifier name="PMS" org.eventb.core.type="ℙ(PMS)"/>
+        <org.eventb.core.poIdentifier name="legSpeed" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="Light" org.eventb.core.type="WTC"/>
+        <org.eventb.core.poIdentifier name="pmpos" org.eventb.core.type="ℙ(PM×(ℤ×ℤ×ℤ))"/>
+        <org.eventb.core.poIdentifier name="legFL" org.eventb.core.type="ℙ(SLEGS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legSeq" org.eventb.core.type="ℙ(SLEGS×ℙ(ℤ×WAYPOINT))"/>
+        <org.eventb.core.poIdentifier name="wpDistMerge" org.eventb.core.type="ℙ(WAYPOINT×ℤ)"/>
+        <org.eventb.core.poIdentifier name="Medium" org.eventb.core.type="WTC"/>
+        <org.eventb.core.poIdentifier name="TMAToLeg" org.eventb.core.type="ℙ(ENTRYTMA×SLEGS)"/>
+        <org.eventb.core.poIdentifier name="MergeBuffer" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="VSep" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="SpeedbeforeLeg" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="Heavy" org.eventb.core.type="WTC"/>
+        <org.eventb.core.poIdentifier name="leglength" org.eventb.core.type="ℙ(SLEGS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="entryToWaypoint" org.eventb.core.type="ℙ(ENTRYTMA×WAYPOINT)"/>
+        <org.eventb.core.poIdentifier name="Separation_dist" org.eventb.core.type="ℙ(WTC×WTC×ℤ)"/>
+        <org.eventb.core.poIdentifier name="segDist" org.eventb.core.type="ℙ(WAYPOINT×WAYPOINT×ℤ)"/>
+        <org.eventb.core.poIdentifier name="wppos" org.eventb.core.type="ℙ(WAYPOINT×(ℤ×ℤ×ℤ))"/>
+        <org.eventb.core.poIdentifier name="routeDist" org.eventb.core.type="ℙ(ENTRYTMA×ℤ)"/>
+        <org.eventb.core.poIdentifier name="PmsMerge" org.eventb.core.type="ℙ(PMS×PM)"/>
+        <org.eventb.core.poIdentifier name="legPMS" org.eventb.core.type="ℙ(SLEGS×PMS)"/>
+        <org.eventb.core.poIdentifier name="Separation_time" org.eventb.core.type="ℙ(WTC×WTC×ℤ)"/>
+        <org.eventb.core.poIdentifier name="MinLat" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poPredicate name="entryToWaypoinu" org.eventb.core.predicate="partition(WTC,{Light},{Medium},{Heavy})" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#'k"/>
+        <org.eventb.core.poPredicate name="entryToWaypoinv" org.eventb.core.predicate="Separation_time∈WTC × WTC → ℕ" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#?"/>
+        <org.eventb.core.poPredicate name="entryToWaypoinw" org.eventb.core.predicate="∀x⦂WTC,y⦂WTC,z⦂WTC·x∈WTC∧y∈WTC∧z∈WTC⇒Separation_time(x ↦ z)≤Separation_time(x ↦ y)+Separation_time(y ↦ z)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*z"/>
+        <org.eventb.core.poPredicate name="entryToWaypoinx" org.eventb.core.predicate="finite(PMS)∧finite(PM)∧PmsMerge∈PMS ⤖ PM" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(i"/>
+        <org.eventb.core.poPredicate name="entryToWaypoiny" org.eventb.core.predicate="finite(SLEGS)∧legPMS∈SLEGS → PMS∧(∀p⦂PMS·p∈PMS⇒card(legPMS∼[{p}])=2)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(j"/>
+        <org.eventb.core.poPredicate name="entryToWaypoinz" org.eventb.core.predicate="leglength∈SLEGS → ℕ1∧legSeq∈SLEGS → (ℕ1 ⇸ WAYPOINT)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(r"/>
+        <org.eventb.core.poPredicate name="entryToWaypoin{" org.eventb.core.predicate="∀l⦂SLEGS·l∈SLEGS⇒legSeq(l)∈1 ‥ leglength(l) ↣ WAYPOINT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(q"/>
+        <org.eventb.core.poPredicate name="entryToWaypoin|" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS·l1∈SLEGS∧l2∈SLEGS∧l1≠l2⇒ran(legSeq(l1))∩ran(legSeq(l2))=(∅ ⦂ ℙ(WAYPOINT))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*S"/>
+        <org.eventb.core.poPredicate name="entryToWaypoin}" org.eventb.core.predicate="wppos∈WAYPOINT → ℤ × ℤ × ℕ1∧pmpos∈PM → ℤ × ℤ × ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(u"/>
+        <org.eventb.core.poPredicate name="entryToWaypoin~" org.eventb.core.predicate="wpDistMerge∈WAYPOINT → ℕ1∧(∀l⦂SLEGS,w⦂WAYPOINT,x⦂ℤ,y⦂ℤ,z⦂ℤ,mx⦂ℤ,my⦂ℤ,mz⦂ℤ,dx⦂ℤ,dy⦂ℤ·l∈SLEGS∧w∈WAYPOINT∧w∈ran(legSeq(l))∧w ↦ (x ↦ y ↦ z)∈wppos∧PmsMerge(legPMS(l)) ↦ (mx ↦ my ↦ mz)∈pmpos∧dx=x − mx∧dy=y − my⇒wpDistMerge(w)∗wpDistMerge(w)≤dx∗dx+dy∗dy∧dx∗dx+dy∗dy&lt;(wpDistMerge(w)+1)∗(wpDistMerge(w)+1))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*?"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio'" org.eventb.core.predicate="legFL∈SLEGS → ℕ1∧(∀l⦂SLEGS,w⦂WAYPOINT,p⦂ℤ×ℤ,z⦂ℤ·l∈SLEGS∧w∈ran(legSeq(l))∧w ↦ (p ↦ z)∈wppos⇒z=legFL(l))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)4"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio(" org.eventb.core.predicate="VSep∈ℕ1∧(∀l1⦂SLEGS,l2⦂SLEGS,w1⦂WAYPOINT,w2⦂WAYPOINT,p1⦂ℤ×ℤ,z1⦂ℤ,p2⦂ℤ×ℤ,z2⦂ℤ·l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))∧w1 ↦ (p1 ↦ z1)∈wppos∧w2 ↦ (p2 ↦ z2)∈wppos⇒z1≥z2+VSep∨z2≥z1+VSep)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)Z"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio)" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS,w1⦂WAYPOINT,w2⦂WAYPOINT·l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)∧w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))∧wpDistMerge(w1)&lt;wpDistMerge(w2)⇒legFL(l1)&gt;legFL(l2)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#){"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio*" org.eventb.core.predicate="TMAToLeg∈ENTRYTMA → SLEGS∧entryToWaypoint∈ENTRYTMA → WAYPOINT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)}"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio+" org.eventb.core.predicate="∀e⦂ENTRYTMA·e∈ENTRYTMA⇒1 ↦ entryToWaypoint(e)∈legSeq(TMAToLeg(e))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)~"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio," org.eventb.core.predicate="routeDist∈ENTRYTMA → ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*'"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio-" org.eventb.core.predicate="segDist∈WAYPOINT × WAYPOINT ⇸ ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*("/>
+        <org.eventb.core.poPredicate name="entryToWaypoio." org.eventb.core.predicate="∀l⦂SLEGS,i⦂ℤ·l∈SLEGS∧i∈dom(legSeq(l))∧i+1∈dom(legSeq(l))⇒legSeq(l)(i) ↦ legSeq(l)(i+1)∈dom(segDist)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*)"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio/" org.eventb.core.predicate="legSpeed∈ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#**"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio0" org.eventb.core.predicate="Separation_dist∈WTC × WTC → ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*,"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio1" org.eventb.core.predicate="∀x⦂WTC,y⦂WTC·x∈WTC∧y∈WTC⇒Separation_time(x ↦ y)∗legSpeed≥Separation_dist(x ↦ y)∗360" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*4"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio2" org.eventb.core.predicate="MergeBuffer∈ℕ" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*V"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio3" org.eventb.core.predicate="MinLat∈ℕ1∧(∀l1⦂SLEGS,l2⦂SLEGS·l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)⇒(∀w1⦂WAYPOINT,w2⦂WAYPOINT·w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))⇒wpDistMerge(w2)≥wpDistMerge(w1)+MinLat)∨(∀w1⦂WAYPOINT,w2⦂WAYPOINT·w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))⇒wpDistMerge(w1)≥wpDistMerge(w2)+MinLat))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*U"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio4" org.eventb.core.predicate="SpeedbeforeLeg∈ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*T"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio5" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS·l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)⇒legFL(l1)≥legFL(l2)+VSep∨legFL(l2)≥legFL(l1)+VSep" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*7"/>
+        <org.eventb.core.poIdentifier name="CP" org.eventb.core.type="ℙ(CP)"/>
+        <org.eventb.core.poIdentifier name="pmCPDist" org.eventb.core.type="ℙ(PM×CP×ℤ)"/>
+        <org.eventb.core.poIdentifier name="activeRunways" org.eventb.core.type="ℙ(RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="pmCP" org.eventb.core.type="ℙ(PM×CP)"/>
+        <org.eventb.core.poIdentifier name="CPRunway" org.eventb.core.type="ℙ(CP×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="FinalDuration" org.eventb.core.type="ℙ(CP×ℤ)"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio6" org.eventb.core.predicate="pmCP∈PM ↔ CP∧dom(pmCP)=PM∧ran(pmCP)=CP" org.eventb.core.source="/SafePM4/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio7" org.eventb.core.predicate="CPRunway∈CP → RUNWAY" org.eventb.core.source="/SafePM4/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#."/>
+        <org.eventb.core.poPredicate name="entryToWaypoio8" org.eventb.core.predicate="pmCPDist∈pmCP → ℕ" org.eventb.core.source="/SafePM4/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio9" org.eventb.core.predicate="FinalDuration∈CP → ℕ1" org.eventb.core.source="/SafePM4/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#0"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio:" org.eventb.core.predicate="activeRunways⊆RUNWAY∧activeRunways≠(∅ ⦂ ℙ(RUNWAY))" org.eventb.core.source="/SafePM4/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio;" org.eventb.core.predicate="∀pm⦂PM·pm∈PM⇒CPRunway[pmCP[{pm}]]∩activeRunways≠(∅ ⦂ ℙ(RUNWAY))" org.eventb.core.source="/SafePM4/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.axiom#3"/>
+        <org.eventb.core.poIdentifier name="DepDepSep" org.eventb.core.type="ℙ(WTC×WTC×ℤ)"/>
+        <org.eventb.core.poIdentifier name="RwySep" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio=" org.eventb.core.predicate="DepDepSep∈WTC × WTC → ℕ1" org.eventb.core.source="/SafePM4/C3.buc|org.eventb.core.contextFile#C3|org.eventb.core.axiom#*"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio&gt;" org.eventb.core.predicate="∀x⦂WTC,y⦂WTC,z⦂WTC·x∈WTC∧y∈WTC∧z∈WTC⇒DepDepSep(x ↦ z)≤DepDepSep(x ↦ y)+DepDepSep(y ↦ z)" org.eventb.core.source="/SafePM4/C3.buc|org.eventb.core.contextFile#C3|org.eventb.core.axiom#,"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio?" org.eventb.core.predicate="RwySep∈ℕ1" org.eventb.core.source="/SafePM4/C3.buc|org.eventb.core.contextFile#C3|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poIdentifier name="ESEBA" org.eventb.core.type="ENTRYTMA"/>
+        <org.eventb.core.poIdentifier name="ADOPI" org.eventb.core.type="ENTRYTMA"/>
+        <org.eventb.core.poIdentifier name="PMS_E" org.eventb.core.type="PMS"/>
+        <org.eventb.core.poIdentifier name="PMS_W" org.eventb.core.type="PMS"/>
+        <org.eventb.core.poIdentifier name="BELGU" org.eventb.core.type="ENTRYTMA"/>
+        <org.eventb.core.poIdentifier name="INREX" org.eventb.core.type="ENTRYTMA"/>
+        <org.eventb.core.poIdentifier name="GM406" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM407" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM408" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM409" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM402" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM403" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM404" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM405" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM410" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM411" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM412" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM417" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM413" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM414" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM415" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM416" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM454" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="GM455" org.eventb.core.type="WAYPOINT"/>
+        <org.eventb.core.poIdentifier name="VALPU" org.eventb.core.type="PM"/>
+        <org.eventb.core.poIdentifier name="LEG_ES" org.eventb.core.type="SLEGS"/>
+        <org.eventb.core.poIdentifier name="LEG_EN" org.eventb.core.type="SLEGS"/>
+        <org.eventb.core.poIdentifier name="RIPAM" org.eventb.core.type="ENTRYTMA"/>
+        <org.eventb.core.poIdentifier name="INSUV" org.eventb.core.type="PM"/>
+        <org.eventb.core.poIdentifier name="LEG_WS" org.eventb.core.type="SLEGS"/>
+        <org.eventb.core.poIdentifier name="LEG_WN" org.eventb.core.type="SLEGS"/>
+        <org.eventb.core.poIdentifier name="OGRAS" org.eventb.core.type="CP"/>
+        <org.eventb.core.poIdentifier name="LUNIP" org.eventb.core.type="ENTRYTMA"/>
+        <org.eventb.core.poIdentifier name="RWY01L" org.eventb.core.type="RUNWAY"/>
+        <org.eventb.core.poIdentifier name="NOSLA" org.eventb.core.type="CP"/>
+        <org.eventb.core.poIdentifier name="RWY01R" org.eventb.core.type="RUNWAY"/>
+        <org.eventb.core.poPredicate name="entryToWaypoio@" org.eventb.core.predicate="partition(RUNWAY,{RWY01L},{RWY01R})∧activeRunways={RWY01L,RWY01R}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#("/>
+        <org.eventb.core.poPredicate name="entryToWaypoioA" org.eventb.core.predicate="partition(PMS,{PMS_W},{PMS_E})∧partition(PM,{VALPU},{INSUV})∧PmsMerge={PMS_W ↦ VALPU,PMS_E ↦ INSUV}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#+"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioB" org.eventb.core.predicate="partition(SLEGS,{LEG_WN},{LEG_WS},{LEG_EN},{LEG_ES})∧legPMS={LEG_WN ↦ PMS_W,LEG_WS ↦ PMS_W,LEG_EN ↦ PMS_E,LEG_ES ↦ PMS_E}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#,"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioC" org.eventb.core.predicate="partition(WAYPOINT,{GM402},{GM405},{GM406},{GM404},{GM455},{GM410},{GM409},{GM408},{GM407},{GM403},{GM411},{GM413},{GM412},{GM454},{GM416},{GM417},{GM415},{GM414})" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioD" org.eventb.core.predicate="leglength={LEG_WN ↦ 5,LEG_WS ↦ 4,LEG_EN ↦ 5,LEG_ES ↦ 4}∧legSeq={LEG_WN ↦ {1 ↦ GM402,2 ↦ GM405,3 ↦ GM406,4 ↦ GM404,5 ↦ GM455},LEG_WS ↦ {1 ↦ GM410,2 ↦ GM409,3 ↦ GM408,4 ↦ GM407},LEG_EN ↦ {1 ↦ GM403,2 ↦ GM411,3 ↦ GM413,4 ↦ GM412,5 ↦ GM454},LEG_ES ↦ {1 ↦ GM416,2 ↦ GM417,3 ↦ GM415,4 ↦ GM414}}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#."/>
+        <org.eventb.core.poPredicate name="entryToWaypoioE" org.eventb.core.predicate="legFL={LEG_WN ↦ 100,LEG_WS ↦ 110,LEG_EN ↦ 100,LEG_ES ↦ 110}∧VSep=10∧MinLat=8" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioF" org.eventb.core.predicate="pmpos={VALPU ↦ (−84 ↦ −138 ↦ 50),INSUV ↦ (9 ↦ −166 ↦ 50)}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#0"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioG" org.eventb.core.predicate="wppos={GM402 ↦ (−248 ↦ −43 ↦ 100),GM405 ↦ (−270 ↦ −105 ↦ 100),GM406 ↦ (−270 ↦ −171 ↦ 100),GM404 ↦ (−247 ↦ −233 ↦ 100),GM455 ↦ (−216 ↦ −272 ↦ 100),GM410 ↦ (−198 ↦ −275 ↦ 110),GM409 ↦ (−238 ↦ −228 ↦ 110),GM408 ↦ (−260 ↦ −169 ↦ 110),GM407 ↦ (−260 ↦ −107 ↦ 110),GM403 ↦ (197 ↦ −166 ↦ 100),GM411 ↦ (185 ↦ −231 ↦ 100),GM413 ↦ (152 ↦ −288 ↦ 100),GM412 ↦ (102 ↦ −331 ↦ 100),GM454 ↦ (57 ↦ −350 ↦ 100),GM416 ↦ (40 ↦ −343 ↦ 110),GM417 ↦ (97 ↦ −322 ↦ 110),GM415 ↦ (145 ↦ −282 ↦ 110),GM414 ↦ (176 ↦ −228 ↦ 110)}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioH" org.eventb.core.predicate="wpDistMerge={GM402 ↦ 189,GM405 ↦ 188,GM406 ↦ 188,GM404 ↦ 188,GM455 ↦ 188,GM410 ↦ 178,GM409 ↦ 178,GM408 ↦ 178,GM407 ↦ 178,GM403 ↦ 188,GM411 ↦ 187,GM413 ↦ 187,GM412 ↦ 189,GM454 ↦ 190,GM416 ↦ 179,GM417 ↦ 179,GM415 ↦ 178,GM414 ↦ 178}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioI" org.eventb.core.predicate="segDist={GM402 ↦ GM405 ↦ 66,GM405 ↦ GM406 ↦ 66,GM406 ↦ GM404 ↦ 66,GM404 ↦ GM455 ↦ 50,GM410 ↦ GM409 ↦ 63,GM409 ↦ GM408 ↦ 63,GM408 ↦ GM407 ↦ 62,GM403 ↦ GM411 ↦ 67,GM411 ↦ GM413 ↦ 66,GM413 ↦ GM412 ↦ 66,GM412 ↦ GM454 ↦ 50,GM416 ↦ GM417 ↦ 63,GM417 ↦ GM415 ↦ 63,GM415 ↦ GM414 ↦ 63}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#3"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioJ" org.eventb.core.predicate="legSpeed=220∧SpeedbeforeLeg=250∧MergeBuffer=10" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#4"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioK" org.eventb.core.predicate="partition(ENTRYTMA,{ADOPI},{BELGU},{RIPAM},{ESEBA},{INREX},{LUNIP})" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#5"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioL" org.eventb.core.predicate="TMAToLeg=({ADOPI,BELGU} × {LEG_WN})∪({RIPAM} × {LEG_WS})∪({ESEBA,INREX} × {LEG_EN})∪({LUNIP} × {LEG_ES})" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioM" org.eventb.core.predicate="entryToWaypoint=({ADOPI,BELGU} × {GM402})∪({RIPAM} × {GM410})∪({ESEBA,INREX} × {GM403})∪({LUNIP} × {GM416})" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#7"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioN" org.eventb.core.predicate="routeDist={ADOPI ↦ 291,BELGU ↦ 659,RIPAM ↦ 323,ESEBA ↦ 202,INREX ↦ 673,LUNIP ↦ 271}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#8"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioO" org.eventb.core.predicate="Separation_time={Light ↦ Light ↦ 82,Light ↦ Medium ↦ 69,Light ↦ Heavy ↦ 60,Medium ↦ Light ↦ 131,Medium ↦ Medium ↦ 69,Medium ↦ Heavy ↦ 60,Heavy ↦ Light ↦ 196,Heavy ↦ Medium ↦ 157,Heavy ↦ Heavy ↦ 96}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#9"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioP" org.eventb.core.predicate="Separation_dist={Light ↦ Light ↦ 25,Light ↦ Medium ↦ 25,Light ↦ Heavy ↦ 25,Medium ↦ Light ↦ 40,Medium ↦ Medium ↦ 25,Medium ↦ Heavy ↦ 25,Heavy ↦ Light ↦ 60,Heavy ↦ Medium ↦ 50,Heavy ↦ Heavy ↦ 40}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#:"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioQ" org.eventb.core.predicate="partition(CP,{NOSLA},{OGRAS})∧pmCP={VALPU ↦ NOSLA,VALPU ↦ OGRAS,INSUV ↦ NOSLA,INSUV ↦ OGRAS}∧pmCPDist={VALPU ↦ NOSLA ↦ 59,VALPU ↦ OGRAS ↦ 50,INSUV ↦ NOSLA ↦ 49,INSUV ↦ OGRAS ↦ 61}∧CPRunway={NOSLA ↦ RWY01R,OGRAS ↦ RWY01L}∧FinalDuration={NOSLA ↦ 270,OGRAS ↦ 270}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#;"/>
+        <org.eventb.core.poPredicate name="entryToWaypoioR" org.eventb.core.predicate="RwySep=60∧DepDepSep={Light ↦ Light ↦ 90,Light ↦ Medium ↦ 90,Light ↦ Heavy ↦ 90,Medium ↦ Light ↦ 90,Medium ↦ Medium ↦ 90,Medium ↦ Heavy ↦ 90,Heavy ↦ Light ↦ 90,Heavy ↦ Medium ↦ 90,Heavy ↦ Heavy ↦ 90}" org.eventb.core.source="/SafePM4/C4_Oslo.buc|org.eventb.core.contextFile#C4_Oslo|org.eventb.core.axiom#="/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="readyTime" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="depRwy" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="lastcpTime" org.eventb.core.type="ℙ(CP×ℤ)"/>
+        <org.eventb.core.poIdentifier name="aircrafts_in_TMA" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="lastTouchdown" org.eventb.core.type="ℙ(RUNWAY×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastEntryBrand" org.eventb.core.type="ℙ(ENTRYTMA×WTC)"/>
+        <org.eventb.core.poIdentifier name="lastDepTime" org.eventb.core.type="ℙ(RUNWAY×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastLegTime" org.eventb.core.type="ℙ(SLEGS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legPointTime" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="entryTMAOf" org.eventb.core.type="ℙ(AIRCRAFTS×ENTRYTMA)"/>
+        <org.eventb.core.poIdentifier name="curr_RW_status" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="legEntryTime" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="tmaEntryTime" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legIndex" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastMergeTime" org.eventb.core.type="ℙ(PM×ℤ)"/>
+        <org.eventb.core.poIdentifier name="plannedRunway" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="cpTime" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="landingQueue" org.eventb.core.type="ℙ(RUNWAY×ℙ(ℤ×AIRCRAFTS))"/>
+        <org.eventb.core.poIdentifier name="brandof" org.eventb.core.type="ℙ(AIRCRAFTS×WTC)"/>
+        <org.eventb.core.poIdentifier name="acLevel" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastEntryTime" org.eventb.core.type="ℙ(ENTRYTMA×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastLegBrand" org.eventb.core.type="ℙ(SLEGS×WTC)"/>
+        <org.eventb.core.poIdentifier name="lastMergeBrand" org.eventb.core.type="ℙ(PM×WTC)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="ETA" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastDepBrand" org.eventb.core.type="ℙ(RUNWAY×WTC)"/>
+        <org.eventb.core.poIdentifier name="current_time" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="legOf" org.eventb.core.type="ℙ(AIRCRAFTS×SLEGS)"/>
+        <org.eventb.core.poIdentifier name="lastcpBrand" org.eventb.core.type="ℙ(CP×WTC)"/>
+        <org.eventb.core.poIdentifier name="clearanceT" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="clearanceL" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="cpOf" org.eventb.core.type="ℙ(AIRCRAFTS×CP)"/>
+        <org.eventb.core.poIdentifier name="Threshold" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="statusof" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="mergeTime" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="depTime" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMB" org.eventb.core.predicate="aircrafts_in_TMA⊆AIRCRAFTS" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#T"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMC" org.eventb.core.predicate="statusof∈aircrafts_in_TMA → STATUS" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#U"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMD" org.eventb.core.predicate="curr_RW_status∈RUNWAY → RW_STATUES" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#p"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TME" org.eventb.core.predicate="curr_RWL_status∈RUNWAY → RWL_STATUES" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#q"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMF" org.eventb.core.predicate="∀r⦂RUNWAY·r∈RUNWAY⇒(curr_RW_status(r)=Unavailable⇒curr_RWL_status(r)=ON)" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#r"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMG" org.eventb.core.predicate="∀r⦂RUNWAY·r∈RUNWAY⇒(curr_RW_status(r)=Available⇒curr_RWL_status(r)=OFF)" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#'*"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMH" org.eventb.core.predicate="clearanceL∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMI" org.eventb.core.predicate="clearanceT∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMJ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔statusof(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMK" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔statusof(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TML" org.eventb.core.predicate="current_time∈ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#'M"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMM" org.eventb.core.predicate="brandof∈AIRCRAFTS ⇸ WTC" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#'W"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMN" org.eventb.core.predicate="ETA∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#(1"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMO" org.eventb.core.predicate="landingQueue∈RUNWAY → seq(AIRCRAFTS)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#(N"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMP" org.eventb.core.predicate="Threshold∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#(\\"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMQ" org.eventb.core.predicate="entryTMAOf∈aircrafts_in_TMA ⇸ ENTRYTMA" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#(i"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMR" org.eventb.core.predicate="plannedRunway∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#(l"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMS" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(clearanceL)⇒a∈dom(plannedRunway)∧clearanceL(a)=plannedRunway(a)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#(p"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMT" org.eventb.core.predicate="legEntryTime∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)Q"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMU" org.eventb.core.predicate="legIndex∈aircrafts_in_TMA ⇸ ℕ1" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)o"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMV" org.eventb.core.predicate="mergeTime∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)n"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMW" org.eventb.core.predicate="legPointTime∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)m"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMX" org.eventb.core.predicate="lastMergeBrand∈PM ⇸ WTC∧lastMergeTime∈PM ⇸ ℕ∧dom(lastMergeTime)=dom(lastMergeBrand)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)l"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMY" org.eventb.core.predicate="legOf∈aircrafts_in_TMA ⇸ SLEGS" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#(\|"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMZ" org.eventb.core.predicate="lastEntryTime∈ENTRYTMA ⇸ ℕ∧lastEntryBrand∈ENTRYTMA ⇸ WTC∧dom(lastEntryTime)=dom(lastEntryBrand)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#))"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM[" org.eventb.core.predicate="lastLegTime∈SLEGS ⇸ ℕ∧lastLegBrand∈SLEGS ⇸ WTC∧dom(lastLegTime)=dom(lastLegBrand)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)."/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM\" org.eventb.core.predicate="tmaEntryTime∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)\\"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM]" org.eventb.core.predicate="acLevel∈aircrafts_in_TMA ⇸ ℕ1" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)p"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM^" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(legIndex)⇒a∈dom(legOf)∧legOf(a)∈dom(leglength)∧a∈dom(legPointTime)∧legIndex(a)≤leglength(legOf(a))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)q"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM_" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime)⇒a∈dom(legOf)∧PmsMerge(legPMS(legOf(a)))∈dom(lastMergeTime)∧mergeTime(a)≤lastMergeTime(PmsMerge(legPMS(legOf(a))))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)r"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM`" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime)∧a∈dom(brandof)∧mergeTime(a)=lastMergeTime(PmsMerge(legPMS(legOf(a))))⇒brandof(a)=lastMergeBrand(PmsMerge(legPMS(legOf(a))))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)s"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMa" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime)∧a∈dom(brandof)∧mergeTime(a)&lt;lastMergeTime(PmsMerge(legPMS(legOf(a))))⇒lastMergeTime(PmsMerge(legPMS(legOf(a)))) − mergeTime(a)≥Separation_time(brandof(a) ↦ lastMergeBrand(PmsMerge(legPMS(legOf(a)))))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)t"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMb" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(mergeTime)∧b∈dom(mergeTime)∧a≠b∧a∈dom(legOf)∧b∈dom(legOf)∧a∈dom(brandof)∧b∈dom(brandof)∧PmsMerge(legPMS(legOf(a)))=PmsMerge(legPMS(legOf(b)))∧mergeTime(a)≤mergeTime(b)⇒mergeTime(b) − mergeTime(a)≥Separation_time(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)u"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMc" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(legEntryTime)⇒a∈dom(legOf)∧legOf(a)∈dom(lastLegTime)∧legEntryTime(a)≤lastLegTime(legOf(a))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)v"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMd" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(legEntryTime)∧a∈dom(brandof)∧legEntryTime(a)=lastLegTime(legOf(a))⇒brandof(a)=lastLegBrand(legOf(a))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)w"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMe" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(legEntryTime)∧a∈dom(brandof)∧legEntryTime(a)&lt;lastLegTime(legOf(a))⇒lastLegTime(legOf(a)) − legEntryTime(a)≥Separation_time(brandof(a) ↦ lastLegBrand(legOf(a)))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)x"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMf" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime)∧b∈dom(legEntryTime)∧a≠b∧a∈dom(brandof)∧b∈dom(brandof)∧legOf(a)=legOf(b)∧legEntryTime(a)≤legEntryTime(b)⇒legEntryTime(b) − legEntryTime(a)≥Separation_time(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)y"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMg" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime)∧b∈dom(legEntryTime)∧a≠b∧a∈dom(brandof)∧b∈dom(brandof)∧legOf(a)=legOf(b)∧legEntryTime(a)≤legEntryTime(b)⇒(legEntryTime(b) − legEntryTime(a))∗legSpeed≥Separation_dist(brandof(a) ↦ brandof(b))∗360" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)z"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMh" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime)∧b∈dom(legEntryTime)∧legOf(a)=legOf(b)∧legEntryTime(a)&lt;legEntryTime(b)∧b∈dom(mergeTime)⇒a∈dom(mergeTime)∧mergeTime(a)&lt;mergeTime(b)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#){"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMi" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(tmaEntryTime)⇒a∈dom(entryTMAOf)∧entryTMAOf(a)∈dom(lastEntryTime)∧tmaEntryTime(a)≤lastEntryTime(entryTMAOf(a))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)\|"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMj" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(tmaEntryTime)∧a∈dom(brandof)∧tmaEntryTime(a)=lastEntryTime(entryTMAOf(a))⇒brandof(a)=lastEntryBrand(entryTMAOf(a))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)}"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMk" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(tmaEntryTime)∧a∈dom(brandof)∧tmaEntryTime(a)&lt;lastEntryTime(entryTMAOf(a))⇒lastEntryTime(entryTMAOf(a)) − tmaEntryTime(a)≥Separation_time(brandof(a) ↦ lastEntryBrand(entryTMAOf(a)))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#)~"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMl" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(legIndex)⇒a∈dom(acLevel)∧acLevel(a)=legFL(legOf(a))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#*'"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMm" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legIndex)∧a∈dom(legOf)∧a∈dom(acLevel)∧b∈dom(legIndex)∧b∈dom(legOf)∧b∈dom(acLevel)∧legOf(a)=legOf(b)⇒acLevel(a)=acLevel(b)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#*+"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMn" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legIndex)∧b∈dom(legIndex)∧legOf(a)≠legOf(b)∧legPMS(legOf(a))=legPMS(legOf(b))⇒acLevel(a)≥acLevel(b)+VSep∨acLevel(b)≥acLevel(a)+VSep" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#*("/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMo" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(clearanceL)⇒a∈dom(Threshold)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#*)"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMp" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA∧statusof(a)∈{ScheduledL,ReadyL}⇒a∈dom(plannedRunway)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#**"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMq" org.eventb.core.predicate="dom(legEntryTime)⊆dom(legIndex)∪dom(mergeTime)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#*,"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMr" org.eventb.core.predicate="⊤" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|de.stups.hhu.rodinmetapredicates.extendedInvariant#(B"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMs" org.eventb.core.predicate="cpOf∈aircrafts_in_TMA ⇸ CP" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)j"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMt" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpOf)⇒a∈dom(entryTMAOf)∧PmsMerge(legPMS(TMAToLeg(entryTMAOf(a)))) ↦ cpOf(a)∈pmCP" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)l"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMu" org.eventb.core.predicate="cpTime∈aircrafts_in_TMA ⇸ ℕ∧dom(cpTime)=dom(mergeTime)∧dom(cpTime)⊆dom(cpOf)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)m"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMv" org.eventb.core.predicate="lastcpTime∈CP ⇸ ℕ∧lastcpBrand∈CP ⇸ WTC∧dom(lastcpTime)=dom(lastcpBrand)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)q"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMw" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpOf)⇒CPRunway(cpOf(a))∈activeRunways" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)n"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMx" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime)⇒cpOf(a)∈dom(lastcpTime)∧cpTime(a)≤lastcpTime(cpOf(a))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)o"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMy" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime)∧a∈dom(brandof)∧cpTime(a)=lastcpTime(cpOf(a))⇒brandof(a)=lastcpBrand(cpOf(a))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)p"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMz" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime)∧a∈dom(brandof)∧cpTime(a)&lt;lastcpTime(cpOf(a))⇒lastcpTime(cpOf(a)) − cpTime(a)≥Separation_time(brandof(a) ↦ lastcpBrand(cpOf(a)))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)r"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM{" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(cpTime)∧b∈dom(cpTime)∧a≠b∧a∈dom(brandof)∧b∈dom(brandof)∧cpOf(a)=cpOf(b)∧cpTime(a)≤cpTime(b)⇒cpTime(b) − cpTime(a)≥Separation_time(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)s"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM|" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(plannedRunway)⇒a∈dom(cpOf)∧plannedRunway(a)=CPRunway(cpOf(a))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#)t"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM}" org.eventb.core.predicate="dom(entryTMAOf)⊆dom(cpOf)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#*'"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TM~" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime)⇒cpTime(a)≥mergeTime(a)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#*("/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN'" org.eventb.core.predicate="readyTime∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*8"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN(" org.eventb.core.predicate="depTime∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*9"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN)" org.eventb.core.predicate="depRwy∈aircrafts_in_TMA ⇸ RUNWAY∧dom(depRwy)=dom(depTime)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*:"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN*" org.eventb.core.predicate="lastDepTime∈RUNWAY ⇸ ℕ∧lastDepBrand∈RUNWAY ⇸ WTC∧dom(lastDepTime)=dom(lastDepBrand)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*;"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN+" org.eventb.core.predicate="lastTouchdown∈RUNWAY ⇸ ℕ" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*="/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN," org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA∧statusof(a)∈{Takingoff,TerminatedT}⇒a∈dom(depTime)∧a∈dom(brandof)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*&gt;"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN-" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA∧statusof(a)=ReadyT⇒a∈dom(readyTime)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*?"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN." org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA∧statusof(a)=Takingoff⇒a∈dom(clearanceT)∧depRwy(a)=clearanceT(a)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*@"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN/" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(depTime)⇒depRwy(a)∈dom(lastDepTime)∧depTime(a)≤lastDepTime(depRwy(a))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*A"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN0" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(depTime)∧a∈dom(brandof)∧depTime(a)=lastDepTime(depRwy(a))⇒brandof(a)=lastDepBrand(depRwy(a))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*B"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN1" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(depTime)∧a∈dom(brandof)∧depTime(a)&lt;lastDepTime(depRwy(a))⇒lastDepTime(depRwy(a)) − depTime(a)≥DepDepSep(brandof(a) ↦ lastDepBrand(depRwy(a)))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*C"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN2" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(depTime)∧b∈dom(depTime)∧a≠b∧a∈dom(brandof)∧b∈dom(brandof)∧depRwy(a)=depRwy(b)∧depTime(a)≤depTime(b)⇒depTime(b) − depTime(a)≥DepDepSep(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*D"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN3" org.eventb.core.predicate="∀a⦂AIRCRAFTS,d⦂AIRCRAFTS·a∈dom(Threshold)∧a∈dom(clearanceL)∧d∈dom(depTime)∧clearanceL(a)=depRwy(d)⇒Threshold(a)≥depTime(d)+RwySep∨depTime(d)≥Threshold(a)+RwySep" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*E"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TN4" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(statusof)∧statusof(a)∈{ReadyT,ExecutedT}⇒a∈dom(readyTime)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.invariant#*H"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMn" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="entryTMAOf'" org.eventb.core.type="ℙ(AIRCRAFTS×ENTRYTMA)"/>
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="readyTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastLegTime'" org.eventb.core.type="ℙ(SLEGS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="current_time'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="Threshold'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="aircrafts_in_TMA'" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="mergeTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="brandof'" org.eventb.core.type="ℙ(AIRCRAFTS×WTC)"/>
+        <org.eventb.core.poIdentifier name="legOf'" org.eventb.core.type="ℙ(AIRCRAFTS×SLEGS)"/>
+        <org.eventb.core.poIdentifier name="lastLegBrand'" org.eventb.core.type="ℙ(SLEGS×WTC)"/>
+        <org.eventb.core.poIdentifier name="landingQueue'" org.eventb.core.type="ℙ(RUNWAY×ℙ(ℤ×AIRCRAFTS))"/>
+        <org.eventb.core.poIdentifier name="lastcpTime'" org.eventb.core.type="ℙ(CP×ℤ)"/>
+        <org.eventb.core.poIdentifier name="acLevel'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="depRwy'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="cpTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="clearanceT'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="lastEntryBrand'" org.eventb.core.type="ℙ(ENTRYTMA×WTC)"/>
+        <org.eventb.core.poIdentifier name="lastDepBrand'" org.eventb.core.type="ℙ(RUNWAY×WTC)"/>
+        <org.eventb.core.poIdentifier name="legEntryTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastDepTime'" org.eventb.core.type="ℙ(RUNWAY×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastEntryTime'" org.eventb.core.type="ℙ(ENTRYTMA×ℤ)"/>
+        <org.eventb.core.poIdentifier name="clearanceL'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="ETA'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legPointTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="cpOf'" org.eventb.core.type="ℙ(AIRCRAFTS×CP)"/>
+        <org.eventb.core.poIdentifier name="lastcpBrand'" org.eventb.core.type="ℙ(CP×WTC)"/>
+        <org.eventb.core.poIdentifier name="plannedRunway'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="lastTouchdown'" org.eventb.core.type="ℙ(RUNWAY×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastMergeTime'" org.eventb.core.type="ℙ(PM×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastMergeBrand'" org.eventb.core.type="ℙ(PM×WTC)"/>
+        <org.eventb.core.poIdentifier name="depTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="tmaEntryTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legIndex'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMn" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMn" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMo" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="entryTMAOf'" org.eventb.core.type="ℙ(AIRCRAFTS×ENTRYTMA)"/>
+        <org.eventb.core.poIdentifier name="f" org.eventb.core.type="CP"/>
+        <org.eventb.core.poIdentifier name="brand" org.eventb.core.type="WTC"/>
+        <org.eventb.core.poIdentifier name="aircrafts_in_TMA'" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="pm" org.eventb.core.type="PM"/>
+        <org.eventb.core.poIdentifier name="brandof'" org.eventb.core.type="ℙ(AIRCRAFTS×WTC)"/>
+        <org.eventb.core.poIdentifier name="duration_entry_merge" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="lastEntryBrand'" org.eventb.core.type="ℙ(ENTRYTMA×WTC)"/>
+        <org.eventb.core.poIdentifier name="previous" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="lastEntryTime'" org.eventb.core.type="ℙ(ENTRYTMA×ℤ)"/>
+        <org.eventb.core.poIdentifier name="ETA'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="cpOf'" org.eventb.core.type="ℙ(AIRCRAFTS×CP)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="entrytma" org.eventb.core.type="ENTRYTMA"/>
+        <org.eventb.core.poIdentifier name="tmaEntryTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMo" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMo" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈AIRCRAFTS∧aircraft∉aircrafts_in_TMA" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal5"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∉dom(statusof)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="current_time∈ℕ" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal8"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="aircraft∉dom(brandof)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal9"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="previous∈ℕ" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal10"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="brand∈WTC" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="entrytma∈ENTRYTMA" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#F"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="aircraft∉dom(ETA)∧aircraft∉dom(tmaEntryTime)∧aircraft∉dom(entryTMAOf)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalN"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="duration_entry_merge=routeDist(entrytma)∗360 ÷ SpeedbeforeLeg" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal;"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="entrytma∈dom(lastEntryTime)∧current_time≥lastEntryTime(entrytma)+Separation_time(lastEntryBrand(entrytma) ↦ brand)⇒previous=0" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalD"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="entrytma∈dom(lastEntryTime)∧current_time&lt;lastEntryTime(entrytma)+Separation_time(lastEntryBrand(entrytma) ↦ brand)⇒previous=lastEntryTime(entrytma)+Separation_time(lastEntryBrand(entrytma) ↦ brand) − current_time" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal11"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="previous+current_time+duration_entry_merge∈ℕ" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalO"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="entrytma∈dom(lastEntryTime)⇒current_time+previous≥lastEntryTime(entrytma)+Separation_time(lastEntryBrand(entrytma) ↦ brand)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal12"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="entrytma∈dom(lastEntryTime)⇒current_time+previous&gt;lastEntryTime(entrytma)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internal13"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="aircraft∉dom(legOf)∧aircraft∉dom(legIndex)∧aircraft∉dom(legEntryTime)∧aircraft∉dom(mergeTime)∧aircraft∉dom(acLevel)∧aircraft∉dom(plannedRunway)∧aircraft∉dom(Threshold)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalS"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="entrytma∉dom(lastEntryTime)⇒previous=0" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalT"/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(tmaEntryTime)∧a∈dom(entryTMAOf)∧a∈dom(brandof)∧entryTMAOf(a)=entrytma⇒current_time+previous&gt;tmaEntryTime(a)∧current_time+previous − tmaEntryTime(a)≥Separation_time(brandof(a) ↦ brand)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalU"/>
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(tmaEntryTime)∧a∈dom(entryTMAOf)∧entryTMAOf(a)=entrytma⇒tmaEntryTime(a)&lt;current_time+previous" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalV"/>
+        <org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="ETA∪{aircraft ↦ previous+current_time+duration_entry_merge}∈aircrafts_in_TMA∪{aircraft} ⇸ ℕ" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalW"/>
+        <org.eventb.core.poPredicate name="PRD19" org.eventb.core.predicate="lastEntryTime{entrytma ↦ current_time+previous}∈ENTRYTMA ⇸ ℕ∧lastEntryBrand{entrytma ↦ brand}∈ENTRYTMA ⇸ WTC∧dom(lastEntryTime{entrytma ↦ current_time+previous})=dom(lastEntryBrand{entrytma ↦ brand})" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalX"/>
+        <org.eventb.core.poPredicate name="PRD20" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime)∧b∈dom(legEntryTime)∧a≠b∧a∈dom(brandof∪{aircraft ↦ brand})∧b∈dom(brandof∪{aircraft ↦ brand})∧legOf(a)=legOf(b)∧legEntryTime(a)≤legEntryTime(b)⇒(legEntryTime(b) − legEntryTime(a))∗legSpeed≥Separation_dist((brandof∪{aircraft ↦ brand})(a) ↦ (brandof∪{aircraft ↦ brand})(b))∗360" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalY"/>
+        <org.eventb.core.poPredicate name="PRD21" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(tmaEntryTime∪{aircraft ↦ current_time+previous})⇒a∈dom(entryTMAOf∪{aircraft ↦ entrytma})∧(entryTMAOf∪{aircraft ↦ entrytma})(a)∈dom(lastEntryTime{entrytma ↦ current_time+previous})∧(tmaEntryTime∪{aircraft ↦ current_time+previous})(a)≤(lastEntryTime{entrytma ↦ current_time+previous})((entryTMAOf∪{aircraft ↦ entrytma})(a))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalZ"/>
+        <org.eventb.core.poPredicate name="PRD22" org.eventb.core.predicate="pm=PmsMerge(legPMS(TMAToLeg(entrytma)))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalP"/>
+        <org.eventb.core.poPredicate name="PRD23" org.eventb.core.predicate="pm ↦ f∈pmCP" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalQ"/>
+        <org.eventb.core.poPredicate name="PRD24" org.eventb.core.predicate="CPRunway(f)∈activeRunways" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)^|org.eventb.core.guard#internalR"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMp" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="lastLegTime'" org.eventb.core.type="ℙ(SLEGS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastLegBrand'" org.eventb.core.type="ℙ(SLEGS×WTC)"/>
+        <org.eventb.core.poIdentifier name="legOf'" org.eventb.core.type="ℙ(AIRCRAFTS×SLEGS)"/>
+        <org.eventb.core.poIdentifier name="acLevel'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legEntryTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="previous" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="legPointTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="leg" org.eventb.core.type="SLEGS"/>
+        <org.eventb.core.poIdentifier name="legIndex'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMp" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMp" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧aircraft∈dom(entryTMAOf)∧aircraft∈dom(brandof)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∉dom(legOf)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="leg=TMAToLeg(entryTMAOf(aircraft))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="previous∈ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#B"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="aircraft∈dom(ETA)∧current_time≥ETA(aircraft)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#6"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="leg∈SLEGS" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="leg∉dom(lastLegTime)⇒previous=current_time" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#3"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="leg∈dom(lastLegTime)∧current_time≥lastLegTime(leg)+Separation_time(lastLegBrand(leg) ↦ brandof(aircraft))⇒previous=current_time" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#8"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leg∈dom(lastLegTime)∧current_time&lt;lastLegTime(leg)+Separation_time(lastLegBrand(leg) ↦ brandof(aircraft))⇒previous=lastLegTime(leg)+Separation_time(lastLegBrand(leg) ↦ brandof(aircraft))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#9"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="aircraft∉dom(legIndex)∧aircraft∉dom(legEntryTime)∧aircraft∉dom(legPointTime)∧aircraft∉dom(acLevel)∧aircraft∉dom(mergeTime)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#E"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(legEntryTime)∧b∈dom(legOf)∧b∈dom(brandof)∧legOf(b)=leg⇒previous&gt;legEntryTime(b)∧previous − legEntryTime(b)≥Separation_time(brandof(b) ↦ brandof(aircraft))∧(previous − legEntryTime(b))∗legSpeed≥Separation_dist(brandof(b) ↦ brandof(aircraft))∗360" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#F"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="leg∈dom(leglength)∧1≤leglength(leg)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#G"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(legIndex)∧b∈dom(acLevel)∧legOf(b)≠leg∧legPMS(legOf(b))=legPMS(leg)⇒legFL(leg)≥acLevel(b)+VSep∨acLevel(b)≥legFL(leg)+VSep" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#H"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(legEntryTime)∧b∈dom(legOf)∧legOf(b)=leg⇒legEntryTime(b)&lt;previous" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#I"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime∪{aircraft ↦ previous})∧b∈dom(legEntryTime∪{aircraft ↦ previous})∧a≠b∧a∈dom(brandof)∧b∈dom(brandof)∧(legOf∪{aircraft ↦ leg})(a)=(legOf∪{aircraft ↦ leg})(b)∧(legEntryTime∪{aircraft ↦ previous})(a)≤(legEntryTime∪{aircraft ↦ previous})(b)⇒(legEntryTime∪{aircraft ↦ previous})(b) − (legEntryTime∪{aircraft ↦ previous})(a)≥Separation_time(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#J"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime∪{aircraft ↦ previous})∧b∈dom(legEntryTime∪{aircraft ↦ previous})∧a≠b∧a∈dom(brandof)∧b∈dom(brandof)∧(legOf∪{aircraft ↦ leg})(a)=(legOf∪{aircraft ↦ leg})(b)∧(legEntryTime∪{aircraft ↦ previous})(a)≤(legEntryTime∪{aircraft ↦ previous})(b)⇒((legEntryTime∪{aircraft ↦ previous})(b) − (legEntryTime∪{aircraft ↦ previous})(a))∗legSpeed≥Separation_dist(brandof(a) ↦ brandof(b))∗360" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#K"/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="legEntryTime∪{aircraft ↦ previous}∈aircrafts_in_TMA ⇸ ℕ∧legOf∪{aircraft ↦ leg}∈aircrafts_in_TMA ⇸ SLEGS∧acLevel∪{aircraft ↦ legFL(leg)}∈aircrafts_in_TMA ⇸ ℕ1∧legIndex∪{aircraft ↦ 1}∈aircrafts_in_TMA ⇸ ℕ1∧dom(legEntryTime∪{aircraft ↦ previous})⊆dom(legOf∪{aircraft ↦ leg})∧dom(legIndex∪{aircraft ↦ 1})⊆dom(legOf∪{aircraft ↦ leg})" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#L"/>
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(legIndex∪{aircraft ↦ 1})⇒a∈dom(legOf∪{aircraft ↦ leg})∧a∈dom(acLevel∪{aircraft ↦ legFL(leg)})∧(acLevel∪{aircraft ↦ legFL(leg)})(a)=legFL((legOf∪{aircraft ↦ leg})(a))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#M"/>
+        <org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime∪{aircraft ↦ previous})∧b∈dom(legEntryTime∪{aircraft ↦ previous})∧(legOf∪{aircraft ↦ leg})(a)=(legOf∪{aircraft ↦ leg})(b)∧(legEntryTime∪{aircraft ↦ previous})(a)&lt;(legEntryTime∪{aircraft ↦ previous})(b)∧b∈dom(mergeTime)⇒a∈dom(mergeTime)∧mergeTime(a)&lt;mergeTime(b)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(x|org.eventb.core.guard#N"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMq" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="f" org.eventb.core.type="CP"/>
+        <org.eventb.core.poIdentifier name="pm" org.eventb.core.type="PM"/>
+        <org.eventb.core.poIdentifier name="mergeTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastcpTime'" org.eventb.core.type="ℙ(CP×ℤ)"/>
+        <org.eventb.core.poIdentifier name="tlm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="cpTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legPointTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="tcp" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="lastcpBrand'" org.eventb.core.type="ℙ(CP×WTC)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="leg" org.eventb.core.type="SLEGS"/>
+        <org.eventb.core.poIdentifier name="lastMergeTime'" org.eventb.core.type="ℙ(PM×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastMergeBrand'" org.eventb.core.type="ℙ(PM×WTC)"/>
+        <org.eventb.core.poIdentifier name="legIndex'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMq" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMq" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧aircraft∈dom(legOf)∧aircraft∈dom(legEntryTime)∧aircraft∈dom(brandof)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal4"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="leg=legOf(aircraft)∧pm=PmsMerge(legPMS(leg))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal5"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(legIndex)∧aircraft∉dom(mergeTime)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="current_time≥legEntryTime(aircraft)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal7"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="tlm=wpDistMerge(legSeq(leg)(legIndex(aircraft)))∗360 ÷ legSpeed" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal8"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="current_time+wpDistMerge(legSeq(legOf(aircraft))(legIndex(aircraft)))∗360 ÷ legSpeed∈ℕ" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#&gt;"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="tlm∈ℕ∧pm∈PM∧brandof(aircraft)∈WTC" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#8"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="pm∈dom(lastMergeTime)⇒pm∈dom(lastMergeBrand)∧lastMergeBrand(pm)∈WTC" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#="/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(legIndex)∧b∈dom(legOf)∧b∈dom(legEntryTime)∧legOf(b)=leg⇒legEntryTime(b)≥legEntryTime(aircraft)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal9"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="PmsMerge(legPMS(legOf(aircraft)))∈dom(lastMergeTime)⇒PmsMerge(legPMS(legOf(aircraft)))∈dom(lastMergeBrand)∧lastMergeBrand(PmsMerge(legPMS(legOf(aircraft)))) ↦ brandof(aircraft)∈dom(Separation_time)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#@"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="pm∉dom(lastMergeTime)∨current_time+tlm≥lastMergeTime(pm)+Separation_time(lastMergeBrand(pm) ↦ brandof(aircraft))+MergeBuffer" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime)∧a∈dom(legOf)∧PmsMerge(legPMS(legOf(a)))=pm⇒mergeTime(a)&lt;current_time+tlm" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#9"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime)∧a∈dom(legOf)∧a∈dom(brandof)∧PmsMerge(legPMS(legOf(a)))=pm⇒current_time+tlm − mergeTime(a)≥Separation_time(brandof(a) ↦ brandof(aircraft))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#:"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(legEntryTime)∧b∈dom(legOf)∧legOf(b)=leg∧legEntryTime(b)&lt;legEntryTime(aircraft)⇒b∈dom(mergeTime)∧mergeTime(b)&lt;current_time+tlm" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#;"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})⇒a∈dom(legOf)∧PmsMerge(legPMS(legOf(a)))∈dom(lastMergeTime{pm ↦ current_time+tlm})∧(mergeTime∪{aircraft ↦ current_time+tlm})(a)≤(lastMergeTime{pm ↦ current_time+tlm})(PmsMerge(legPMS(legOf(a))))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#A"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧a∈dom(brandof)∧(mergeTime∪{aircraft ↦ current_time+tlm})(a)&lt;(lastMergeTime{pm ↦ current_time+tlm})(PmsMerge(legPMS(legOf(a))))⇒(lastMergeTime{pm ↦ current_time+tlm})(PmsMerge(legPMS(legOf(a)))) − (mergeTime∪{aircraft ↦ current_time+tlm})(a)≥Separation_time(brandof(a) ↦ (lastMergeBrand{pm ↦ brandof(aircraft)})(PmsMerge(legPMS(legOf(a)))))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#B"/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧b∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧a≠b∧a∈dom(legOf)∧b∈dom(legOf)∧a∈dom(brandof)∧b∈dom(brandof)∧PmsMerge(legPMS(legOf(a)))=PmsMerge(legPMS(legOf(b)))∧(mergeTime∪{aircraft ↦ current_time+tlm})(a)≤(mergeTime∪{aircraft ↦ current_time+tlm})(b)⇒(mergeTime∪{aircraft ↦ current_time+tlm})(b) − (mergeTime∪{aircraft ↦ current_time+tlm})(a)≥Separation_time(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#C"/>
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime)∧b∈dom(legEntryTime)∧legOf(a)=legOf(b)∧legEntryTime(a)&lt;legEntryTime(b)∧b∈dom(mergeTime∪{aircraft ↦ current_time+tlm})⇒a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧(mergeTime∪{aircraft ↦ current_time+tlm})(a)&lt;(mergeTime∪{aircraft ↦ current_time+tlm})(b)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#D"/>
+        <org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="dom(legEntryTime)⊆dom({aircraft} ⩤ legIndex)∪dom(mergeTime∪{aircraft ↦ current_time+tlm})" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#E"/>
+        <org.eventb.core.poPredicate name="PRD19" org.eventb.core.predicate="aircraft∈dom(cpOf)∧f=cpOf(aircraft)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD20" org.eventb.core.predicate="pm ↦ f∈dom(pmCPDist)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal:"/>
+        <org.eventb.core.poPredicate name="PRD21" org.eventb.core.predicate="tcp=tlm+pmCPDist(pm ↦ f)∗360 ÷ legSpeed" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD22" org.eventb.core.predicate="f∈dom(lastcpTime)⇒f∈dom(lastcpBrand)∧lastcpBrand(f) ↦ brandof(aircraft)∈dom(Separation_time)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal;"/>
+        <org.eventb.core.poPredicate name="PRD23" org.eventb.core.predicate="f∉dom(lastcpTime)∨current_time+tcp≥lastcpTime(f)+Separation_time(lastcpBrand(f) ↦ brandof(aircraft))+MergeBuffer" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD24" org.eventb.core.predicate="cpTime∪{aircraft ↦ current_time+tcp}∈aircrafts_in_TMA ⇸ ℕ∧dom(cpTime∪{aircraft ↦ current_time+tcp})=dom(mergeTime∪{aircraft ↦ current_time+tlm})∧dom(cpTime∪{aircraft ↦ current_time+tcp})⊆dom(cpOf)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal="/>
+        <org.eventb.core.poPredicate name="PRD25" org.eventb.core.predicate="lastcpTime{f ↦ current_time+tcp}∈CP ⇸ ℕ∧lastcpBrand{f ↦ brandof(aircraft)}∈CP ⇸ WTC∧dom(lastcpTime{f ↦ current_time+tcp})=dom(lastcpBrand{f ↦ brandof(aircraft)})" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal&gt;"/>
+        <org.eventb.core.poPredicate name="PRD26" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})⇒cpOf(a)∈dom(lastcpTime{f ↦ current_time+tcp})∧(cpTime∪{aircraft ↦ current_time+tcp})(a)≤(lastcpTime{f ↦ current_time+tcp})(cpOf(a))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal?"/>
+        <org.eventb.core.poPredicate name="PRD27" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime)∧cpOf(a)=f⇒cpTime(a)&lt;current_time+tcp" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internal@"/>
+        <org.eventb.core.poPredicate name="PRD28" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime)∧a∈dom(brandof)∧cpOf(a)=f⇒current_time+tcp − cpTime(a)≥Separation_time(brandof(a) ↦ brandof(aircraft))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internalA"/>
+        <org.eventb.core.poPredicate name="PRD29" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})⇒a∈dom(cpOf)∧cpOf(a)∈dom(lastcpTime{f ↦ current_time+tcp})∧cpOf(a)∈dom(lastcpBrand{f ↦ brandof(aircraft)})∧(lastcpBrand{f ↦ brandof(aircraft)})(cpOf(a))∈WTC" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internalG"/>
+        <org.eventb.core.poPredicate name="PRD30" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})∧a∈dom(brandof)∧(cpTime∪{aircraft ↦ current_time+tcp})(a)=(lastcpTime{f ↦ current_time+tcp})(cpOf(a))⇒brandof(a)=(lastcpBrand{f ↦ brandof(aircraft)})(cpOf(a))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internalB"/>
+        <org.eventb.core.poPredicate name="PRD31" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})∧a∈dom(brandof)∧(cpTime∪{aircraft ↦ current_time+tcp})(a)&lt;(lastcpTime{f ↦ current_time+tcp})(cpOf(a))⇒(lastcpTime{f ↦ current_time+tcp})(cpOf(a)) − (cpTime∪{aircraft ↦ current_time+tcp})(a)≥Separation_time(brandof(a) ↦ (lastcpBrand{f ↦ brandof(aircraft)})(cpOf(a)))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internalC"/>
+        <org.eventb.core.poPredicate name="PRD32" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})∧b∈dom(cpTime∪{aircraft ↦ current_time+tcp})∧a≠b∧a∈dom(brandof)∧b∈dom(brandof)∧cpOf(a)=cpOf(b)∧(cpTime∪{aircraft ↦ current_time+tcp})(a)≤(cpTime∪{aircraft ↦ current_time+tcp})(b)⇒(cpTime∪{aircraft ↦ current_time+tcp})(b) − (cpTime∪{aircraft ↦ current_time+tcp})(a)≥Separation_time(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internalD"/>
+        <org.eventb.core.poPredicate name="PRD33" org.eventb.core.predicate="mergeTime∪{aircraft ↦ current_time+tlm}∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internalF"/>
+        <org.eventb.core.poPredicate name="PRD34" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})⇒a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧(cpTime∪{aircraft ↦ current_time+tcp})(a)≥(mergeTime∪{aircraft ↦ current_time+tlm})(a)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)`|org.eventb.core.guard#internalE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMr" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="pm" org.eventb.core.type="PM"/>
+        <org.eventb.core.poIdentifier name="tlm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="k" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="legPointTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="tseg" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="leg" org.eventb.core.type="SLEGS"/>
+        <org.eventb.core.poIdentifier name="legIndex'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMr" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMr" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈dom(legOf)∧aircraft∈dom(legIndex)∧aircraft∈dom(legPointTime)∧aircraft∈dom(brandof)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="leg=legOf(aircraft)∧pm=PmsMerge(legPMS(leg))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="k=legIndex(aircraft)∧k&lt;leglength(leg)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧k∈dom(legSeq(leg))∧k+1∈dom(legSeq(leg))∧k∈ℕ1∧k+1≤leglength(leg)∧legPointTime(aircraft)∈ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#:"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="legSeq(leg)(k) ↦ legSeq(leg)(k+1)∈dom(segDist)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#;"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="tseg=segDist(legSeq(leg)(k) ↦ legSeq(leg)(k+1))∗360 ÷ legSpeed" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#6"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧legIndex(aircraft)+1∈ℕ1∧legIndex(aircraft)+1≤leglength(legOf(aircraft))∧legPointTime(aircraft)+segDist(legSeq(legOf(aircraft))(legIndex(aircraft)) ↦ legSeq(legOf(aircraft))(legIndex(aircraft)+1))∗360 ÷ legSpeed∈ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#&gt;"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="tseg∈ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#="/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="tlm=wpDistMerge(legSeq(leg)(k))∗360 ÷ legSpeed" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#7"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="current_time≥legPointTime(aircraft)+tseg" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="pm∈dom(lastMergeTime)∧current_time+tlm&lt;lastMergeTime(pm)+Separation_time(lastMergeBrand(pm) ↦ brandof(aircraft))+MergeBuffer" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="legIndex{aircraft ↦ k+1}∈aircrafts_in_TMA ⇸ ℕ1" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#?"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="legPointTime{aircraft ↦ legPointTime(aircraft)+tseg}∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#@"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(legIndex{aircraft ↦ k+1})⇒a∈dom(legOf)∧legOf(a)∈dom(leglength)∧a∈dom(legPointTime{aircraft ↦ legPointTime(aircraft)+tseg})∧(legIndex{aircraft ↦ k+1})(a)≤leglength(legOf(a))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#A"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="dom(legIndex{aircraft ↦ k+1})=dom(legIndex)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#B"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="dom(legIndex{aircraft ↦ k+1})⊆dom(acLevel)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#C"/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legIndex{aircraft ↦ k+1})∧b∈dom(legIndex{aircraft ↦ k+1})∧legOf(a)≠legOf(b)∧legPMS(legOf(a))=legPMS(legOf(b))⇒acLevel(a)≥acLevel(b)+VSep∨acLevel(b)≥acLevel(a)+VSep" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#)1|org.eventb.core.guard#D"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMs" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="f" org.eventb.core.type="CP"/>
+        <org.eventb.core.poIdentifier name="pm" org.eventb.core.type="PM"/>
+        <org.eventb.core.poIdentifier name="mergeTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastcpTime'" org.eventb.core.type="ℙ(CP×ℤ)"/>
+        <org.eventb.core.poIdentifier name="tlm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="cpTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legPointTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="tcp" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="lastcpBrand'" org.eventb.core.type="ℙ(CP×WTC)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="leg" org.eventb.core.type="SLEGS"/>
+        <org.eventb.core.poIdentifier name="lastMergeTime'" org.eventb.core.type="ℙ(PM×ℤ)"/>
+        <org.eventb.core.poIdentifier name="lastMergeBrand'" org.eventb.core.type="ℙ(PM×WTC)"/>
+        <org.eventb.core.poIdentifier name="legIndex'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMs" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMs" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧aircraft∈dom(legOf)∧aircraft∈dom(brandof)∧aircraft∈dom(legEntryTime)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="leg=legOf(aircraft)∧pm=PmsMerge(legPMS(leg))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(legIndex)∧legIndex(aircraft)=leglength(leg)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="aircraft∉dom(mergeTime)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="current_time≥legPointTime(aircraft)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="tlm=wpDistMerge(legSeq(leg)(leglength(leg)))∗360 ÷ legSpeed" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="current_time+wpDistMerge(legSeq(legOf(aircraft))(leglength(legOf(aircraft))))∗360 ÷ legSpeed∈ℕ" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#&gt;"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="tlm∈ℕ∧pm∈PM∧brandof(aircraft)∈WTC" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="pm∈dom(lastMergeTime)⇒pm∈dom(lastMergeBrand)∧lastMergeBrand(pm)∈WTC" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal2"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="PmsMerge(legPMS(legOf(aircraft)))∈dom(lastMergeTime)⇒PmsMerge(legPMS(legOf(aircraft)))∈dom(lastMergeBrand)∧lastMergeBrand(PmsMerge(legPMS(legOf(aircraft)))) ↦ brandof(aircraft)∈dom(Separation_time)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#?"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="pm∉dom(lastMergeTime)∨current_time+tlm≥lastMergeTime(pm)+Separation_time(lastMergeBrand(pm) ↦ brandof(aircraft))+MergeBuffer" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#1"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(legIndex)∧b∈dom(legOf)∧b∈dom(legEntryTime)∧legOf(b)=leg⇒legEntryTime(b)≥legEntryTime(aircraft)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal3"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime)∧a∈dom(legOf)∧PmsMerge(legPMS(legOf(a)))=pm⇒mergeTime(a)&lt;current_time+tlm" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#:"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime)∧a∈dom(legOf)∧a∈dom(brandof)∧PmsMerge(legPMS(legOf(a)))=pm⇒current_time+tlm − mergeTime(a)≥Separation_time(brandof(a) ↦ brandof(aircraft))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#;"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(legEntryTime)∧b∈dom(legOf)∧legOf(b)=leg∧legEntryTime(b)&lt;legEntryTime(aircraft)⇒b∈dom(mergeTime)∧mergeTime(b)&lt;current_time+tlm" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#="/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})⇒a∈dom(legOf)∧PmsMerge(legPMS(legOf(a)))∈dom(lastMergeTime{pm ↦ current_time+tlm})∧(mergeTime∪{aircraft ↦ current_time+tlm})(a)≤(lastMergeTime{pm ↦ current_time+tlm})(PmsMerge(legPMS(legOf(a))))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#@"/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧a∈dom(brandof)∧(mergeTime∪{aircraft ↦ current_time+tlm})(a)&lt;(lastMergeTime{pm ↦ current_time+tlm})(PmsMerge(legPMS(legOf(a))))⇒(lastMergeTime{pm ↦ current_time+tlm})(PmsMerge(legPMS(legOf(a)))) − (mergeTime∪{aircraft ↦ current_time+tlm})(a)≥Separation_time(brandof(a) ↦ (lastMergeBrand{pm ↦ brandof(aircraft)})(PmsMerge(legPMS(legOf(a)))))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#A"/>
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧b∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧a≠b∧a∈dom(legOf)∧b∈dom(legOf)∧a∈dom(brandof)∧b∈dom(brandof)∧PmsMerge(legPMS(legOf(a)))=PmsMerge(legPMS(legOf(b)))∧(mergeTime∪{aircraft ↦ current_time+tlm})(a)≤(mergeTime∪{aircraft ↦ current_time+tlm})(b)⇒(mergeTime∪{aircraft ↦ current_time+tlm})(b) − (mergeTime∪{aircraft ↦ current_time+tlm})(a)≥Separation_time(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#B"/>
+        <org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(legEntryTime)∧b∈dom(legEntryTime)∧legOf(a)=legOf(b)∧legEntryTime(a)&lt;legEntryTime(b)∧b∈dom(mergeTime∪{aircraft ↦ current_time+tlm})⇒a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧(mergeTime∪{aircraft ↦ current_time+tlm})(a)&lt;(mergeTime∪{aircraft ↦ current_time+tlm})(b)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#C"/>
+        <org.eventb.core.poPredicate name="PRD19" org.eventb.core.predicate="dom(legEntryTime)⊆dom({aircraft} ⩤ legIndex)∪dom(mergeTime∪{aircraft ↦ current_time+tlm})" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#D"/>
+        <org.eventb.core.poPredicate name="PRD20" org.eventb.core.predicate="aircraft∈dom(cpOf)∧f=cpOf(aircraft)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#7"/>
+        <org.eventb.core.poPredicate name="PRD21" org.eventb.core.predicate="pm ↦ f∈dom(pmCPDist)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal4"/>
+        <org.eventb.core.poPredicate name="PRD22" org.eventb.core.predicate="tcp=tlm+pmCPDist(pm ↦ f)∗360 ÷ legSpeed" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#8"/>
+        <org.eventb.core.poPredicate name="PRD23" org.eventb.core.predicate="f∈dom(lastcpTime)⇒f∈dom(lastcpBrand)∧lastcpBrand(f) ↦ brandof(aircraft)∈dom(Separation_time)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal5"/>
+        <org.eventb.core.poPredicate name="PRD24" org.eventb.core.predicate="f∉dom(lastcpTime)∨current_time+tcp≥lastcpTime(f)+Separation_time(lastcpBrand(f) ↦ brandof(aircraft))+MergeBuffer" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#9"/>
+        <org.eventb.core.poPredicate name="PRD25" org.eventb.core.predicate="cpTime∪{aircraft ↦ current_time+tcp}∈aircrafts_in_TMA ⇸ ℕ∧dom(cpTime∪{aircraft ↦ current_time+tcp})=dom(mergeTime∪{aircraft ↦ current_time+tlm})∧dom(cpTime∪{aircraft ↦ current_time+tcp})⊆dom(cpOf)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poPredicate name="PRD26" org.eventb.core.predicate="lastcpTime{f ↦ current_time+tcp}∈CP ⇸ ℕ∧lastcpBrand{f ↦ brandof(aircraft)}∈CP ⇸ WTC∧dom(lastcpTime{f ↦ current_time+tcp})=dom(lastcpBrand{f ↦ brandof(aircraft)})" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal7"/>
+        <org.eventb.core.poPredicate name="PRD27" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})⇒cpOf(a)∈dom(lastcpTime{f ↦ current_time+tcp})∧(cpTime∪{aircraft ↦ current_time+tcp})(a)≤(lastcpTime{f ↦ current_time+tcp})(cpOf(a))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal8"/>
+        <org.eventb.core.poPredicate name="PRD28" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime)∧cpOf(a)=f⇒cpTime(a)&lt;current_time+tcp" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal9"/>
+        <org.eventb.core.poPredicate name="PRD29" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime)∧a∈dom(brandof)∧cpOf(a)=f⇒current_time+tcp − cpTime(a)≥Separation_time(brandof(a) ↦ brandof(aircraft))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal:"/>
+        <org.eventb.core.poPredicate name="PRD30" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})⇒a∈dom(cpOf)∧cpOf(a)∈dom(lastcpTime{f ↦ current_time+tcp})∧cpOf(a)∈dom(lastcpBrand{f ↦ brandof(aircraft)})∧(lastcpBrand{f ↦ brandof(aircraft)})(cpOf(a))∈WTC" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal@"/>
+        <org.eventb.core.poPredicate name="PRD31" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})∧a∈dom(brandof)∧(cpTime∪{aircraft ↦ current_time+tcp})(a)=(lastcpTime{f ↦ current_time+tcp})(cpOf(a))⇒brandof(a)=(lastcpBrand{f ↦ brandof(aircraft)})(cpOf(a))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal;"/>
+        <org.eventb.core.poPredicate name="PRD32" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})∧a∈dom(brandof)∧(cpTime∪{aircraft ↦ current_time+tcp})(a)&lt;(lastcpTime{f ↦ current_time+tcp})(cpOf(a))⇒(lastcpTime{f ↦ current_time+tcp})(cpOf(a)) − (cpTime∪{aircraft ↦ current_time+tcp})(a)≥Separation_time(brandof(a) ↦ (lastcpBrand{f ↦ brandof(aircraft)})(cpOf(a)))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal="/>
+        <org.eventb.core.poPredicate name="PRD33" org.eventb.core.predicate="∀a⦂AIRCRAFTS,b⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})∧b∈dom(cpTime∪{aircraft ↦ current_time+tcp})∧a≠b∧a∈dom(brandof)∧b∈dom(brandof)∧cpOf(a)=cpOf(b)∧(cpTime∪{aircraft ↦ current_time+tcp})(a)≤(cpTime∪{aircraft ↦ current_time+tcp})(b)⇒(cpTime∪{aircraft ↦ current_time+tcp})(b) − (cpTime∪{aircraft ↦ current_time+tcp})(a)≥Separation_time(brandof(a) ↦ brandof(b))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal&gt;"/>
+        <org.eventb.core.poPredicate name="PRD34" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(cpTime∪{aircraft ↦ current_time+tcp})⇒a∈dom(mergeTime∪{aircraft ↦ current_time+tlm})∧(cpTime∪{aircraft ↦ current_time+tcp})(a)≥(mergeTime∪{aircraft ↦ current_time+tlm})(a)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)u|org.eventb.core.guard#internal?"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMt" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="pm" org.eventb.core.type="PM"/>
+        <org.eventb.core.poIdentifier name="landingQueue'" org.eventb.core.type="ℙ(RUNWAY×ℙ(ℤ×AIRCRAFTS))"/>
+        <org.eventb.core.poIdentifier name="plannedRunway'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMt" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMt" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=Blocked" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*(|org.eventb.core.guard#internal5"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∈dom(mergeTime)∧aircraft∈dom(legOf)∧aircraft∉dom(plannedRunway)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*(|org.eventb.core.guard#internal4"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pm=PmsMerge(legPMS(legOf(aircraft)))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*(|org.eventb.core.guard#internalO"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="runway∈RUNWAY" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*(|org.eventb.core.guard#internalP"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="landingQueue{runway ↦ landingQueue(runway)∪{seqSize(landingQueue(runway))+1 ↦ aircraft}}∈RUNWAY → seq(AIRCRAFTS)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*(|org.eventb.core.guard#internalU"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="aircraft∈dom(cpOf)∧runway=CPRunway(cpOf(aircraft))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*(|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(cpTime)∧b≠aircraft∧CPRunway(cpOf(b))=runway∧cpTime(b)&lt;cpTime(aircraft)⇒b∈dom(plannedRunway)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*(|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMu" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMu" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMu" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ScheduledL" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(q|org.eventb.core.guard#internal4"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∈dom(mergeTime)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(q|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="current_time≥mergeTime(aircraft)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(q|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="aircraft∈dom(plannedRunway)∧plannedRunway(aircraft)∈dom(landingQueue)∧landingQueue(plannedRunway(aircraft))∈ℤ ⇸ AIRCRAFTS" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(q|org.eventb.core.guard#internal3"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="1∈dom(landingQueue(plannedRunway(aircraft)))∧landingQueue(plannedRunway(aircraft))≠(emptySeq ⦂ ℙ(ℤ×AIRCRAFTS))∧landingQueue(plannedRunway(aircraft))(1)=aircraft" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(q|org.eventb.core.guard#internal2"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMv" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="landing_instant" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="Threshold'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="landingQueue'" org.eventb.core.type="ℙ(RUNWAY×ℙ(ℤ×AIRCRAFTS))"/>
+        <org.eventb.core.poIdentifier name="duration_final" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="clearanceL'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMv" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMv" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ReadyL" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internal4"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∉dom(clearanceL)∧runway∈RUNWAY" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#7"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(plannedRunway)∧runway=plannedRunway(aircraft)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internalE"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="runway∈dom(landingQueue)∧landingQueue(runway)∈seq(AIRCRAFTS)∧landingQueue(runway)∈ℤ ⇸ AIRCRAFTS∧1∈dom(landingQueue(runway))∧1∈1 ‥ seqSize(landingQueue(runway))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internalF"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="landingQueue(runway)≠(emptySeq ⦂ ℙ(ℤ×AIRCRAFTS))∧landingQueue(runway)(1)=aircraft" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internalC"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="aircraft∈dom(mergeTime)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#Y"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="duration_final∈ℕ1" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#]"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="finite(landingQueue(plannedRunway(aircraft)))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internalI"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="current_time≥mergeTime(aircraft)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internalD"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="landing_instant=current_time+duration_final" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#P"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈dom(clearanceL)∧clearanceL(b)=runway∧b≠aircraft∧b∈dom(Threshold)∧b∈dom(brandof)∧aircraft∈dom(brandof)∧Threshold(b)≤landing_instant⇒landing_instant − Threshold(b)≥Separation_time(brandof(b) ↦ brandof(aircraft))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internal3"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="runway∈dom(landingQueue)∧landingQueue(runway)∈ℤ ⇸ AIRCRAFTS∧1∈dom(landingQueue(runway))∧1∈1 ‥ seqSize(landingQueue(runway))" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internalG"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="landingQueue(runway)∈seq(AIRCRAFTS)∧1∈dom(landingQueue(runway))∧1∈1 ‥ seqSize(landingQueue(runway))⇒landingQueue{runway ↦ seqDelete(landingQueue(runway),1)}∈RUNWAY → seq(AIRCRAFTS)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(8|org.eventb.core.guard#internalH"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="aircraft∈dom(cpOf)∧duration_final=FinalDuration(cpOf(aircraft))" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)d|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="aircraft∈dom(cpTime)∧current_time≥cpTime(aircraft)" org.eventb.core.source="/SafePM4/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#)d|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="∀d⦂AIRCRAFTS·d∈dom(depTime)∧depRwy(d)=runway⇒landing_instant≥depTime(d)+RwySep∨depTime(d)≥landing_instant+RwySep" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#**|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="clearanceL∪{aircraft ↦ runway}∈aircrafts_in_TMA ⇸ RUNWAY∧Threshold{aircraft ↦ landing_instant}∈aircrafts_in_TMA ⇸ ℕ" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#**|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="∀a⦂AIRCRAFTS,d⦂AIRCRAFTS·a∈dom(Threshold{aircraft ↦ landing_instant})∧a∈dom(clearanceL∪{aircraft ↦ runway})∧d∈dom(depTime)∧(clearanceL∪{aircraft ↦ runway})(a)=depRwy(d)⇒(Threshold{aircraft ↦ landing_instant})(a)≥depTime(d)+RwySep∨depTime(d)≥(Threshold{aircraft ↦ landing_instant})(a)+RwySep" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#**|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMw" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="lastTouchdown'" org.eventb.core.type="ℙ(RUNWAY×ℤ)"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMw" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMw" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ExecutedL" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(_|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="runway∈RUNWAY∧curr_RW_status(runway)=Available∧curr_RWL_status(runway)=OFF" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(_|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(clearanceL)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(_|org.eventb.core.guard#internal2"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="runway=clearanceL(aircraft)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(_|org.eventb.core.guard#1"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="current_time≥Threshold(aircraft)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#(_|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMx" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="Threshold'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="durationL" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="clearanceL'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="ETA'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMx" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMx" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=Landing" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'@|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="runway∈RUNWAY∧curr_RW_status(runway)=Unavailable∧curr_RWL_status(runway)=ON" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'@|org.eventb.core.guard#4"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(clearanceL)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'@|org.eventb.core.guard#internal4"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="runway=clearanceL(aircraft)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'@|org.eventb.core.guard#internal20"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="durationL∈60 ‥ 90" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'@|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="current_time≥Threshold(aircraft)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'@|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="current_time∈ℕ" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'@|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="aircraft∈dom(brandof)" org.eventb.core.source="/SafePM4/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'@|org.eventb.core.guard#internal19"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMy" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="current_time'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="tm" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMy" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMy" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="tm∈1 ‥ 60" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*-|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMz" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="readyTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMz" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMz" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=TerminatedL" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*.|org.eventb.core.guard#internal1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TM{" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="clearanceT'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TM{" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TM{" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ReadyT" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*\/|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∉dom(clearanceT)∧runway∈RUNWAY" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*\/|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TM|" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="readyTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="depRwy'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="lastDepBrand'" org.eventb.core.type="ℙ(RUNWAY×WTC)"/>
+        <org.eventb.core.poIdentifier name="lastDepTime'" org.eventb.core.type="ℙ(RUNWAY×ℤ)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+        <org.eventb.core.poIdentifier name="depTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TM|" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TM\|" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ExecutedT" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="runway∈RUNWAY∧curr_RW_status(runway)=Available∧curr_RWL_status(runway)=OFF" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#internal2"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(clearanceT)∧runway=clearanceT(aircraft)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#internal3"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="aircraft∈dom(brandof)∧aircraft∈dom(readyTime)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="∀b⦂AIRCRAFTS·b∈aircrafts_in_TMA∧statusof(b)=ExecutedT∧b∈dom(readyTime)∧b∈dom(clearanceT)∧clearanceT(b)=runway⇒readyTime(b)≥readyTime(aircraft)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="brandof(aircraft)∈WTC∧aircraft∉dom(depTime)∧(runway∈dom(lastDepTime)⇒runway∈dom(lastDepBrand))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#internal4"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="runway∉dom(lastDepTime)∨current_time≥lastDepTime(runway)+DepDepSep(lastDepBrand(runway) ↦ brandof(aircraft))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="runway∉dom(lastTouchdown)∨current_time≥lastTouchdown(runway)+RwySep" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(Threshold)∧a∈dom(clearanceL)∧clearanceL(a)=runway⇒Threshold(a)≥current_time+RwySep∨current_time≥Threshold(a)+RwySep" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="∀d⦂AIRCRAFTS·d∈dom(depTime)∧d∈dom(brandof)∧depRwy(d)=runway⇒current_time≥depTime(d)+DepDepSep(brandof(d) ↦ brandof(aircraft))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#internal5"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="depTime{aircraft ↦ current_time}∈aircrafts_in_TMA ⇸ ℕ∧depRwy{aircraft ↦ runway}∈aircrafts_in_TMA ⇸ RUNWAY∧dom(depRwy{aircraft ↦ runway})=dom(depTime{aircraft ↦ current_time})∧lastDepTime{runway ↦ current_time}∈RUNWAY ⇸ ℕ∧lastDepBrand{runway ↦ brandof(aircraft)}∈RUNWAY ⇸ WTC∧dom(lastDepTime{runway ↦ current_time})=dom(lastDepBrand{runway ↦ brandof(aircraft)})" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(depTime{aircraft ↦ current_time})⇒(depRwy{aircraft ↦ runway})(a)∈dom(lastDepTime{runway ↦ current_time})∧(lastDepBrand{runway ↦ brandof(aircraft)})((depRwy{aircraft ↦ runway})(a))∈WTC" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#internal7"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈dom(depTime{aircraft ↦ current_time})∧a∈dom(brandof)∧(depTime{aircraft ↦ current_time})(a)&lt;(lastDepTime{runway ↦ current_time})((depRwy{aircraft ↦ runway})(a))⇒(lastDepTime{runway ↦ current_time})((depRwy{aircraft ↦ runway})(a)) − (depTime{aircraft ↦ current_time})(a)≥DepDepSep(brandof(a) ↦ (lastDepBrand{runway ↦ brandof(aircraft)})((depRwy{aircraft ↦ runway})(a)))" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*0|org.eventb.core.guard#internal8"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TM}" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="clearanceT'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TM}" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TM}" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=Takingoff" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*1|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="runway∈RUNWAY∧curr_RW_status(runway)=Unavailable∧curr_RWL_status(runway)=ON" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*1|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(clearanceT)∧runway=clearanceT(aircraft)" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*1|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TM~" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="entryTMAOf'" org.eventb.core.type="ℙ(AIRCRAFTS×ENTRYTMA)"/>
+        <org.eventb.core.poIdentifier name="readyTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="Threshold'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="aircrafts_in_TMA'" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="mergeTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legOf'" org.eventb.core.type="ℙ(AIRCRAFTS×SLEGS)"/>
+        <org.eventb.core.poIdentifier name="depRwy'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="acLevel'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="cpTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legEntryTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="ETA'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legPointTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="cpOf'" org.eventb.core.type="ℙ(AIRCRAFTS×CP)"/>
+        <org.eventb.core.poIdentifier name="plannedRunway'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="depTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="tmaEntryTime'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legIndex'" org.eventb.core.type="ℙ(AIRCRAFTS×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TM~" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TM~" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=TerminatedT" org.eventb.core.source="/SafePM4/M4.bum|org.eventb.core.machineFile#M4|org.eventb.core.event#*2|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SafePM4/M4_OSLO.bpo|org.eventb.core.poFile#M4_OSLO|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>

@@ -1,0 +1,132 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{M1}
+\MACHINE{M1}{M0}{C0}{}
+\VARIABLES{
+	\Variable{aircrafts\_in\_TMA}{}
+	\Variable{statusof}{}
+	\Variable{curr\_RW\_status}{}
+	\Variable{curr\_RWL\_status}{}
+	\Variable{aircrafts\_ReadyL}{}
+	\Variable{clearanceL}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$aircrafts\_ReadyL \subseteq{} aircrafts\_in\_TMA$}{}
+	\Invariant{inv2}{false}{$clearanceL \in{} aircrafts\_ReadyL \pfun{} RUNWAY$}{}
+	\Invariant{inv3}{false}{$\forall{}a\qdot{} a\in{}aircrafts\_in\_TMA \land{} statusof(a)=TerminatedL \limp{} a\notin{}aircrafts\_ReadyL$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$aircrafts\_in\_TMA \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act2}{$statusof \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act3}{$curr\_RW\_status \bcmeq{} RUNWAY \cprod{} \{Available\}$}{true}{}
+		\Action{act4}{$curr\_RWL\_status \bcmeq{} RUNWAY \cprod{} \{OFF\}$}{true}{}
+		\Action{act5}{$clearanceL\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act6}{$aircrafts\_ReadyL\bcmeq{} \emptyset{}$}{true}{}
+	}
+}
+\EVT{Entry\_in\_TMA}{false}{ordinary}{Entry\_in\_TMA}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} AIRCRAFTS \land{} aircraft \notin{} aircrafts\_in\_TMA$}{true}{}
+		\Guard{grd2}{false}{$aircraft \notin{} dom(statusof)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_TMA\bcmeq{} aircrafts\_in\_TMA \bunion{} \{aircraft\}$}{true}{}
+		\Action{act2}{$statusof(aircraft) \bcmeq{} Blocked$}{true}{}
+	}
+}
+\EVT{Schedule\_Arrival}{false}{ordinary}{Schedule\_Arrival}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = Blocked$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft)\bcmeq{} ScheduledL$}{true}{}
+	}
+}
+\EVT{Reach\_Merge\_Fix}{false}{ordinary}{Reach\_Merge\_Fix}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft)=ScheduledL$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft)\bcmeq{} ReadyL$}{true}{}
+		\Action{act2}{$aircrafts\_ReadyL\bcmeq{} aircrafts\_ReadyL \bunion{} \{aircraft\}$}{true}{}
+	}
+}
+\EVT{Landing\_Verification}{false}{ordinary}{Landing\_Verification}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = ReadyL$}{true}{}
+		\Guard{grd9}{false}{$aircraft \notin{} dom(clearanceL) \land{} runway \in{} RUNWAY$}{true}{}
+		\Guard{grd10}{false}{$aircraft \in{} aircrafts\_ReadyL$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ExecutedL$}{true}{}
+		\Action{act5}{$clearanceL \bcmeq{} clearanceL \bunion{} \{aircraft \mapsto{} runway\}$}{true}{}
+	}
+}
+\EVT{Touchdown}{false}{ordinary}{Touchdown}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = ExecutedL$}{true}{}
+		\Guard{grd2}{false}{$ runway \in{} RUNWAY \land{} curr\_RW\_status(runway) = Available \land{} curr\_RWL\_status(runway) = OFF$}{true}{}
+		\Guard{grd4}{false}{$aircraft \in{} dom(clearanceL)$}{true}{}
+		\Guard{grd3}{false}{$runway = clearanceL(aircraft)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} Landing$}{true}{}
+		\Action{act2}{$curr\_RW\_status(runway) \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} ON$}{true}{}
+	}
+}
+\EVT{Terminating\_Landing}{false}{ordinary}{Terminating\_Landing}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = Landing$}{true}{}
+		\Guard{grd2}{false}{$runway \in{} RUNWAY \land{} curr\_RW\_status(runway) = Unavailable \land{} curr\_RWL\_status(runway) = ON $}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} aircrafts\_ReadyL$}{true}{}
+		\Guard{grd5}{false}{$aircraft \in{} dom(clearanceL)$}{true}{}
+		\Guard{grd4}{false}{$runway = clearanceL(aircraft)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TerminatedL$}{true}{}
+		\Action{act3}{$curr\_RW\_status(runway) \bcmeq{} Available$}{true}{}
+		\Action{act4}{$curr\_RWL\_status(runway) \bcmeq{} OFF$}{true}{}
+		\Action{act7}{$aircrafts\_ReadyL \bcmeq{} aircrafts\_ReadyL \setminus{} \{aircraft\}$}{true}{}
+		\Action{act8}{$clearanceL \bcmeq{} \{aircraft\} \domsub{} clearanceL$}{true}{}
+	}
+}
+\EVT{Taxiway\_Exit}{false}{ordinary}{Taxiway\_Exit}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA \land{} statusof(aircraft) = TerminatedL$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_TMA \bcmeq{} aircrafts\_in\_TMA \setminus{} \{aircraft\} $}{true}{}
+		\Action{act2}{$statusof \bcmeq{} \{aircraft\} \domsub{} statusof$}{true}{}
+	}
+}
+}
+\END
+\end{document}

@@ -1,0 +1,1418 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(BlockedSlots×ℤ))∈(∅ ⦂ ℙ(BlockedSlots)) → Minutes"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(BlockedSlots×ℤ))∈(∅ ⦂ ℙ(BlockedSlots)) → Hours"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(BlockedSlots×ℤ)) ⊗ (∅ ⦂ ℙ(BlockedSlots×ℤ))∈(∅ ⦂ ℙ(BlockedSlots)) ↣ Minutes × Hours"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(BlockedSlots×ℤ))∈(∅ ⦂ ℙ(BlockedSlots)) → Hours"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p7,p8,p10,p13,p9,p4,p11,p3,p12,p1,p5,p14,p15">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedBlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="s∈BlockedSlots ∖ blockedSlots"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="sm ↦ sh∉ran(blockedM ⊗ blockedH)"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="blockedM ⊗ blockedH∈blockedSlots ↣ Minutes × Hours"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="blockedM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sm∈Minutes"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="blockedM{s ↦ sm}∈blockedSlots∪{s} → Minutes"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="blockedH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="sh∈Hours"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬sm ↦ sh∈ran(blockedM ⊗ blockedH)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p7,p8,p10,p13,p9,p4,p11,p3,p12,p1,p5,p14,p15">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedBlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="s∈BlockedSlots ∖ blockedSlots"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="sm ↦ sh∉ran(blockedM ⊗ blockedH)"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="blockedM ⊗ blockedH∈blockedSlots ↣ Minutes × Hours"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="blockedM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sm∈Minutes"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="blockedH{s ↦ sh}∈blockedSlots∪{s} → Hours"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="blockedH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="sh∈Hours"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬sm ↦ sh∈ran(blockedM ⊗ blockedH)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p1,p4,p5,p6">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="blockedH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="s∈BlockedSlots ∖ blockedSlots"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="sm ↦ sh∉ran(blockedM ⊗ blockedH)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="labels⊆Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="blockedM ⊗ blockedH∈blockedSlots ↣ Minutes × Hours"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="sm∈Minutes"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(blockedM{s ↦ sm}) ⊗ (blockedH{s ↦ sh})∈blockedSlots∪{s} ↣ Minutes × Hours"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sh∈Hours"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬sm ↦ sh∈ran(blockedM ⊗ blockedH)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p26"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p27"/>
+                <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p28"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p29"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p30"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p12,p13,p4,p20,p24,p5,p22,p18,p15,p11,p25,p23,p1,p3,p9,p16,p7,p14,p17,p10,p21,p2,p19,p26,p28">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedBlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="eh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="em" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="endH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="endM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="startH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="startM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="s∈BlockedSlots ∖ blockedSlots"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="em∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="sm∈Minutes"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧¬l1=l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="endH{s ↦ eh}∈blockedSlots∪{s} → Hours"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀s1⦂BlockedSlots·s1∈blockedSlots∧s1≠s∧curTime(0,startM(s1),startH(s1))≥curTime(0,sm,sh)⇒curTime(0,startM(s1),startH(s1))≥curTime(0,em,eh)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="eh∈Hours"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧l1≠l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈blockedSlots∧s2∈blockedSlots∧s1≠s2∧curTime(0,startM(s1),startH(s1))≥curTime(0,endM(s2),endH(s2))⇒curTime(0,startM(s1),startH(s1))≥curTime(0,endM(s2),endH(s2))"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="sh∈Hours"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="sm∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="endH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="curTime(0,sm,sh)&lt;curTime(0,em,eh)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="endM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="em∈Minutes"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="0∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="startH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="eh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="∀s1⦂BlockedSlots·s1∈blockedSlots∧¬s1=s∧curTime(0,startM(s1),startH(s1))≥curTime(0,sm,sh)⇒curTime(0,startM(s1),startH(s1))≥curTime(0,em,eh)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="sh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="startM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="∀bs⦂BlockedSlots·bs∈blockedSlots⇒curTime(0,startM(bs),startH(bs))&lt;curTime(0,endM(bs),endH(bs))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="inv6/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="bs" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p12"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p14"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees bs)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+                                <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p16">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p18">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="p3,p4,p5,p1,p10,p7,p9,p11,p8,p2,p12,p16">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p19">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p3,p4,p5,p1,p10,p7,p9,p11,p8,p2,p12,p16">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p20">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="p9">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p16"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p21">
+                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="p9"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="+" org.eventb.core.prGoal="p22">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p11">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p16"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="," org.eventb.core.prGoal="p23">
+                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="p11"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="-" org.eventb.core.prGoal="p24">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="p3,p4,p5,p1,p10,p7,p9,p11,p8,p2,p12,p16">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="." org.eventb.core.prGoal="p25">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p3,p4,p5,p1,p10,p7,p9,p11,p8,p2,p12,p16">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="/" org.eventb.core.prGoal="p26">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p26" org.eventb.core.prHyps="p8">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p16"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p27">
+                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p27" org.eventb.core.prHyps="p8"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="1" org.eventb.core.prGoal="p28">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p28" org.eventb.core.prHyps="p2">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p16"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="2" org.eventb.core.prGoal="p29">
+                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p29" org.eventb.core.prHyps="p2"/>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="endH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="endM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="startH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="startM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="bs∈blockedSlots">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="bs∈dom(startH)">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="endM(bs)∈0 ‥ 59">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="bs∈blockedSlots⇒startM(bs)∈0 ‥ 59∧startH(bs)∈0 ‥ 23∧bs∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧bs∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧endM(bs)∈0 ‥ 59∧endH(bs)∈0 ‥ 23∧bs∈dom(endM)∧endM∈BlockedSlots ⇸ ℤ∧bs∈dom(endH)∧endH∈BlockedSlots ⇸ ℤ">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧¬l1=l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="endM∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="endH(bs)∈0 ‥ 23">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧l1≠l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="startM∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="endH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="startM(bs)∈0 ‥ 59">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀bs⦂BlockedSlots·bs∈blockedSlots⇒startM(bs)∈0 ‥ 59∧startH(bs)∈0 ‥ 23∧bs∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧bs∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧endM(bs)∈0 ‥ 59∧endH(bs)∈0 ‥ 23∧bs∈dom(endM)∧endM∈BlockedSlots ⇸ ℤ∧bs∈dom(endH)∧endH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="endH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="startH(bs)∈0 ‥ 23">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="endM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="startH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="startM(bs)∈0 ‥ 59∧startH(bs)∈0 ‥ 23∧bs∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧bs∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧endM(bs)∈0 ‥ 59∧endH(bs)∈0 ‥ 23∧bs∈dom(endM)∧endM∈BlockedSlots ⇸ ℤ∧bs∈dom(endH)∧endH∈BlockedSlots ⇸ ℤ">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="startH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="bs∈dom(endH)">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="bs∈dom(startM)">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="bs∈dom(endM)">
+            <org.eventb.core.prIdent name="bs" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="startM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="blockedSlots"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(BlockedSlots))⊆(∅ ⦂ ℙ(BlockedSlots))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p7,p8,p10,p13,p9,p4,p11,p3,p12,p1,p5,p14,p15">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedBlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="s∈BlockedSlots ∖ blockedSlots"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="sm ↦ sh∉ran(blockedM ⊗ blockedH)"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="blockedM ⊗ blockedH∈blockedSlots ↣ Minutes × Hours"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots∪{s}"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="blockedM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sm∈Minutes"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="blockedH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="sh∈Hours"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬sm ↦ sh∈ran(blockedM ⊗ blockedH)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p17"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p18"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p19">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p4,p5,p6,p10,p14,p7,p2,p12,p13,p1,p3,p15,p8,p9,p16">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p20">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="p4,p5,p6,p10,p14,p7,p2,p12,p13,p1,p3,p15,p8,p9,p16">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                            <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p21">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="p4,p5,p6,p10,p14,p7,p2,p12,p13,p1,p3,p15,p8,p9,p16">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                            <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p22">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p4,p5,p6,p10,p14,p7,p2,p12,p13,p1,p3,p15,p8,p9,p16">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                            <org.eventb.core.prAnte name="+" org.eventb.core.prGoal="p23">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="p4,p5,p6,p10,p14,p7,p2,p12,p13,p1,p3,p15,p8,p9,p16">
+                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedBlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="eh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="em" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="0∈0 ‥ 59∧sm∈0 ‥ 59∧sh∈0 ‥ 23∧em∈0 ‥ 59∧eh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="s∈BlockedSlots ∖ blockedSlots"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="em∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="blockedM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="sm∈Minutes"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧¬l1=l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="em∈Minutes"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="0∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="eh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="eh∈Hours"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="sh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧l1≠l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="blockedH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="sh∈Hours"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="sm∈0 ‥ 59"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addLabel/grd2/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="la" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Labels">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈ℕ∧curM∈ℕ∧curH∈ℕ" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2"/>
+                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5,p6"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees la)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+                                <org.eventb.core.prIdent name="la" org.eventb.core.type="Labels"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="p10"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="h" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="m" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈blockedSlots∧s2∈blockedSlots∧s1≠s2∧startH(s1)∗60+startM(s1)≥startH(s2)∗60+startM(s2)⇒startH(s1)∗60+startM(s1)≥endH(s2)∗60+endM(s2)">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="endH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+            <org.eventb.core.prIdent name="endM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+            <org.eventb.core.prIdent name="startH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+            <org.eventb.core.prIdent name="startM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="curTime(0,arrivalM(la),arrivalH(la)) − curTime(0,m,h)≥3∨arrivalH(la)∗60+arrivalM(la) − (h∗60+m)≤−3">
+            <org.eventb.core.prIdent name="la" org.eventb.core.type="Labels"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="m∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="blockedSlots⊆BlockedSlots">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈blockedSlots∧s2∈blockedSlots∧¬s1=s2∧startH(s1)∗60+startM(s1)≥startH(s2)∗60+startM(s2)⇒startH(s1)∗60+startM(s1)≥endH(s2)∗60+endM(s2)">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="endH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+            <org.eventb.core.prIdent name="endM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+            <org.eventb.core.prIdent name="startH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+            <org.eventb.core.prIdent name="startM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀la⦂Labels·la∈labels⇒curTime(0,arrivalM(la),arrivalH(la)) − curTime(0,m,h)≥3∨arrivalH(la)∗60+arrivalM(la) − (h∗60+m)≤−3"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="h∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="la∈labels⇒curTime(0,arrivalM(la),arrivalH(la)) − curTime(0,m,h)≥3∨arrivalH(la)∗60+arrivalM(la) − (h∗60+m)≤−3">
+            <org.eventb.core.prIdent name="la" org.eventb.core.type="Labels"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="l∈Labels ∖ labels∧h∈0 ‥ 23∧m∈0 ‥ 59">
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="l∈Labels ∖ labels">
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="la∈labels">
+            <org.eventb.core.prIdent name="la" org.eventb.core.type="Labels"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="inv7/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="s1,s2" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p15"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees s1,s2)" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17">
+                                <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+                                <org.eventb.core.prIdent name="s2" org.eventb.core.type="BlockedSlots"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="p18,p19,p20">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p3,p4,p5,p2,p10,p7,p9,p11,p8,p1,p12,p13,p18,p19,p20">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p23">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="p9">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p18">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="p18"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p24">
+                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="p9"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p25">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p11">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p18">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="p18"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="+" org.eventb.core.prGoal="p26">
+                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p26" org.eventb.core.prHyps="p11"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="," org.eventb.core.prGoal="p27">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p27" org.eventb.core.prHyps="p3,p4,p5,p2,p10,p7,p9,p11,p8,p1,p12,p13,p18,p19,p20">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="-" org.eventb.core.prGoal="p28">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p28" org.eventb.core.prHyps="p8">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p19">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p19"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="." org.eventb.core.prGoal="p29">
+                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p29" org.eventb.core.prHyps="p8"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="/" org.eventb.core.prGoal="p30">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p30" org.eventb.core.prHyps="p1">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p19">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p19"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p31">
+                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="p1"/>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="endH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="endM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="startH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="startM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="s2∈dom(endH)">
+            <org.eventb.core.prIdent name="s2" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧¬l1=l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="endH(s2)∈0 ‥ 23">
+            <org.eventb.core.prIdent name="s2" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="s2∈dom(endM)">
+            <org.eventb.core.prIdent name="s2" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="endM∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="s1∈dom(startM)">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧l1≠l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈blockedSlots∧s2∈blockedSlots∧¬s1=s2⇒startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧endH(s2)∈0 ‥ 23∧s2∈dom(endM)∧endM∈BlockedSlots ⇸ ℤ∧s2∈dom(endH)∧endH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈blockedSlots∧s2∈blockedSlots∧s1≠s2⇒startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧endH(s2)∈0 ‥ 23∧s2∈dom(endM)∧endM∈BlockedSlots ⇸ ℤ∧s2∈dom(endH)∧endH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="startH(s1)∈0 ‥ 23">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="s1∈blockedSlots∧s2∈blockedSlots∧¬s1=s2⇒startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧endH(s2)∈0 ‥ 23∧s2∈dom(endM)∧endM∈BlockedSlots ⇸ ℤ∧s2∈dom(endH)∧endH∈BlockedSlots ⇸ ℤ">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+            <org.eventb.core.prIdent name="s2" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="s2∈blockedSlots">
+            <org.eventb.core.prIdent name="s2" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬s1=s2">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+            <org.eventb.core.prIdent name="s2" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="startM∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="endH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="endH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧endH(s2)∈0 ‥ 23∧s2∈dom(endM)∧endM∈BlockedSlots ⇸ ℤ∧s2∈dom(endH)∧endH∈BlockedSlots ⇸ ℤ">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+            <org.eventb.core.prIdent name="s2" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="s1∈dom(startH)">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="endM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="startH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="s1∈blockedSlots">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="startH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="startM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀bs⦂BlockedSlots·bs∈blockedSlots⇒curTime(0,startM(bs),startH(bs))&lt;curTime(0,endM(bs),endH(bs))"/>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="blockedSlots"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈(∅ ⦂ ℙ(BlockedSlots))∧s2∈(∅ ⦂ ℙ(BlockedSlots))∧s1≠s2∧curTime(0,(∅ ⦂ ℙ(BlockedSlots×ℤ))(s1),(∅ ⦂ ℙ(BlockedSlots×ℤ))(s1))≥curTime(0,(∅ ⦂ ℙ(BlockedSlots×ℤ))(s2),(∅ ⦂ ℙ(BlockedSlots×ℤ))(s2))⇒curTime(0,(∅ ⦂ ℙ(BlockedSlots×ℤ))(s1),(∅ ⦂ ℙ(BlockedSlots×ℤ))(s1))≥curTime(0,(∅ ⦂ ℙ(BlockedSlots×ℤ))(s2),(∅ ⦂ ℙ(BlockedSlots×ℤ))(s2))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+                <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="eh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="em" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="endH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="endM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="startH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="startM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀s1⦂BlockedSlots·s1∈blockedSlots∧¬s1=s∧curTime(0,startM(s1),startH(s1))≥curTime(0,sm,sh)⇒curTime(0,startM(s1),startH(s1))≥curTime(0,em,eh)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈blockedSlots∪{s}∧s2∈blockedSlots∪{s}∧s1≠s2∧curTime(0,(startM{s ↦ sm})(s1),(startH{s ↦ sh})(s1))≥curTime(0,(endM{s ↦ em})(s2),(endH{s ↦ eh})(s2))⇒curTime(0,(startM{s ↦ sm})(s1),(startH{s ↦ sh})(s1))≥curTime(0,(endM{s ↦ em})(s2),(endH{s ↦ eh})(s2))"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧¬l1=l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+            <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧l1≠l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+            <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀s1⦂BlockedSlots·s1∈blockedSlots∧s1≠s∧curTime(0,startM(s1),startH(s1))≥curTime(0,sm,sh)⇒curTime(0,startM(s1),startH(s1))≥curTime(0,em,eh)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈blockedSlots∧s2∈blockedSlots∧s1≠s2∧curTime(0,startM(s1),startH(s1))≥curTime(0,endM(s2),endH(s2))⇒curTime(0,startM(s1),startH(s1))≥curTime(0,endM(s2),endH(s2))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="s1" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p17,p22,p14">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p25">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p28">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p26"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p27"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p29"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p30"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees s1)" org.eventb.core.prGoal="p28" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p31">
+                                        <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p34" org.eventb.core.prHyps="p32,p33">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p34" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p35">
+                                                        <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p35" org.eventb.core.prHyps="p5,p6,p8,p16,p23,p9,p19,p13,p10,p3,p24,p20,p1,p4,p21,p11,p15,p7,p12,p22,p17,p2,p14,p26,p32,p33">
+                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p36">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p36" org.eventb.core.prHyps="p19">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p32">
+                                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p32"/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p37">
+                                                        <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p37" org.eventb.core.prHyps="p19"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p38">
+                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p38" org.eventb.core.prHyps="p13">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p32">
+                                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p32"/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prAnte name="+" org.eventb.core.prGoal="p39">
+                                                        <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p39" org.eventb.core.prHyps="p13"/>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedBlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="eh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="em" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="endH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="endM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="startH" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prIdent name="startM" org.eventb.core.type="ℙ(BlockedSlots×ℤ)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="s∈BlockedSlots ∖ blockedSlots"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="em∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="sm∈Minutes"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧¬l1=l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="eh∈Hours"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀s1⦂BlockedSlots·(s1∈blockedSlots∧s1≠s⇒startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧sm∈0 ‥ 59∧sh∈0 ‥ 23)∧(s1∈blockedSlots∧s1≠s∧curTime(0,startM(s1),startH(s1))≥curTime(0,sm,sh)⇒em∈0 ‥ 59∧eh∈0 ‥ 23)"/>
+        <org.eventb.core.prPred name="p36" org.eventb.core.predicate="s1∈dom(startM)">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧l1≠l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p35" org.eventb.core.predicate="startH(s1)∈0 ‥ 23">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="∀s1⦂BlockedSlots·(s1∈blockedSlots∧s1≠s⇒startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ∧⊤∧⊤)∧(s1∈blockedSlots∧s1≠s∧curTime(0,startM(s1),startH(s1))≥curTime(0,sm,sh)⇒⊤∧⊤)"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="∀s1⦂BlockedSlots,s2⦂BlockedSlots·s1∈blockedSlots∧s2∈blockedSlots∧s1≠s2∧curTime(0,startM(s1),startH(s1))≥curTime(0,endM(s2),endH(s2))⇒curTime(0,startM(s1),startH(s1))≥curTime(0,endM(s2),endH(s2))"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="sh∈Hours"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="sm∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p37" org.eventb.core.predicate="startM∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p33" org.eventb.core.predicate="¬s1=s">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="endH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="curTime(0,sm,sh)&lt;curTime(0,em,eh)"/>
+        <org.eventb.core.prPred name="p38" org.eventb.core.predicate="s1∈dom(startH)">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="endM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="em∈Minutes"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="0∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p39" org.eventb.core.predicate="startH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p34" org.eventb.core.predicate="startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="∀s1⦂BlockedSlots·s1∈blockedSlots∧¬s1=s⇒startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="s1∈blockedSlots∧¬s1=s⇒startH(s1)∈0 ‥ 23∧s1∈dom(startM)∧startM∈BlockedSlots ⇸ ℤ∧s1∈dom(startH)∧startH∈BlockedSlots ⇸ ℤ">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p32" org.eventb.core.predicate="s1∈blockedSlots">
+            <org.eventb.core.prIdent name="s1" org.eventb.core.type="BlockedSlots"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="startH∈blockedSlots → Hours"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="eh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="sh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="startM∈blockedSlots → Minutes"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="∀bs⦂BlockedSlots·bs∈blockedSlots⇒curTime(0,startM(bs),startH(bs))&lt;curTime(0,endM(bs),endH(bs))"/>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="blockedSlots"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addLabel/arrivalM/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p0" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p1,p2,p3"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p4"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="h∈Hours">
+            <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="h" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="l∈Labels ∖ labels∧h∈Hours∧m∈Minutes">
+            <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="h" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="m" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="labels⊆Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="blockedSlots⊆BlockedSlots">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="m∈Minutes">
+            <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="m" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="l∈Labels ∖ labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addLabel/arrivalH/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p0" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p1,p2,p3"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p4"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="h∈Hours">
+            <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="h" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="l∈Labels ∖ labels∧h∈Hours∧m∈Minutes">
+            <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="h" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="m" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="labels⊆Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="blockedSlots⊆BlockedSlots">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="m∈Minutes">
+            <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="m" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="l∈Labels ∖ labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addLabel/labels/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Labels">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3,p4"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="h∈Hours">
+            <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="h" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="l∈Labels ∖ labels∧h∈Hours∧m∈Minutes">
+            <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="h" org.eventb.core.type="ℤ"/>
+            <org.eventb.core.prIdent name="m" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="blockedSlots⊆BlockedSlots">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="labels∪{l}=labels"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="m∈Minutes">
+            <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+            <org.eventb.core.prIdent name="m" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="l∈labels"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="l∈Labels ∖ labels"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="removeLabel/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Labels">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p1"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p3"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4"/>
+                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p5"/>
+                    <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p6"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="h" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="m" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="h∈Hours"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="l∈Labels ∖ labels∧h∈Hours∧m∈Minutes"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="blockedSlots⊆BlockedSlots">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="l∈Labels"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="m∈Minutes"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="l∈Labels ∖ labels"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="removeLabel/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="labels⊆Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="blockedSlots⊆BlockedSlots">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="l∈Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="removeLabel/act2/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="labels⊆Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="blockedSlots⊆BlockedSlots">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="l∈Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="removeLabel/act3/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="labels⊆Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="blockedSlots⊆BlockedSlots">
+            <org.eventb.core.prIdent name="BlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+            <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="l∈Labels">
+            <org.eventb.core.prIdent name="Labels" org.eventb.core.type="ℙ(Labels)"/>
+            <org.eventb.core.prIdent name="l" org.eventb.core.type="Labels"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(BlockedSlots))⊆(∅ ⦂ ℙ(BlockedSlots))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addBlockingSlot/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19" org.eventb.core.prSets="BlockedSlots,Labels">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p20"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p21"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p22"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p5,p7,p13,p17,p8,p16,p1,p3,p18,p9,p12,p6,p10,p19,p14,p2,p11,p20">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Hours" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Minutes" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="Seconds" org.eventb.core.type="ℙ(ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalH" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="arrivalM" org.eventb.core.type="ℙ(Labels×ℤ)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedBlockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="displayedLabels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="eh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="em" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="labels" org.eventb.core.type="ℙ(Labels)"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="BlockedSlots"/>
+        <org.eventb.core.prIdent name="sh" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="sm" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="s∈BlockedSlots ∖ blockedSlots"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="labels⊆Labels"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="em∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots∪{s}"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="blockedSlots⊆BlockedSlots"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="sm∈Minutes"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Seconds=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="Minutes=0 ‥ 59"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="curTime(0,sm,sh)&lt;curTime(0,em,eh)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧¬l1=l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="Hours=0 ‥ 23"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="displayedLabels⊆labels"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="em∈Minutes"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="0∈0 ‥ 59"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="eh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="eh∈Hours"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="arrivalM∈labels → Minutes"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="sh∈0 ‥ 23"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="∀l1⦂Labels,l2⦂Labels·l1∈labels∧l2∈labels∧l1≠l2⇒curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))≥3∨curTime(0,arrivalM(l1),arrivalH(l1)) − curTime(0,arrivalM(l2),arrivalH(l2))&lt;−3"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="displayedBlockedSlots⊆blockedSlots"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="arrivalH∈labels → Hours"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="sh∈Hours"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="sm∈0 ‥ 59"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="display/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="curTime" org.eventb.core.label="curTime" org.eventb.core.predicate="curS∈0 ‥ 59∧curM∈0 ‥ 59∧curH∈0 ‥ 23" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scOperatorArgument name="curS" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curM" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scOperatorArgument name="curH" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.operatorArgument#*" org.eventb.core.type="ℤ"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ABZ2023/Time.tuf|org.eventb.theory.core.theoryRoot#Time|org.eventb.theory.core.newOperatorDefinition#'|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="curS+curM∗60+curH∗3600"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
+        <org.eventb.core.prIdent name="blkslots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="blkslots⊆blockedSlots"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="display/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="BlockedSlots">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
+        <org.eventb.core.prIdent name="blkslots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prIdent name="blockedSlots" org.eventb.core.type="ℙ(BlockedSlots)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="blkslots⊆blockedSlots"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>

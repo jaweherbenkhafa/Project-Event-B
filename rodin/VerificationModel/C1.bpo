@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="STATUS" org.eventb.core.type="ℙ(STATUS)"/>
+        <org.eventb.core.poIdentifier name="RUNWAY" org.eventb.core.type="ℙ(RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="RW_STATUES" org.eventb.core.type="ℙ(RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="AIRCRAFTS" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="RWL_STATUES" org.eventb.core.type="ℙ(RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="Blocked" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Available" org.eventb.core.type="RW_STATUES"/>
+        <org.eventb.core.poIdentifier name="OFF" org.eventb.core.type="RWL_STATUES"/>
+        <org.eventb.core.poIdentifier name="ON" org.eventb.core.type="RWL_STATUES"/>
+        <org.eventb.core.poIdentifier name="Landing" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Takingoff" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Unavailable" org.eventb.core.type="RW_STATUES"/>
+        <org.eventb.core.poIdentifier name="ExecutedL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ScheduledL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ExecutedT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ReadyL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ReadyT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="TerminatedL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="TerminatedT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poPredicate name="Unavailablf" org.eventb.core.predicate="finite(AIRCRAFTS)" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#E"/>
+        <org.eventb.core.poPredicate name="Unavailablg" org.eventb.core.predicate="finite(RUNWAY)∧card(RUNWAY)≥1" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#m"/>
+        <org.eventb.core.poPredicate name="Unavailablh" org.eventb.core.predicate="partition(STATUS,{Blocked},{ScheduledL},{ReadyL},{ExecutedL},{Landing},{TerminatedL},{ReadyT},{ExecutedT},{Takingoff},{TerminatedT})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#D"/>
+        <org.eventb.core.poPredicate name="Unavailabli" org.eventb.core.predicate="partition(RW_STATUES,{Available},{Unavailable})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#Q"/>
+        <org.eventb.core.poPredicate name="Unavailablj" org.eventb.core.predicate="partition(RWL_STATUES,{ON},{OFF})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#R"/>
+        <org.eventb.core.poPredicate name="Unavailablk" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ1⇒x=x mod y+x ÷ y∗y" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#Z"/>
+        <org.eventb.core.poPredicate name="Unavailabll" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ·a∈ℕ∧b∈ℕ∧a≤b⇒a ÷ 60≤b ÷ 60" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#["/>
+        <org.eventb.core.poPredicate name="Unavailablm" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ,c⦂ℤ·a∈ℕ∧b∈ℕ∧c∈ℕ∧a≤b⇒a+c≤b+c" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#\\"/>
+        <org.eventb.core.poPredicate name="Unavailabln" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ,c⦂ℤ·a∈ℕ∧b∈ℕ∧c∈ℕ1∧a≤b⇒c∗a≤c∗b" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#^"/>
+        <org.eventb.core.poIdentifier name="WAYPOINT" org.eventb.core.type="ℙ(WAYPOINT)"/>
+        <org.eventb.core.poIdentifier name="WTC" org.eventb.core.type="ℙ(WTC)"/>
+        <org.eventb.core.poIdentifier name="PM" org.eventb.core.type="ℙ(PM)"/>
+        <org.eventb.core.poIdentifier name="SLEGS" org.eventb.core.type="ℙ(SLEGS)"/>
+        <org.eventb.core.poIdentifier name="ENTRYTMA" org.eventb.core.type="ℙ(ENTRYTMA)"/>
+        <org.eventb.core.poIdentifier name="PMS" org.eventb.core.type="ℙ(PMS)"/>
+        <org.eventb.core.poIdentifier name="legSpeed" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="Light" org.eventb.core.type="WTC"/>
+        <org.eventb.core.poIdentifier name="pmpos" org.eventb.core.type="ℙ(PM×(ℤ×ℤ×ℤ))"/>
+        <org.eventb.core.poIdentifier name="legFL" org.eventb.core.type="ℙ(SLEGS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="legSeq" org.eventb.core.type="ℙ(SLEGS×ℙ(ℤ×WAYPOINT))"/>
+        <org.eventb.core.poIdentifier name="wpDistMerge" org.eventb.core.type="ℙ(WAYPOINT×ℤ)"/>
+        <org.eventb.core.poIdentifier name="Medium" org.eventb.core.type="WTC"/>
+        <org.eventb.core.poIdentifier name="TMAToLeg" org.eventb.core.type="ℙ(ENTRYTMA×SLEGS)"/>
+        <org.eventb.core.poIdentifier name="MergeBuffer" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="VSep" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="SpeedbeforeLeg" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="Heavy" org.eventb.core.type="WTC"/>
+        <org.eventb.core.poIdentifier name="leglength" org.eventb.core.type="ℙ(SLEGS×ℤ)"/>
+        <org.eventb.core.poIdentifier name="entryToWaypoint" org.eventb.core.type="ℙ(ENTRYTMA×WAYPOINT)"/>
+        <org.eventb.core.poIdentifier name="Separation_dist" org.eventb.core.type="ℙ(WTC×WTC×ℤ)"/>
+        <org.eventb.core.poIdentifier name="segDist" org.eventb.core.type="ℙ(WAYPOINT×WAYPOINT×ℤ)"/>
+        <org.eventb.core.poIdentifier name="wppos" org.eventb.core.type="ℙ(WAYPOINT×(ℤ×ℤ×ℤ))"/>
+        <org.eventb.core.poIdentifier name="routeDist" org.eventb.core.type="ℙ(ENTRYTMA×ℤ)"/>
+        <org.eventb.core.poIdentifier name="PmsMerge" org.eventb.core.type="ℙ(PMS×PM)"/>
+        <org.eventb.core.poIdentifier name="legPMS" org.eventb.core.type="ℙ(SLEGS×PMS)"/>
+        <org.eventb.core.poIdentifier name="Separation_time" org.eventb.core.type="ℙ(WTC×WTC×ℤ)"/>
+        <org.eventb.core.poIdentifier name="MinLat" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="axm3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC2"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂WTC,y⦂WTC,z⦂WTC·x∈WTC∧y∈WTC∧z∈WTC⇒x ↦ z∈dom(Separation_time)∧Separation_time∈WTC × WTC ⇸ ℤ∧x ↦ y∈dom(Separation_time)∧y ↦ z∈dom(Separation_time)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*z"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*z"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC4"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(SLEGS)∧legPMS∈SLEGS → PMS⇒(∀p⦂PMS·p∈PMS⇒finite(legPMS∼[{p}]))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(j"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(j"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC6"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀l⦂SLEGS·l∈SLEGS⇒l∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)∧l∈dom(leglength)∧leglength∈SLEGS ⇸ ℤ" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(q"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(q"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC7"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS·l1∈SLEGS∧l2∈SLEGS∧l1≠l2⇒l1∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)∧l2∈dom(legSeq)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*S"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*S"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm10/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC9"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="wpDistMerge∈WAYPOINT → ℕ1⇒(∀l⦂SLEGS,w⦂WAYPOINT,x⦂ℤ,y⦂ℤ,z⦂ℤ,mx⦂ℤ,my⦂ℤ,mz⦂ℤ,dx⦂ℤ,dy⦂ℤ·(l∈SLEGS∧w∈WAYPOINT⇒l∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)∧(w∈ran(legSeq(l))∧w ↦ (x ↦ y ↦ z)∈wppos⇒l∈dom(legPMS)∧legPMS∈SLEGS ⇸ PMS∧legPMS(l)∈dom(PmsMerge)∧PmsMerge∈PMS ⇸ PM))∧(l∈SLEGS∧w∈WAYPOINT∧w∈ran(legSeq(l))∧w ↦ (x ↦ y ↦ z)∈wppos∧PmsMerge(legPMS(l)) ↦ (mx ↦ my ↦ mz)∈pmpos∧dx=x − mx∧dy=y − my⇒w∈dom(wpDistMerge)∧wpDistMerge∈WAYPOINT ⇸ ℤ))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*?"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm11/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC:"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="legFL∈SLEGS → ℕ1⇒(∀l⦂SLEGS,w⦂WAYPOINT,p⦂ℤ×ℤ,z⦂ℤ·(l∈SLEGS⇒l∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT))∧(l∈SLEGS∧w∈ran(legSeq(l))∧w ↦ (p ↦ z)∈wppos⇒l∈dom(legFL)∧legFL∈SLEGS ⇸ ℤ))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)4"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC:"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm12/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC;"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="VSep∈ℕ1⇒(∀l1⦂SLEGS,l2⦂SLEGS,w1⦂WAYPOINT·l1∈SLEGS∧l2∈SLEGS∧l1≠l2⇒l1∈dom(legPMS)∧legPMS∈SLEGS ⇸ PMS∧l2∈dom(legPMS)∧(legPMS(l1)=legPMS(l2)⇒l1∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)∧(w1∈ran(legSeq(l1))⇒l2∈dom(legSeq))))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)Z"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)Z"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC;"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm13/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC="/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS,w1⦂WAYPOINT,w2⦂WAYPOINT·(l1∈SLEGS∧l2∈SLEGS∧l1≠l2⇒l1∈dom(legPMS)∧legPMS∈SLEGS ⇸ PMS∧l2∈dom(legPMS)∧(legPMS(l1)=legPMS(l2)∧w1∈WAYPOINT∧w2∈WAYPOINT⇒l1∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)∧(w1∈ran(legSeq(l1))⇒l2∈dom(legSeq)∧(w2∈ran(legSeq(l2))⇒w1∈dom(wpDistMerge)∧wpDistMerge∈WAYPOINT ⇸ ℤ∧w2∈dom(wpDistMerge)))))∧(l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)∧w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))∧wpDistMerge(w1)&lt;wpDistMerge(w2)⇒l1∈dom(legFL)∧legFL∈SLEGS ⇸ ℤ∧l2∈dom(legFL))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#){"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#){"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC="/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm15/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC?"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀e⦂ENTRYTMA·e∈ENTRYTMA⇒e∈dom(entryToWaypoint)∧entryToWaypoint∈ENTRYTMA ⇸ WAYPOINT∧e∈dom(TMAToLeg)∧TMAToLeg∈ENTRYTMA ⇸ SLEGS∧TMAToLeg(e)∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)~"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)~"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC?"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm17/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀l⦂SLEGS,i⦂ℤ·(l∈SLEGS⇒l∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT))∧(l∈SLEGS∧i∈dom(legSeq(l))∧i+1∈dom(legSeq(l))⇒legSeq(l)∈ℤ ⇸ WAYPOINT)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCB"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm20/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCE"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂WTC,y⦂WTC·x∈WTC∧y∈WTC⇒x ↦ y∈dom(Separation_time)∧Separation_time∈WTC × WTC ⇸ ℤ∧x ↦ y∈dom(Separation_dist)∧Separation_dist∈WTC × WTC ⇸ ℤ" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*4"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCE"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm22/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCG"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="MinLat∈ℕ1⇒(∀l1⦂SLEGS,l2⦂SLEGS·(l1∈SLEGS∧l2∈SLEGS∧l1≠l2⇒l1∈dom(legPMS)∧legPMS∈SLEGS ⇸ PMS∧l2∈dom(legPMS))∧(l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)⇒(∀w1⦂WAYPOINT,w2⦂WAYPOINT·(w1∈WAYPOINT∧w2∈WAYPOINT⇒l1∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)∧(w1∈ran(legSeq(l1))⇒l2∈dom(legSeq)))∧(w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))⇒w2∈dom(wpDistMerge)∧wpDistMerge∈WAYPOINT ⇸ ℤ∧w1∈dom(wpDistMerge)))∧((∀w1⦂WAYPOINT,w2⦂WAYPOINT·w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))⇒wpDistMerge(w2)≥wpDistMerge(w1)+MinLat)∨(∀w1⦂WAYPOINT,w2⦂WAYPOINT·(w1∈WAYPOINT∧w2∈WAYPOINT⇒l1∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)∧(w1∈ran(legSeq(l1))⇒l2∈dom(legSeq)∧legSeq∈SLEGS ⇸ ℙ(ℤ × WAYPOINT)))∧(w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))⇒w1∈dom(wpDistMerge)∧wpDistMerge∈WAYPOINT ⇸ ℤ∧w2∈dom(wpDistMerge)∧wpDistMerge∈WAYPOINT ⇸ ℤ)))))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*U"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*U"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCG"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm25/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCI"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS·(l1∈SLEGS∧l2∈SLEGS∧l1≠l2⇒l1∈dom(legPMS)∧legPMS∈SLEGS ⇸ PMS∧l2∈dom(legPMS))∧(l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)⇒l1∈dom(legFL)∧legFL∈SLEGS ⇸ ℤ∧l2∈dom(legFL)∧(legFL(l1)≥legFL(l2)+VSep∨(l2∈dom(legFL)∧legFL∈SLEGS ⇸ ℤ∧l1∈dom(legFL)∧legFL∈SLEGS ⇸ ℤ)))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*7"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCI"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="HYPC2" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(WTC,{Light},{Medium},{Heavy})" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#'k"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Separation_time∈WTC × WTC → ℕ" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#?"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC4" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC2" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀x⦂WTC,y⦂WTC,z⦂WTC·x∈WTC∧y∈WTC∧z∈WTC⇒Separation_time(x ↦ z)≤Separation_time(x ↦ y)+Separation_time(y ↦ z)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*z"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="finite(PMS)∧finite(PM)∧PmsMerge∈PMS ⤖ PM" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(i"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC6" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC4" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="finite(SLEGS)∧legPMS∈SLEGS → PMS∧(∀p⦂PMS·p∈PMS⇒card(legPMS∼[{p}])=2)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(j"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="leglength∈SLEGS → ℕ1∧legSeq∈SLEGS → (ℕ1 ⇸ WAYPOINT)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(r"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC7" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC6" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀l⦂SLEGS·l∈SLEGS⇒legSeq(l)∈1 ‥ leglength(l) ↣ WAYPOINT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(q"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC9" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC7" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS·l1∈SLEGS∧l2∈SLEGS∧l1≠l2⇒ran(legSeq(l1))∩ran(legSeq(l2))=(∅ ⦂ ℙ(WAYPOINT))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*S"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="wppos∈WAYPOINT → ℤ × ℤ × ℕ1∧pmpos∈PM → ℤ × ℤ × ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#(u"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC:" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC9" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="wpDistMerge∈WAYPOINT → ℕ1∧(∀l⦂SLEGS,w⦂WAYPOINT,x⦂ℤ,y⦂ℤ,z⦂ℤ,mx⦂ℤ,my⦂ℤ,mz⦂ℤ,dx⦂ℤ,dy⦂ℤ·l∈SLEGS∧w∈WAYPOINT∧w∈ran(legSeq(l))∧w ↦ (x ↦ y ↦ z)∈wppos∧PmsMerge(legPMS(l)) ↦ (mx ↦ my ↦ mz)∈pmpos∧dx=x − mx∧dy=y − my⇒wpDistMerge(w)∗wpDistMerge(w)≤dx∗dx+dy∗dy∧dx∗dx+dy∗dy&lt;(wpDistMerge(w)+1)∗(wpDistMerge(w)+1))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*?"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC;" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC:" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="legFL∈SLEGS → ℕ1∧(∀l⦂SLEGS,w⦂WAYPOINT,p⦂ℤ×ℤ,z⦂ℤ·l∈SLEGS∧w∈ran(legSeq(l))∧w ↦ (p ↦ z)∈wppos⇒z=legFL(l))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)4"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC=" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC;" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="VSep∈ℕ1∧(∀l1⦂SLEGS,l2⦂SLEGS,w1⦂WAYPOINT,w2⦂WAYPOINT,p1⦂ℤ×ℤ,z1⦂ℤ,p2⦂ℤ×ℤ,z2⦂ℤ·l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))∧w1 ↦ (p1 ↦ z1)∈wppos∧w2 ↦ (p2 ↦ z2)∈wppos⇒z1≥z2+VSep∨z2≥z1+VSep)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)Z"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC?" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC=" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS,w1⦂WAYPOINT,w2⦂WAYPOINT·l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)∧w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))∧wpDistMerge(w1)&lt;wpDistMerge(w2)⇒legFL(l1)&gt;legFL(l2)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#){"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="TMAToLeg∈ENTRYTMA → SLEGS∧entryToWaypoint∈ENTRYTMA → WAYPOINT" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)}"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPCB" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPC?" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="∀e⦂ENTRYTMA·e∈ENTRYTMA⇒1 ↦ entryToWaypoint(e)∈legSeq(TMAToLeg(e))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#)~"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="routeDist∈ENTRYTMA → ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*'"/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="segDist∈WAYPOINT × WAYPOINT ⇸ ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPCE" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCB" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="∀l⦂SLEGS,i⦂ℤ·l∈SLEGS∧i∈dom(legSeq(l))∧i+1∈dom(legSeq(l))⇒legSeq(l)(i) ↦ legSeq(l)(i+1)∈dom(segDist)" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*)"/>
+        <org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="legSpeed∈ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#**"/>
+        <org.eventb.core.poPredicate name="PRD19" org.eventb.core.predicate="Separation_dist∈WTC × WTC → ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPCG" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCE" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD20" org.eventb.core.predicate="∀x⦂WTC,y⦂WTC·x∈WTC∧y∈WTC⇒Separation_time(x ↦ y)∗legSpeed≥Separation_dist(x ↦ y)∗360" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*4"/>
+        <org.eventb.core.poPredicate name="PRD21" org.eventb.core.predicate="MergeBuffer∈ℕ" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*V"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPCI" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCG" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD22" org.eventb.core.predicate="MinLat∈ℕ1∧(∀l1⦂SLEGS,l2⦂SLEGS·l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)⇒(∀w1⦂WAYPOINT,w2⦂WAYPOINT·w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))⇒wpDistMerge(w2)≥wpDistMerge(w1)+MinLat)∨(∀w1⦂WAYPOINT,w2⦂WAYPOINT·w1∈WAYPOINT∧w2∈WAYPOINT∧w1∈ran(legSeq(l1))∧w2∈ran(legSeq(l2))⇒wpDistMerge(w1)≥wpDistMerge(w2)+MinLat))" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*U"/>
+        <org.eventb.core.poPredicate name="PRD23" org.eventb.core.predicate="SpeedbeforeLeg∈ℕ1" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*T"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SafePM4/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#HYPCI" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD24" org.eventb.core.predicate="∀l1⦂SLEGS,l2⦂SLEGS·l1∈SLEGS∧l2∈SLEGS∧l1≠l2∧legPMS(l1)=legPMS(l2)⇒legFL(l1)≥legFL(l2)+VSep∨legFL(l2)≥legFL(l1)+VSep" org.eventb.core.source="/SafePM4/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#*7"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

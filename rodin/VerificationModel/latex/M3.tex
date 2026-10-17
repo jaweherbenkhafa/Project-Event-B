@@ -1,0 +1,437 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{M3}
+\MACHINE{M3}{M2}{C1}{}
+\VARIABLES{
+	\Variable{aircrafts\_in\_TMA}{}
+	\Variable{statusof}{}
+	\Variable{curr\_RW\_status}{}
+	\Variable{curr\_RWL\_status}{}
+	\Variable{aircrafts\_ReadyL}{}
+	\Variable{clearanceL}{}
+	\Variable{deadline}{}
+	\Variable{current\_time}{}
+	\Variable{brandof}{}
+	\Variable{Pre\_AC\_RWY}{}
+	\Variable{free\_RWY\_time}{}
+	\Variable{ArrivalM}{}
+	\Variable{ArrivalH}{}
+	\Variable{ArrivalS}{}
+	\Variable{ETA\_H}{}
+	\Variable{ETA\_M}{}
+	\Variable{ETA\_S}{}
+	\Variable{landingQueue}{}
+	\Variable{aircrafts\_on\_ground}{}
+	\Variable{clearanceT}{}
+	\Variable{aircrafts\_ReadyT}{}
+	\Variable{TOBT\_of}{}
+	\Variable{TTOT\_H}{}
+	\Variable{TTOT\_M}{}
+	\Variable{TTOT\_S}{}
+	\Variable{takeoffQueue}{}
+	\Variable{Pre\_AC\_VOR}{}
+	\Variable{last\_VOR\_time}{}
+	\Variable{ThresholdS}{}
+	\Variable{ThresholdM}{}
+	\Variable{ThresholdH}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$TOBT\_of \in{}  aircrafts\_on\_ground \pfun{} \nat{}$}{}
+	\Invariant{inv2}{false}{$TTOT\_H \in{} aircrafts\_on\_ground \pfun{} Hours $}{}
+	\Invariant{inv3}{false}{$TTOT\_M \in{} aircrafts\_on\_ground \pfun{} Minute $}{}
+	\Invariant{inv4}{false}{$TTOT\_S \in{} aircrafts\_on\_ground \pfun{} Seconds $}{}
+	\Invariant{inv5}{false}{$takeoffQueue \in{} RUNWAY \tfun{} seq(AIRCRAFTS)$}{}
+	\Invariant{inv6}{false}{$\forall{} r \qdot{} r \in{} RUNWAY \limp{} ran(takeoffQueue(r)) \subseteq{} aircrafts\_on\_ground$}{}
+	\Invariant{inv7}{false}{$\\\forall{} r1,r2 \qdot{} r1\in{}RUNWAY \land{} r2\in{}RUNWAY \land{} r1\neq{}r2   \\~            \limp{} ran(takeoffQueue(r1)) \binter{} ran(takeoffQueue(r2)) = \emptyset{} $}{}
+	\Invariant{inv11}{false}{$\forall{} a \qdot{} a \in{} dom(TTOT\_S) \limp{} TTOT\_S(a) \leq{} 59$}{}
+	\Invariant{inv12}{false}{$\forall{} a \qdot{} a \in{} dom(TTOT\_M) \limp{} TTOT\_M(a) \leq{} 59$}{}
+	\Invariant{inv13}{false}{$\\\forall{} r,a,b \qdot{}\\~   r \in{} RUNWAY \land{} a \in{} dom(clearanceL) \land{} clearanceL(a) = r \land{} b \in{} ran(takeoffQueue(r))\\~   \land{} a \in{} dom(ThresholdS) \land{} a \in{} dom(ThresholdM) \land{} a \in{} dom(ThresholdH)\\~   \land{} b \in{} dom(TTOT\_S) \land{} b \in{} dom(TTOT\_M) \land{} b \in{} dom(TTOT\_H)\\~   \land{} a \in{} dom(brandof) \land{} b \in{} dom(brandof)\\~   \limp{}\\~   ( curTimeSec(ThresholdS(a),ThresholdM(a),ThresholdH(a))\\~       \geq{} curTimeSec(TTOT\_S(b),TTOT\_M(b),TTOT\_H(b)) + Separation\_time(brandof(b))*60\\~     \lor{}\\~     curTimeSec(TTOT\_S(b),TTOT\_M(b),TTOT\_H(b))\\~       \geq{} curTimeSec(ThresholdS(a),ThresholdM(a),ThresholdH(a)) + Separation\_time(brandof(a))*60\\~   )$}{}
+	\Invariant{inv14}{false}{$Pre\_AC\_VOR \in{} RUNWAY \pfun{} (aircrafts\_in\_TMA \bunion{} aircrafts\_on\_ground)$}{}
+	\Invariant{inv15}{false}{$last\_VOR\_time \in{} RUNWAY \tfun{} \nat{}$}{}
+	\Invariant{inv16}{false}{$ThresholdH \in{} aircrafts\_in\_TMA  \pfun{}  Hours$}{}
+	\Invariant{inv17}{false}{$ThresholdM \in{} aircrafts\_in\_TMA  \pfun{}  Minute$}{}
+	\Invariant{inv18}{false}{$ThresholdS \in{} aircrafts\_in\_TMA  \pfun{}  Seconds$}{}
+	\Invariant{inv19}{false}{$Pre\_AC\_RWY \in{} RUNWAY \pfun{}  (aircrafts\_in\_TMA \bunion{} aircrafts\_on\_ground)$}{}
+	\Invariant{inv20}{false}{$free\_RWY\_time \in{} RUNWAY \tfun{} \nat{}$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$aircrafts\_in\_TMA \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act2}{$statusof \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act3}{$curr\_RW\_status \bcmeq{} RUNWAY \cprod{} \{Available\}$}{true}{}
+		\Action{act4}{$curr\_RWL\_status \bcmeq{} RUNWAY \cprod{} \{OFF\}$}{true}{}
+		\Action{act5}{$aircrafts\_on\_ground\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act6}{$clearanceL\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act7}{$aircrafts\_ReadyL\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act8}{$clearanceT\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act9}{$aircrafts\_ReadyT\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act39}{$deadline\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act11}{$current\_time \bcmeq{} 0$}{true}{}
+		\Action{act16}{$brandof\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act20}{$ArrivalH\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act21}{$ArrivalM\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act22}{$ArrivalS\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act35}{$ETA\_H\bcmeq{}\emptyset{} $}{true}{}
+		\Action{act36}{$ETA\_S\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act37}{$ETA\_M\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act42}{$landingQueue \bcmeq{} RUNWAY \cprod{} \{emptySeq\}$}{true}{}
+		\Action{act43}{$ThresholdS\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act44}{$ThresholdM \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act45}{$ThresholdH \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act46}{$Pre\_AC\_VOR \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act47}{$ last\_VOR\_time \bcmeq{} RUNWAY \cprod{} \{0\}$}{true}{}
+		\Action{act48}{$TOBT\_of\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act49}{$TTOT\_H\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act50}{$TTOT\_M \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act51}{$TTOT\_S \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act52}{$takeoffQueue \bcmeq{} RUNWAY \cprod{} \{emptySeq\}$}{true}{}
+		\Action{act53}{$Pre\_AC\_RWY\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act54}{$free\_RWY\_time\bcmeq{} RUNWAY \cprod{} \{0\}$}{true}{}
+	}
+}
+\EVT{Entry\_in\_TMA}{false}{ordinary}{Entry\_in\_TMA}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{d}{true}{}
+		\Param{brand}{true}{}
+		\Param{speed}{true}{}
+		\Param{duration\_before\_land}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} AIRCRAFTS$}{true}{}
+		\Guard{grd2}{false}{$aircraft \notin{} aircrafts\_in\_TMA$}{true}{}
+		\Guard{grd3}{false}{$aircraft \notin{} dom(statusof)$}{true}{}
+		\Guard{grd4}{false}{$d \in{} \nat{} $}{true}{}
+		\Guard{grd5}{false}{$current\_time \in{} \nat{}   $}{true}{}
+		\Guard{grd6}{false}{$aircraft \notin{} dom(brandof)$}{true}{}
+		\Guard{grd7}{false}{$brand \in{} BRAND$}{true}{}
+		\Guard{grd8}{false}{$brand \notin{}ran(brandof)$}{true}{}
+		\Guard{grd9}{false}{$speed \in{} 170\upto{}250$}{true}{}
+		\Guard{grd10}{false}{$duration\_before\_land = (D\_E\_V * 3600) / speed $}{true}{}
+		\Guard{grd11}{false}{$duration\_before\_land + current\_time < d$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_TMA\bcmeq{} aircrafts\_in\_TMA \bunion{} \{aircraft\}$}{true}{}
+		\Action{act2}{$statusof(aircraft) \bcmeq{} Blocked$}{true}{}
+		\Action{act3}{$deadline\bcmeq{} deadline \bunion{} \{aircraft \mapsto{}d\}$}{true}{}
+		\Action{act7}{$brandof\bcmeq{} brandof \bunion{} \{aircraft \mapsto{}brand\}$}{true}{}
+		\Action{act9}{$ETA\_M\bcmeq{} ETA\_M \bunion{}  \{aircraft \mapsto{} ((current\_time+duration\_before\_land) mod 3600) / 60\}$}{true}{}
+		\Action{act10}{$ETA\_S\bcmeq{} ETA\_S \bunion{}  \{aircraft \mapsto{} ((current\_time+duration\_before\_land) mod 3600) mod 60\}$}{true}{}
+		\Action{act11}{$ETA\_H\bcmeq{} ETA\_H \bunion{}  \{aircraft \mapsto{} ((current\_time+duration\_before\_land) / 3600) \}$}{true}{}
+	}
+}
+\EVT{Landing\_Preparing}{true}{ordinary}{Landing\_Preparing}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+		\Param{runway}{false}{}
+		\Param{previous}{false}{}
+		\Param{usetime}{false}{}
+		\Param{pos}{false}{}
+		\Param{newArr}{false}{}
+		\Param{ln}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = Blocked$}{false}{}
+		\Guard{grd51}{false}{$\forall{} r \qdot{} r \in{} RUNWAY \limp{} aircraft \notin{} ran(landingQueue(r))$}{false}{}
+		\Guard{grd5}{false}{$aircraft \notin{} dom(clearanceL)$}{false}{}
+		\Guard{grd6}{false}{$aircraft \notin{} aircrafts\_ReadyL$}{false}{}
+		\Guard{grd52}{false}{$pos \in{} 1\upto{}(seqSize(landingQueue(runway))+1) $}{false}{}
+		\Guard{grd49}{false}{$ln \in{} \nat{} \land{} ln = seqSize(landingQueue(runway))$}{false}{}
+		\Guard{grd56}{false}{$landingQueue(runway) \in{} seq(AIRCRAFTS)$}{false}{}
+		\Guard{grd54}{false}{$ landingQueue(runway) \in{} 1\upto{}ln \tfun{} AIRCRAFTS$}{false}{}
+		\Guard{grd79}{false}{$newArr \in{} pos\upto{}ln \tfun{} \nat{}$}{false}{}
+		\Guard{grd78}{false}{$dom(newArr) = pos\upto{}ln$}{false}{}
+		\Guard{grd50}{false}{$\\pos \in{} 1\upto{}(ln+1)\\\land{}\\(\forall{} i \qdot{} i \in{} 1\upto{}(pos-1) \land{} i \in{} dom(landingQueue(runway)) \land{} landingQueue(runway)(i) \in{} dom(deadline)\\\limp{}\\~  deadline(landingQueue(runway)(i))\\~   \leq{}\\~   deadline(aircraft)\\)\\\land{}\\(\forall{} i \qdot{}\\~   i \in{} pos\upto{}ln\\~   \land{} i \in{} dom(landingQueue(runway))\\~   \land{} landingQueue(runway)(i) \in{} dom(deadline)\\~   \limp{}\\~      deadline(landingQueue(runway)(i))\\~   >\\~  deadline(aircraft)\\)$}{false}{}
+		\Guard{grd82}{false}{$usetime+previous \leq{} current\_time+deadline(aircraft)$}{false}{}
+		\Guard{grd80}{false}{$\\(\\~ pos = 1\\~ \land{}\\~ ( runway \notin{} dom(Pre\_AC\_VOR)\\~   \lor{}\\~   ( Pre\_AC\_VOR(runway) \in{} dom(brandof)\\~     \land{} aircraft \in{} dom(ETA\_S) \land{} aircraft \in{} dom(ETA\_M) \land{} aircraft \in{} dom(ETA\_H)\\~     \land{} ETA\_H(aircraft) \in{} \nat{} \land{} ETA\_M(aircraft) \in{} \nat{} \land{} ETA\_S(aircraft) \in{} \nat{}\\~     \land{} ETA\_M(aircraft) \leq{} 59 \land{} ETA\_S(aircraft) \leq{} 59\\~     \land{} curTimeSec(ETA\_S(aircraft),ETA\_M(aircraft),ETA\_H(aircraft)) - last\_VOR\_time(runway)\\~       > Separation\_time(brandof(Pre\_AC\_VOR(runway))) * 60\\~   )\\~ )\\)\\\limp{}\\previous = 0 \land{} usetime = curTimeSec(ETA\_S(aircraft),ETA\_M(aircraft),ETA\_H(aircraft))$}{false}{}
+		\Guard{grd81}{false}{$\\pos = 1\\\land{} runway \in{} dom(Pre\_AC\_VOR)\\\land{} Pre\_AC\_VOR(runway) \in{} dom(brandof)\\\land{} aircraft \in{} dom(ETA\_S) \land{} aircraft \in{} dom(ETA\_M) \land{} aircraft \in{} dom(ETA\_H)\\\land{} ETA\_H(aircraft) \in{} \nat{} \land{} ETA\_M(aircraft) \in{} \nat{} \land{} ETA\_S(aircraft) \in{} \nat{}\\\land{} ETA\_M(aircraft) \leq{} 59 \land{} ETA\_S(aircraft) \leq{} 59\\\land{} curTimeSec(ETA\_S(aircraft),ETA\_M(aircraft),ETA\_H(aircraft)) - last\_VOR\_time(runway)\\~   \leq{} Separation\_time(brandof(Pre\_AC\_VOR(runway))) * 60\\\limp{}\\previous = Separation\_time(brandof(Pre\_AC\_VOR(runway))) * 60\\\land{} usetime = last\_VOR\_time(runway)$}{false}{}
+		\Guard{grd38}{false}{$\\pos > 1  \land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalH)\\~   \land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalM)\\~   \land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalS) \land{} ArrivalS(landingQueue(runway)(pos-1))\leq{}59 \land{} ArrivalM(landingQueue(runway)(pos-1))\leq{}59 \land{} aircraft \in{} dom(ETA\_S) \land{} aircraft \in{} dom(ETA\_M) \land{} aircraft \in{} dom(ETA\_H)\land{} ETA\_H(aircraft)\geq{}0 \land{} ETA\_S(aircraft)\geq{}0 \land{} ETA\_M(aircraft)\geq{}0 \land{} ETA\_H(aircraft) \in{} \nat{} \land{} ETA\_M(aircraft) \in{} \nat{} \land{} ETA\_S(aircraft) \in{} \nat{}\land{} ArrivalM(landingQueue(runway)(pos-1)) \in{} \nat{}  \land{} ArrivalS(landingQueue(runway)(pos-1)) \in{} \nat{} \land{} ArrivalH(landingQueue(runway)(pos-1)) \in{} \nat{} \land{} ETA\_M(aircraft)\leq{}59 \land{} ETA\_S(aircraft)\leq{}59\\\\~\land{} curTimeSec(ArrivalS(landingQueue(runway)(pos-1)), ArrivalM(landingQueue(runway)(pos-1)), ArrivalH(landingQueue(runway)(pos-1)))\\~    < curTimeSec(ETA\_S(aircraft), ETA\_M(aircraft), ETA\_H(aircraft))\\~\land{} curTimeSec(ETA\_S(aircraft), ETA\_M(aircraft), ETA\_H(aircraft))\\~    - curTimeSec(ArrivalS(landingQueue(runway)(pos-1)), ArrivalM(landingQueue(runway)(pos-1)), ArrivalH(landingQueue(runway)(pos-1)))\\~  > Separation\_time(brandof(landingQueue(runway)(pos-1))) * 60\\\limp{} previous = 0 \land{} usetime = curTimeSec(ETA\_S(aircraft), ETA\_M(aircraft), ETA\_H(aircraft))$}{false}{}
+		\Guard{grd37}{false}{$\\pos > 1   \land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalH)\\~   \land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalM)\\~   \land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalS) \land{} ArrivalS(landingQueue(runway)(pos-1))\leq{}59 \land{} ArrivalM(landingQueue(runway)(pos-1))\leq{}59 \land{} aircraft \in{} dom(ETA\_S) \land{} aircraft \in{} dom(ETA\_M) \land{} aircraft \in{} dom(ETA\_H)\land{} ETA\_H(aircraft)\geq{}0 \land{} ETA\_S(aircraft)\geq{}0 \land{} ETA\_M(aircraft)\geq{}0 \land{} ETA\_H(aircraft) \in{} \nat{} \land{} ETA\_M(aircraft) \in{} \nat{} \land{} ETA\_S(aircraft) \in{} \nat{}\land{} ArrivalM(landingQueue(runway)(pos-1)) \in{} \nat{}  \land{} ArrivalS(landingQueue(runway)(pos-1)) \in{} \nat{} \land{} ArrivalH(landingQueue(runway)(pos-1)) \in{} \nat{} \land{} ETA\_M(aircraft)\leq{}59 \land{} ETA\_S(aircraft)\leq{}59\\\land{} curTimeSec(ArrivalS(landingQueue(runway)(pos-1)),ArrivalM(landingQueue(runway)(pos-1)),ArrivalH(landingQueue(runway)(pos-1))) \leq{} curTimeSec(ETA\_S(aircraft),ETA\_M(aircraft),ETA\_H(aircraft))   \\\land{} curTimeSec(ETA\_S(aircraft),ETA\_M(aircraft),ETA\_H(aircraft)) - curTimeSec(ArrivalS(landingQueue(runway)(pos-1)),ArrivalM(landingQueue(runway)(pos-1)),ArrivalH(landingQueue(runway)(pos-1))) \leq{} Separation\_time(brandof(landingQueue(runway)(pos-1))) * 60  \\\limp{} previous = Separation\_time(brandof(landingQueue(runway)(pos-1))) * 60   \\~ \land{} usetime = curTimeSec(ArrivalS(landingQueue(runway)(pos-1)),ArrivalM(landingQueue(runway)(pos-1)),ArrivalH(landingQueue(runway)(pos-1)))$}{false}{}
+		\Guard{grd83}{false}{$\\pos > 1\\\land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalH) \land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalM)\\\land{} landingQueue(runway)(pos-1) \in{} dom(ArrivalS)\\\land{} aircraft \in{} dom(ETA\_S) \land{} aircraft \in{} dom(ETA\_M) \land{} aircraft \in{} dom(ETA\_H)\\\land{} ArrivalS(landingQueue(runway)(pos-1)) \leq{} 59 \land{} ArrivalM(landingQueue(runway)(pos-1)) \leq{} 59\\\land{} ETA\_M(aircraft) \leq{} 59 \land{} ETA\_S(aircraft) \leq{} 59\\\land{} curTimeSec(ArrivalS(landingQueue(runway)(pos-1)),ArrivalM(landingQueue(runway)(pos-1)),ArrivalH(landingQueue(runway)(pos-1)))\\~   > curTimeSec(ETA\_S(aircraft),ETA\_M(aircraft),ETA\_H(aircraft))\\\limp{}\\~  previous = Separation\_time(brandof(landingQueue(runway)(pos-1))) * 60\\~  \land{} usetime = curTimeSec(ArrivalS(landingQueue(runway)(pos-1)),ArrivalM(landingQueue(runway)(pos-1)),ArrivalH(landingQueue(runway)(pos-1)))$}{false}{}
+		\Guard{grd43}{false}{$\\pos \leq{} ln \land{} pos\in{}dom(newArr) \land{} aircraft \in{} dom(brandof)\land{} landingQueue(runway)(pos) \in{} dom(ArrivalH)\\~   \land{} landingQueue(runway)(pos) \in{} dom(ArrivalM)\\~   \land{} landingQueue(runway)(pos) \in{} dom(ArrivalS) \land{} ArrivalS(landingQueue(runway)(pos))\leq{}59 \land{} ArrivalM(landingQueue(runway)(pos))\leq{}59 \land{} aircraft \in{} dom(ETA\_S) \land{} aircraft \in{} dom(ETA\_M) \land{} aircraft \in{} dom(ETA\_H)\land{} ETA\_H(aircraft)\geq{}0 \land{} ETA\_S(aircraft)\geq{}0 \land{} ETA\_M(aircraft)\geq{}0 \land{} ETA\_H(aircraft) \in{} \nat{} \land{} ETA\_M(aircraft) \in{} \nat{} \land{} ETA\_S(aircraft) \in{} \nat{}\land{} ArrivalM(landingQueue(runway)(pos)) \in{} \nat{}  \land{} ArrivalS(landingQueue(runway)(pos)) \in{} \nat{} \land{} ArrivalH(landingQueue(runway)(pos)) \in{} \nat{} \land{} ETA\_M(aircraft)\leq{}59 \land{} ETA\_S(aircraft)\leq{}59\\~   \land{} usetime+previous+(Separation\_time(brandof(aircraft))*60) \geq{} curTimeSec(ArrivalS(landingQueue(runway)(pos)),ArrivalM(landingQueue(runway)(pos)),ArrivalH(landingQueue(runway)(pos)))\\~   \limp{} newArr(pos) = usetime+previous+(Separation\_time(brandof(aircraft))*60)$}{false}{}
+		\Guard{grd46}{false}{$\\pos \leq{} ln \land{} pos\in{}dom(newArr) \land{} landingQueue(runway)(pos) \in{} dom(ArrivalH)\\~   \land{} landingQueue(runway)(pos) \in{} dom(ArrivalM)\\~   \land{} landingQueue(runway)(pos) \in{} dom(ArrivalS) \land{} ArrivalS(landingQueue(runway)(pos))\leq{}59 \land{} ArrivalM(landingQueue(runway)(pos))\leq{}59 \land{} aircraft \in{} dom(ETA\_S) \land{} aircraft \in{} dom(ETA\_M) \land{} aircraft \in{} dom(ETA\_H)\land{} ETA\_H(aircraft)\geq{}0 \land{} ETA\_S(aircraft)\geq{}0 \land{} ETA\_M(aircraft)\geq{}0 \land{} ETA\_H(aircraft) \in{} \nat{} \land{} ETA\_M(aircraft) \in{} \nat{} \land{} ETA\_S(aircraft) \in{} \nat{}\land{} ArrivalM(landingQueue(runway)(pos)) \in{} \nat{}  \land{} ArrivalS(landingQueue(runway)(pos)) \in{} \nat{} \land{} ArrivalH(landingQueue(runway)(pos)) \in{} \nat{} \land{} ETA\_M(aircraft)\leq{}59 \land{} ETA\_S(aircraft)\leq{}59\\~   \land{} usetime+previous+(Separation\_time(brandof(aircraft))*60) < curTimeSec(ArrivalS(landingQueue(runway)(pos)),ArrivalM(landingQueue(runway)(pos)),ArrivalH(landingQueue(runway)(pos)))\\~   \limp{} newArr(pos) = curTimeSec(ArrivalS(landingQueue(runway)(pos)),ArrivalM(landingQueue(runway)(pos)),ArrivalH(landingQueue(runway)(pos)))$}{false}{}
+		\Guard{grd48}{false}{$\\\forall{} i \qdot{} i \in{}dom(newArr) \land{} i > pos \land{} i\in{}dom(landingQueue(runway))\land{}(i-1) \in{}dom(newArr)\land{} i - 1\in{}dom(landingQueue(runway))\\~\land{} landingQueue(runway)(i) \in{} dom(ArrivalH)\\~   \land{} landingQueue(runway)(i) \in{} dom(ArrivalM)\\~   \land{} landingQueue(runway)(i) \in{} dom(ArrivalS) \land{} ArrivalS(landingQueue(runway)(i))\leq{}59 \land{} ArrivalM(landingQueue(runway)(i))\leq{}59 \land{} ArrivalS(landingQueue(runway)(i)) \in{} \nat{} \land{} ArrivalH(landingQueue(runway)(i)) \in{} \nat{} \land{} ArrivalM(landingQueue(runway)(i)) \in{} \nat{}\land{} landingQueue(runway)(i - 1)\in{}dom(brandof)\\~   \land{} newArr(i-1)+(Separation\_time(brandof(landingQueue(runway)(i-1)))*60) \geq{} curTimeSec(ArrivalS(landingQueue(runway)(i)),ArrivalM(landingQueue(runway)(i)),ArrivalH(landingQueue(runway)(i)))\\~   \limp{} newArr(i) = newArr(i-1)+(Separation\_time(brandof(landingQueue(runway)(i-1)))*60)$}{false}{}
+		\Guard{grd47}{false}{$\\\forall{} i \qdot{} i \in{} dom(landingQueue(runway)) \land{} i\in{}dom(newArr)\land{}  i > pos\land{} (i - 1)\in{}dom(newArr) \land{}i - 1\in{}dom(landingQueue(runway))\\\land{} i\in{}dom(landingQueue(runway))\land{} landingQueue(runway)(i) \in{} dom(ArrivalH)\\~   \land{} landingQueue(runway)(i) \in{} dom(ArrivalM)\\~   \land{} landingQueue(runway)(i) \in{} dom(ArrivalS) \land{} ArrivalM(landingQueue(runway)(i))\in{}0 \upto{} 59 \land{} ArrivalS(landingQueue(runway)(i))\in{}0 \upto{} 59\land{} ArrivalS(landingQueue(runway)(i))\leq{}59 \land{} ArrivalM(landingQueue(runway)(i))\leq{}59 \land{} ArrivalS(landingQueue(runway)(i)) \in{} \nat{} \land{} ArrivalH(landingQueue(runway)(i)) \in{} \nat{} \land{} ArrivalM(landingQueue(runway)(i)) \in{} \nat{}\land{} landingQueue(runway)(i - 1)\in{}dom(brandof)\\~   \land{} newArr(i-1)+(Separation\_time(brandof(landingQueue(runway)(i-1)))*60) < curTimeSec(ArrivalS(landingQueue(runway)(i)),ArrivalM(landingQueue(runway)(i)),ArrivalH(landingQueue(runway)(i)))\\~   \limp{} newArr(i) = curTimeSec(ArrivalS(landingQueue(runway)(i)),ArrivalM(landingQueue(runway)(i)),ArrivalH(landingQueue(runway)(i)))$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyL$}{false}{}
+		\Action{act2}{$\\landingQueue(runway) \bcmeq{} (1\upto{}(pos-1) \domres{} landingQueue(runway))   \\~  \bunion{} \{pos \mapsto{} aircraft\}   \\~  \bunion{} (\lambda{} x \qdot{} x \in{} (pos+1)\upto{}(ln+1) \land{} x - 1\in{}dom(landingQueue(runway))\\~| landingQueue(runway)(x-1))$}{false}{}
+		\Action{act4}{$\\ArrivalH \bcmeq{}  \\~   (\{ i \qdot{} i \in{} pos\upto{}ln \land{} i\in{}dom(landingQueue(runway))\\| landingQueue(runway)(i) \} \domsub{} ArrivalH)  \\~   \bunion{} \{aircraft \mapsto{} (usetime+previous) / 3600\}  \\~   \bunion{} \{ i \qdot{} i \in{} pos\upto{}ln \land{} i\in{}dom(landingQueue(runway)) | landingQueue(runway)(i) \mapsto{} (newArr(i) / 3600) \}$}{false}{}
+		\Action{act5}{$\\ArrivalM \bcmeq{}  \\~   (\{ i \qdot{} i \in{} pos\upto{}ln \land{} i\in{}dom(landingQueue(runway))\\~| landingQueue(runway)(i) \} \domsub{} ArrivalM)  \\~   \bunion{} \{aircraft \mapsto{} ((usetime+previous) mod 3600) / 60\}  \\~   \bunion{} \{ i \qdot{} i \in{} pos\upto{}ln \land{} i\in{}dom(landingQueue(runway))| landingQueue(runway)(i) \mapsto{} ((newArr(i) mod 3600) / 60) \}$}{false}{}
+		\Action{act6}{$\\ArrivalS \bcmeq{}  \\~   (\{ i \qdot{} i \in{} pos\upto{}ln \land{} i\in{}dom(landingQueue(runway)) \land{} 0\leq{}newArr(i)\land{} newArr(i)\in{} \nat{} \land{} 0\leq{}(usetime+previous) mod 3600 \land{}	(usetime+previous) mod 3600 \in{} \nat{} \\~| landingQueue(runway)(i) \} \domsub{} ArrivalS) \\~   \bunion{} \{aircraft \mapsto{} ((usetime+previous) mod 3600) mod 60\}  \\~   \bunion{} \{ i \qdot{} i \in{} pos\upto{}ln \land{} 0\leq{}newArr(i)\land{} newArr(i)\in{} \nat{} \land{} 0\leq{}newArr(i) mod 3600\land{} 0\leq{}(usetime+previous) mod 3600 \land{} (usetime+previous) mod 3600\in{} \nat{} \land{} i\in{}dom(landingQueue(runway))| landingQueue(runway)(i) \mapsto{} ((newArr(i) mod 3600) mod 60) \}$}{false}{}
+	}
+}
+\EVT{Landing\_Verification}{true}{ordinary}{Landing\_Verification}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+		\Param{runway}{false}{}
+		\Param{speed\_final}{false}{}
+		\Param{duration\_final}{false}{}
+		\Param{landing\_instant}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = ReadyL$}{false}{}
+		\Guard{grd9}{false}{$aircraft \notin{} dom(clearanceL)$}{false}{}
+		\Guard{grd10}{false}{$runway \in{} RUNWAY$}{false}{}
+		\Guard{grd35}{false}{$runway\in{}dom(landingQueue)$}{false}{}
+		\Guard{grd39}{false}{$finite(landingQueue(runway))$}{false}{}
+		\Guard{grd26}{false}{$landingQueue(runway) \neq{} emptySeq$}{false}{}
+		\Guard{grd6}{false}{$landingQueue(runway)(1) = aircraft$}{false}{}
+		\Guard{grd41}{false}{$speed\_final \in{} 80\upto{}170 $}{false}{}
+		\Guard{grd42}{false}{$duration\_final = (D\_V\_R * 3600) / speed\_final$}{false}{}
+		\Guard{grd40}{false}{$\\ArrivalH(aircraft) \in{} \nat{} \land{} ArrivalM(aircraft) \in{} 0\upto{}59 \land{} ArrivalS(aircraft) \in{} 0\upto{}59\\~           \land{} curTimeSec(ArrivalS(aircraft),ArrivalM(aircraft),ArrivalH(aircraft)) \leq{} current\_time$}{false}{}
+		\Guard{grd43}{false}{$landing\_instant = curTimeSec(ArrivalS(aircraft),ArrivalM(aircraft),ArrivalH(aircraft)) + duration\_final$}{false}{}
+		\Guard{grd44}{false}{$\\\forall{} b \qdot{}\\~       b \in{} dom(clearanceL) \land{} clearanceL(b) = runway \land{} b \neq{} aircraft\\~       \land{} b \in{} dom(ThresholdH) \land{} b \in{} dom(ThresholdM) \land{} b \in{} dom(ThresholdS)\\~       \land{} ThresholdM(b) \in{} 0\upto{}59 \land{} ThresholdS(b) \in{} 0\upto{}59 \land{} ThresholdH(b) \in{} \nat{}\\~       \land{} b \in{} dom(brandof)\\~       \land{} curTimeSec(ThresholdS(b),ThresholdM(b),ThresholdH(b)) < landing\_instant\\~       \limp{}\\~       landing\_instant - curTimeSec(ThresholdS(b),ThresholdM(b),ThresholdH(b))\\~       \geq{} Separation\_time(brandof(b)) * 60$}{false}{}
+		\Guard{grd45}{false}{$\\\forall{} b \qdot{}\\~   b \in{} dom(clearanceT) \land{} clearanceT(b) = runway\\~   \land{} b \in{} dom(TTOT\_S) \land{} b \in{} dom(TTOT\_M) \land{} b \in{} dom(TTOT\_H) \land{} b \in{} dom(brandof) \land{} aircraft \in{} dom(brandof)\\~   \limp{}\\~   ( landing\_instant \geq{} curTimeSec(TTOT\_S(b),TTOT\_M(b),TTOT\_H(b)) + Separation\_time(brandof(b))*60\\~     \lor{}\\~     curTimeSec(TTOT\_S(b),TTOT\_M(b),TTOT\_H(b)) \geq{} landing\_instant + Separation\_time(brandof(aircraft))*60\\~   )$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ExcutedL$}{false}{}
+		\Action{act4}{$aircrafts\_ReadyL\bcmeq{} aircrafts\_ReadyL \bunion{} \{aircraft\}$}{false}{}
+		\Action{act5}{$clearanceL \bcmeq{} clearanceL \bunion{} \{aircraft \mapsto{} runway\}$}{false}{}
+		\Action{act15}{$Pre\_AC\_VOR(runway) \bcmeq{} aircraft$}{false}{}
+		\Action{act14}{$last\_VOR\_time(runway) \bcmeq{} current\_time$}{false}{}
+		\Action{act10}{$landingQueue(runway) \bcmeq{} seqDelete(landingQueue(runway), landingQueue(runway)\converse{}(aircraft))$}{false}{}
+		\Action{act11}{$ThresholdH(aircraft) \bcmeq{} landing\_instant / 3600$}{false}{}
+		\Action{act12}{$ThresholdM(aircraft) \bcmeq{} (landing\_instant mod 3600) / 60$}{false}{}
+		\Action{act13}{$ThresholdS(aircraft) \bcmeq{} (landing\_instant mod 3600) mod 60$}{false}{}
+	}
+}
+\EVT{Touchdown}{false}{ordinary}{Touchdown}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = ExcutedL$}{true}{}
+		\Guard{grd6}{false}{$runway = clearanceL(aircraft)$}{true}{}
+		\Guard{grd3}{false}{$ runway \in{} RUNWAY$}{true}{}
+		\Guard{grd4}{false}{$curr\_RW\_status(runway) = Available$}{true}{}
+		\Guard{grd5}{false}{$curr\_RWL\_status(runway) = OFF$}{true}{}
+		\Guard{grd7}{false}{$current\_time \geq{} curTimeSec(ThresholdS(aircraft),ThresholdM(aircraft),ThresholdH(aircraft))$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} Landing$}{true}{}
+		\Action{act2}{$curr\_RW\_status(runway) \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} ON$}{true}{}
+	}
+}
+\EVT{Terminating\_Landing}{true}{ordinary}{Terminating\_Landing}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+		\Param{runway}{false}{}
+		\Param{durationL}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_TMA$}{false}{}
+		\Guard{grd6}{false}{$runway \in{} RUNWAY$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = Landing$}{false}{}
+		\Guard{grd4}{false}{$curr\_RW\_status(runway) = Unavailable$}{false}{}
+		\Guard{grd5}{false}{$curr\_RWL\_status(runway) = ON$}{false}{}
+		\Guard{grd7}{false}{$aircraft \in{} aircrafts\_ReadyL$}{false}{}
+		\Guard{grd9}{false}{$runway = clearanceL(aircraft)$}{false}{}
+		\Guard{grd15}{false}{$durationL \in{} 60\upto{}90$}{false}{}
+		\Guard{grd14}{false}{$current\_time \geq{} (curTimeSec(ThresholdS(aircraft),ThresholdM(aircraft),ThresholdH(aircraft)) + durationL)$}{false}{}
+		\Guard{grd17}{false}{$current\_time \in{} \nat{}$}{false}{}
+		\Guard{grd22}{false}{$aircraft \in{} dom(brandof)$}{false}{}
+		\Guard{grd18}{false}{$Separation\_time(brandof(aircraft)) \in{} \nat{}$}{false}{}
+		\Guard{grd23}{false}{$runway \in{} dom(Pre\_AC\_RWY) \lor{} runway \notin{} dom(Pre\_AC\_RWY) $}{true}{}
+		\Guard{grd24}{false}{$runway \in{} dom(free\_RWY\_time)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TerminatedL$}{false}{}
+		\Action{act3}{$curr\_RW\_status(runway) \bcmeq{} Available$}{false}{}
+		\Action{act4}{$curr\_RWL\_status(runway) \bcmeq{} OFF$}{false}{}
+		\Action{act5}{$aircrafts\_in\_TMA \bcmeq{} aircrafts\_in\_TMA \setminus{} \{aircraft\} $}{false}{}
+		\Action{act6}{$aircrafts\_on\_ground \bcmeq{} aircrafts\_on\_ground \bunion{} \{aircraft\}$}{false}{}
+		\Action{act7}{$aircrafts\_ReadyL \bcmeq{} aircrafts\_ReadyL \setminus{} \{aircraft\}$}{false}{}
+		\Action{act8}{$clearanceL \bcmeq{} \{aircraft\} \domsub{} clearanceL$}{false}{}
+		\Action{act18}{$deadline\bcmeq{} \{aircraft\} \domsub{} deadline$}{false}{}
+		\Action{act11}{$ArrivalH \bcmeq{} \{aircraft\} \domsub{} ArrivalH$}{false}{}
+		\Action{act12}{$ArrivalM \bcmeq{} \{aircraft\} \domsub{} ArrivalM$}{false}{}
+		\Action{act13}{$ArrivalS \bcmeq{} \{aircraft\} \domsub{} ArrivalS$}{false}{}
+		\Action{act14}{$ETA\_H \bcmeq{} \{aircraft\} \domsub{} ETA\_H$}{false}{}
+		\Action{act15}{$ETA\_S \bcmeq{} \{aircraft\} \domsub{} ETA\_S$}{false}{}
+		\Action{act16}{$ETA\_M \bcmeq{} \{aircraft\} \domsub{} ETA\_M$}{false}{}
+		\Action{act19}{$ThresholdH \bcmeq{} \{aircraft\} \domsub{} ThresholdH$}{false}{}
+		\Action{act20}{$ThresholdM \bcmeq{} \{aircraft\} \domsub{} ThresholdM$}{false}{}
+		\Action{act21}{$ThresholdS \bcmeq{} \{aircraft\} \domsub{} ThresholdS$}{false}{}
+		\Action{act22}{$free\_RWY\_time(runway)\bcmeq{} current\_time$}{true}{}
+		\Action{act23}{$Pre\_AC\_RWY(runway)\bcmeq{} aircraft$}{true}{}
+	}
+}
+\EVT{Entry\_on\_Ground}{true}{ordinary}{Entry\_on\_Ground}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+		\Param{TOBT}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_on\_ground$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft)=TerminatedL$}{false}{}
+		\Guard{grd3}{false}{$TOBT \in{} \nat{}$}{true}{}
+		\Guard{grd4}{false}{$TOBT \geq{} current\_time $}{true}{}
+		\Guard{grd5}{false}{$aircraft \notin{} dom (TOBT\_of)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyPushback$}{false}{}
+		\Action{act2}{$TOBT\_of(aircraft) \bcmeq{} TOBT$}{true}{}
+	}
+}
+\EVT{Pushback\_Ready}{true}{ordinary}{Pushback\_Ready}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_on\_ground$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = ReadyPushback$}{false}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(TOBT\_of)$}{true}{}
+		\Guard{grd4}{false}{$\\\forall{} b \qdot{} b \in{} aircrafts\_on\_ground \land{} b \neq{} aircraft \\~       \land{} statusof(b) = ReadyPushback \land{} b \in{} dom(TOBT\_of) \\~   \limp{} TOBT\_of(aircraft) \leq{} TOBT\_of(b)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} Pushbacked$}{false}{}
+	}
+}
+\EVT{Takeoff\_Preparing}{false}{ordinary}{Takeoff\_Preparing}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{taxi\_duration}{true}{}
+		\Param{pos}{true}{}
+		\Param{previous}{true}{}
+		\Param{usetime}{true}{}
+		\Param{ln}{true}{}
+		\Param{newArr}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_on\_ground$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = Pushbacked$}{true}{}
+		\Guard{grd5}{false}{$runway \notin{} ran(clearanceT)$}{true}{}
+		\Guard{grd6}{false}{$aircraft \notin{} dom(clearanceT)$}{true}{}
+		\Guard{grd8}{false}{$aircraft \notin{} dom(clearanceL)$}{true}{}
+		\Guard{grd9}{false}{$\forall{} r \qdot{} r \in{} RUNWAY \limp{} aircraft \notin{} ran(takeoffQueue(r))$}{true}{}
+		\Guard{grd12}{false}{$taxi\_duration \in{} 360\upto{}738$}{true}{}
+		\Guard{grd16}{false}{$ln \in{} \nat{} \land{} ln = seqSize(takeoffQueue(runway))$}{true}{}
+		\Guard{grd17}{false}{$takeoffQueue(runway) \in{} seq(AIRCRAFTS)$}{true}{}
+		\Guard{grd18}{false}{$takeoffQueue(runway) \in{} 1\upto{}ln \tfun{} AIRCRAFTS$}{true}{}
+		\Guard{grd26}{false}{$newArr \in{} pos\upto{}ln \tfun{} \nat{}$}{true}{}
+		\Guard{grd27}{false}{$dom(newArr) = pos\upto{}ln$}{true}{}
+		\Guard{grd28}{false}{$\\pos \in{} 1\upto{}(ln+1)  \\\land{} (\forall{} i \qdot{} i \in{} 1\upto{}(pos-1) \land{} i \in{} dom(takeoffQueue(runway))  \\~    \land{} takeoffQueue(runway)(i) \in{} dom(TTOT\_H) \land{} takeoffQueue(runway)(i) \in{} dom(TTOT\_M) \land{} takeoffQueue(runway)(i) \in{} dom(TTOT\_S)  \\~  \limp{} curTimeSec(TTOT\_S(takeoffQueue(runway)(i)),TTOT\_M(takeoffQueue(runway)(i)),TTOT\_H(takeoffQueue(runway)(i)))  \\~      \leq{} (TOBT\_of(aircraft)+taxi\_duration))  \\\land{} (\forall{} i \qdot{} i \in{} pos\upto{}ln \land{} i \in{} dom(takeoffQueue(runway))  \\~    \land{} takeoffQueue(runway)(i) \in{} dom(TTOT\_H) \land{} takeoffQueue(runway)(i) \in{} dom(TTOT\_M) \land{} takeoffQueue(runway)(i) \in{} dom(TTOT\_S)  \\~  \limp{} curTimeSec(TTOT\_S(takeoffQueue(runway)(i)),TTOT\_M(takeoffQueue(runway)(i)),TTOT\_H(takeoffQueue(runway)(i)))  \\~      > (TOBT\_of(aircraft)+taxi\_duration)) $}{true}{}
+		\Guard{grd29}{false}{$\\pos = 1  \\\lor{} (pos > 1 \land{} takeoffQueue(runway)(pos-1) \in{} dom(TTOT\_H) \land{} takeoffQueue(runway)(pos-1) \in{} dom(TTOT\_M) \land{} takeoffQueue(runway)(pos-1) \in{} dom(TTOT\_S)  \\~   \land{} takeoffQueue(runway)(pos-1) \in{} dom(brandof)  \\~   \land{} curTimeSec(TTOT\_S(takeoffQueue(runway)(pos-1)),TTOT\_M(takeoffQueue(runway)(pos-1)),TTOT\_H(takeoffQueue(runway)(pos-1)))  \\~       < (TOBT\_of(aircraft)+taxi\_duration)  \\~   \land{} (TOBT\_of(aircraft)+taxi\_duration) - curTimeSec(TTOT\_S(takeoffQueue(runway)(pos-1)),TTOT\_M(takeoffQueue(runway)(pos-1)),TTOT\_H(takeoffQueue(runway)(pos-1)))  \\~       > Separation\_time(brandof(takeoffQueue(runway)(pos-1))) * 60)  \\\limp{} previous = 0 \land{} usetime = (TOBT\_of(aircraft)+taxi\_duration)$}{true}{}
+		\Guard{grd30}{false}{$\\pos > 1 \land{} takeoffQueue(runway)(pos-1) \in{} dom(TTOT\_H) \land{} takeoffQueue(runway)(pos-1) \in{} dom(TTOT\_M) \land{} takeoffQueue(runway)(pos-1) \in{} dom(TTOT\_S)  \\\land{} takeoffQueue(runway)(pos-1) \in{} dom(brandof)  \\\land{} curTimeSec(TTOT\_S(takeoffQueue(runway)(pos-1)),TTOT\_M(takeoffQueue(runway)(pos-1)),TTOT\_H(takeoffQueue(runway)(pos-1)))  \\~   \leq{} (TOBT\_of(aircraft)+taxi\_duration)  \\\land{} (TOBT\_of(aircraft)+taxi\_duration) - curTimeSec(TTOT\_S(takeoffQueue(runway)(pos-1)),TTOT\_M(takeoffQueue(runway)(pos-1)),TTOT\_H(takeoffQueue(runway)(pos-1)))  \\~   \leq{} Separation\_time(brandof(takeoffQueue(runway)(pos-1))) * 60  \\\limp{} previous = Separation\_time(brandof(takeoffQueue(runway)(pos-1))) * 60  \\~  \land{} usetime = curTimeSec(TTOT\_S(takeoffQueue(runway)(pos-1)),TTOT\_M(takeoffQueue(runway)(pos-1)),TTOT\_H(takeoffQueue(runway)(pos-1)))$}{true}{}
+		\Guard{grd31}{false}{$ usetime+previous \in{} \nat{}$}{true}{}
+		\Guard{grd32}{false}{$\\\forall{} a \qdot{} a \in{} dom(clearanceL) \land{} clearanceL(a) = runway\\~     \land{} a \in{} dom(ThresholdS) \land{} a \in{} dom(ThresholdM) \land{} a \in{} dom(ThresholdH) \land{} a \in{} dom(brandof)\\\limp{}\\( curTimeSec(ThresholdS(a),ThresholdM(a),ThresholdH(a))\\~   \geq{} (usetime+previous) + Separation\_time(brandof(aircraft))*60\\~ \lor{}\\~ (usetime+previous)\\~   \geq{} curTimeSec(ThresholdS(a),ThresholdM(a),ThresholdH(a)) + Separation\_time(brandof(a))*60\\)$}{true}{}
+		\Guard{grd33}{false}{$\\pos \leq{} ln \land{} pos\in{}dom(newArr) \land{} takeoffQueue(runway)(pos) \in{} dom(TTOT\_H) \land{} takeoffQueue(runway)(pos) \in{} dom(TTOT\_M) \land{} takeoffQueue(runway)(pos) \in{} dom(TTOT\_S)  \\\land{} usetime+previous+(Separation\_time(brandof(aircraft))*60) \geq{} curTimeSec(TTOT\_S(takeoffQueue(runway)(pos)),TTOT\_M(takeoffQueue(runway)(pos)),TTOT\_H(takeoffQueue(runway)(pos)))  \\\limp{} newArr(pos) = usetime+previous+(Separation\_time(brandof(aircraft))*60)$}{true}{}
+		\Guard{grd34}{false}{$\\pos \leq{} ln \land{} pos\in{}dom(newArr) \land{} takeoffQueue(runway)(pos) \in{} dom(TTOT\_H) \land{} takeoffQueue(runway)(pos) \in{} dom(TTOT\_M) \land{} takeoffQueue(runway)(pos) \in{} dom(TTOT\_S)  \\\land{} usetime+previous+(Separation\_time(brandof(aircraft))*60) < curTimeSec(TTOT\_S(takeoffQueue(runway)(pos)),TTOT\_M(takeoffQueue(runway)(pos)),TTOT\_H(takeoffQueue(runway)(pos)))  \\\limp{} newArr(pos) = curTimeSec(TTOT\_S(takeoffQueue(runway)(pos)),TTOT\_M(takeoffQueue(runway)(pos)),TTOT\_H(takeoffQueue(runway)(pos)))$}{true}{}
+		\Guard{grd35}{false}{$\\\forall{} i \qdot{} i \in{}dom(newArr) \land{} i > pos \land{} i\in{}dom(takeoffQueue(runway)) \land{} (i-1)\in{}dom(newArr) \land{} (i-1)\in{}dom(takeoffQueue(runway))  \\\land{} takeoffQueue(runway)(i-1)\in{}dom(brandof)  \\\land{} newArr(i-1)+(Separation\_time(brandof(takeoffQueue(runway)(i-1)))*60) \geq{} curTimeSec(TTOT\_S(takeoffQueue(runway)(i)),TTOT\_M(takeoffQueue(runway)(i)),TTOT\_H(takeoffQueue(runway)(i)))  \\\limp{} newArr(i) = newArr(i-1)+(Separation\_time(brandof(takeoffQueue(runway)(i-1)))*60) $}{true}{}
+		\Guard{grd36}{false}{$\\\forall{} i \qdot{} i \in{}dom(newArr) \land{} i > pos \land{} i\in{}dom(takeoffQueue(runway)) \land{} (i-1)\in{}dom(newArr) \land{} (i-1)\in{}dom(takeoffQueue(runway))  \\\land{} takeoffQueue(runway)(i-1)\in{}dom(brandof)  \\\land{} newArr(i-1)+(Separation\_time(brandof(takeoffQueue(runway)(i-1)))*60) < curTimeSec(TTOT\_S(takeoffQueue(runway)(i)),TTOT\_M(takeoffQueue(runway)(i)),TTOT\_H(takeoffQueue(runway)(i)))  \\\limp{} newArr(i) = curTimeSec(TTOT\_S(takeoffQueue(runway)(i)),TTOT\_M(takeoffQueue(runway)(i)),TTOT\_H(takeoffQueue(runway)(i)))$}{true}{}
+		\Guard{grd41}{false}{$0\leq{}(usetime+previous) mod 3600$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} OnholdT$}{true}{}
+		\Action{act4}{$\\takeoffQueue(runway) \bcmeq{} (1\upto{}(pos-1) \domres{} takeoffQueue(runway))  \\~   \bunion{} \{pos \mapsto{} aircraft\}  \\~   \bunion{} (\lambda{}x\qdot{} x\in{}(pos+1)\upto{}(ln+1) \land{} x-1\in{}dom(takeoffQueue(runway)) | takeoffQueue(runway)(x-1)) $}{true}{}
+		\Action{act5}{$\\TTOT\_H \bcmeq{} (\{i\qdot{}i\in{}pos\upto{}ln\land{}i\in{}dom(takeoffQueue(runway)) | takeoffQueue(runway)(i)\} \domsub{} TTOT\_H)  \\~   \bunion{} \{aircraft \mapsto{} (usetime+previous)/3600\}  \\~   \bunion{} \{i\qdot{}i\in{}pos\upto{}ln\land{}i\in{}dom(takeoffQueue(runway)) | takeoffQueue(runway)(i) \mapsto{} (newArr(i)/3600)\}$}{true}{}
+		\Action{act6}{$\\TTOT\_M \bcmeq{} (\{i\qdot{}i\in{}pos\upto{}ln\land{}i\in{}dom(takeoffQueue(runway)) | takeoffQueue(runway)(i)\} \domsub{} TTOT\_M)  \\~   \bunion{} \{aircraft \mapsto{} ((usetime+previous) mod 3600)/60\}  \\~   \bunion{} \{i\qdot{}i\in{}pos\upto{}ln\land{}i\in{}dom(takeoffQueue(runway)) | takeoffQueue(runway)(i) \mapsto{} ((newArr(i) mod 3600)/60)\}$}{true}{}
+		\Action{act7}{$\\TTOT\_S \bcmeq{} (\{i\qdot{}i\in{}pos\upto{}ln\land{}i\in{}dom(takeoffQueue(runway)) | takeoffQueue(runway)(i)\} \domsub{} TTOT\_S)  \\~   \bunion{} \{aircraft \mapsto{} ((usetime+previous) mod 3600) mod 60\}  \\~   \bunion{} \{i\qdot{}i\in{}pos\upto{}ln\land{}i\in{}dom(takeoffQueue(runway)) | takeoffQueue(runway)(i) \mapsto{} ((newArr(i) mod 3600) mod 60)\}$}{true}{}
+	}
+}
+\EVT{Takeoff\_Verification}{false}{ordinary}{Takeoff\_Verification}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{previous}{true}{}
+		\Param{usetime}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_on\_ground$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = OnholdT$}{true}{}
+		\Guard{grd3}{false}{$curr\_RW\_status(runway) = Available$}{true}{}
+		\Guard{grd4}{false}{$curr\_RWL\_status(runway) = OFF$}{true}{}
+		\Guard{grd5}{false}{$runway \notin{} ran(clearanceT)$}{true}{}
+		\Guard{grd7}{false}{$aircraft \notin{} dom(clearanceT)$}{true}{}
+		\Guard{grd8}{false}{$aircraft \notin{} dom(clearanceL)$}{true}{}
+		\Guard{grd9}{false}{$takeoffQueue(runway) \neq{} emptySeq$}{true}{}
+		\Guard{grd10}{false}{$aircraft \in{} ran(takeoffQueue(runway))$}{true}{}
+		\Guard{grd12}{false}{$curTimeSec(TTOT\_S(aircraft),TTOT\_M(aircraft),TTOT\_H(aircraft)) \leq{} current\_time + 300 $}{true}{}
+		\Guard{grd17}{false}{$\\(runway \notin{} dom(Pre\_AC\_RWY)  \\~   \lor{} ( runway \in{} dom(Pre\_AC\_RWY) \land{} Pre\_AC\_RWY(runway) \in{} dom(brandof)  \\~       \land{} current\_time \geq{} free\_RWY\_time(runway) + (Separation\_time(brandof(Pre\_AC\_RWY(runway))) * 60) ) )  \\~   \limp{} previous = 0$}{true}{}
+		\Guard{grd18}{false}{$\\runway \in{} dom(Pre\_AC\_RWY)  \\~       \land{} Pre\_AC\_RWY(runway) \notin{} \emptyset{}  \\~       \land{} current\_time < free\_RWY\_time(runway) + (Separation\_time(brandof(Pre\_AC\_RWY(runway))) * 60)  \\~       \limp{} previous = Separation\_time(brandof(Pre\_AC\_RWY(runway))) * 60 $}{true}{}
+		\Guard{grd19}{false}{$free\_RWY\_time(runway)=0 \limp{} usetime=current\_time$}{true}{}
+		\Guard{grd20}{false}{$free\_RWY\_time(runway)\neq{}0 \limp{} usetime=free\_RWY\_time(runway)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyT$}{true}{}
+		\Action{act2}{$aircrafts\_ReadyT\bcmeq{} aircrafts\_ReadyT \bunion{} \{aircraft\}$}{true}{}
+		\Action{act3}{$clearanceT \bcmeq{} clearanceT \bunion{} \{aircraft \mapsto{} runway\}$}{true}{}
+		\Action{act4}{$takeoffQueue(runway) \bcmeq{} seqDelete(takeoffQueue(runway), takeoffQueue(runway)\converse{}(aircraft))$}{true}{}
+	}
+}
+\EVT{Start\_Takeoff}{true}{ordinary}{Start\_Takeoff}{}{
+	\ANY{
+		\Param{aircraft}{false}{}
+		\Param{runway}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_on\_ground$}{false}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = ReadyT$}{false}{}
+		\Guard{grd3}{false}{$runway \in{} RUNWAY$}{false}{}
+		\Guard{grd6}{false}{$runway = clearanceT(aircraft)$}{false}{}
+		\Guard{grd4}{false}{$curr\_RW\_status(runway) = Available$}{false}{}
+		\Guard{grd5}{false}{$curr\_RWL\_status(runway) = OFF$}{false}{}
+		\Guard{grd7}{false}{$aircraft \in{} dom(TTOT\_H) \land{} aircraft \in{} dom(TTOT\_M) \land{} aircraft \in{} dom(TTOT\_S)$}{true}{}
+		\Guard{grd8}{false}{$current\_time \geq{} curTimeSec(TTOT\_S(aircraft),TTOT\_M(aircraft),TTOT\_H(aircraft))$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} Takeoff $}{false}{}
+		\Action{act2}{$curr\_RW\_status(runway) \bcmeq{} Unavailable$}{false}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} ON$}{false}{}
+	}
+}
+\EVT{Terminating\_takeoff}{false}{ordinary}{Terminating\_takeoff}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{durationT}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_on\_ground$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = Takeoff$}{true}{}
+		\Guard{grd3}{false}{$runway \in{} RUNWAY$}{true}{}
+		\Guard{grd4}{false}{$curr\_RW\_status(runway) = Unavailable$}{true}{}
+		\Guard{grd5}{false}{$curr\_RWL\_status(runway) = ON$}{true}{}
+		\Guard{grd6}{false}{$aircraft \in{} dom(TTOT\_H) \land{} aircraft \in{} dom(TTOT\_M) \land{} aircraft \in{} dom(TTOT\_S)$}{true}{}
+		\Guard{grd7}{false}{$durationT \in{} 60\upto{}90$}{true}{}
+		\Guard{grd9}{false}{$current\_time \geq{} (curTimeSec(TTOT\_S(aircraft),TTOT\_M(aircraft),TTOT\_H(aircraft)) + durationT)$}{true}{}
+		\Guard{grd10}{false}{$runway \in{} dom(Pre\_AC\_RWY) \lor{} runway \notin{} dom(Pre\_AC\_RWY)$}{true}{}
+		\Guard{grd11}{false}{$current\_time \in{} \nat{}$}{true}{}
+		\Guard{grd12}{false}{$aircraft \in{} dom(brandof)$}{true}{}
+		\Guard{grd13}{false}{$Separation\_time(brandof(aircraft)) \in{} \nat{}$}{true}{}
+		\Guard{grd14}{false}{$runway \in{} dom(free\_RWY\_time)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$curr\_RW\_status(runway) \bcmeq{} Available $}{true}{}
+		\Action{act2}{$statusof \bcmeq{} \{aircraft\} \domsub{} statusof $}{true}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} OFF $}{true}{}
+		\Action{act4}{$aircrafts\_on\_ground \bcmeq{} aircrafts\_on\_ground \setminus{} \{aircraft\}$}{true}{}
+		\Action{act5}{$aircrafts\_ReadyT \bcmeq{} aircrafts\_ReadyT \setminus{} \{aircraft\}$}{true}{}
+		\Action{act6}{$clearanceT \bcmeq{} \{aircraft\} \domsub{} clearanceT$}{true}{}
+		\Action{act7}{$free\_RWY\_time(runway) \bcmeq{} current\_time$}{true}{}
+		\Action{act8}{$Pre\_AC\_RWY(runway) \bcmeq{} aircraft$}{true}{}
+	}
+}
+\EVT{tick\_tock}{false}{ordinary}{tick\_tock}{}{
+	\ANY{
+		\Param{tm}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$tm=60$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$current\_time\bcmeq{} current\_time+tm$}{true}{}
+	}
+}
+}
+\END
+\end{document}

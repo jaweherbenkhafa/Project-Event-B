@@ -1,0 +1,39 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{C0}
+\CONTEXT{C0}{}{}
+\SETS{
+	\Set{AIRCRAFTS}{}
+	\Set{STATUS}{}
+	\Set{RW\_STATUES}{}
+	\Set{RWL\_STATUES}{}
+	\Set{RUNWAY}{}
+}
+\CONSTANTS{
+	\Constant{Blocked}{}
+	\Constant{ReadyL}{}
+	\Constant{Landing}{}
+	\Constant{TerminatedL}{}
+	\Constant{ReadyT}{}
+	\Constant{TakingOff}{}
+	\Constant{Available}{}
+	\Constant{Unavailable}{}
+	\Constant{ON}{}
+	\Constant{OFF}{}
+	\Constant{Departing}{}
+	\Constant{parcking}{}
+}
+\AXIOMS{
+	\Axiom{axm12}{false}{$finite(AIRCRAFTS)$}{}
+	\Axiom{axm11}{false}{$partition(STATUS, \{Blocked\}, \{ReadyL\}, \{Landing\}, \{TerminatedL\}, \{ReadyT\}, \{TakingOff\},\{Departing\},\{parcking\})$}{}
+	\Axiom{axm14}{false}{$partition(RWL\_STATUES,\{ON\},\{OFF\})$}{}
+	\Axiom{axm15}{false}{$partition(RW\_STATUES,\{Available\},\{Unavailable\})$}{}
+	\Axiom{axm16}{false}{$finite(RUNWAY) \land{} card(RUNWAY) \leq{}4$}{}
+	\Axiom{axm18}{true}{$\forall{}x,y\qdot{} x \in{} \nat{} \land{} y\in{} \natn{} \limp{} x=x mod y+x/y*y$}{}
+	\Axiom{axm19}{true}{$\forall{}a,b\qdot{} a\in{} \nat{} \land{} b\in{} \nat{} \land{} a\leq{}b \limp{}a/60\leq{}b/60$}{}
+	\Axiom{axm20}{true}{$\forall{}a,b,c\qdot{} a\in{} \nat{} \land{} b\in{} \nat{} \land{} c\in{} \nat{} \land{} a\leq{}b \limp{}a+c\leq{}b+c$}{}
+	\Axiom{axm22}{true}{$\forall{}a,b,c\qdot{} a\in{} \nat{} \land{} b\in{} \nat{} \land{} c\in{} \natn{}\land{} a\leq{}b \limp{}c*a\leq{}c*b$}{}
+}
+\END
+\end{document}

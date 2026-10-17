@@ -1,0 +1,104 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{C1}
+\CONTEXT{C1}{C0}{}
+\SETS{
+	\Set{BRAND}{}
+	\Set{ENTRYTMA}{}
+	\Set{PMS}{}
+	\Set{PM}{}
+	\Set{SLEGS}{}
+	\Set{WAYPOINT}{}
+	\Set{SIDE}{}
+}
+\CONSTANTS{
+	\Constant{Minute}{}
+	\Constant{Hours}{}
+	\Constant{Seconds}{}
+	\Constant{Separation\_time}{}
+	\Constant{Small}{}
+	\Constant{Large}{}
+	\Constant{Heavy}{}
+	\Constant{speed\_aircraft}{}
+	\Constant{PmsMerge}{}
+	\Constant{legPMS}{}
+	\Constant{distanceLegMerge}{}
+	\Constant{VALPU}{}
+	\Constant{INSUV}{}
+	\Constant{GM410}{}
+	\Constant{GM416}{}
+	\Constant{GM402}{}
+	\Constant{GM403}{}
+	\Constant{TMA1}{}
+	\Constant{TMA2}{}
+	\Constant{TMA3}{}
+	\Constant{TMA4}{}
+	\Constant{PMS\_W}{}
+	\Constant{PMS\_E}{}
+	\Constant{LEG\_WN}{}
+	\Constant{LEG\_WS}{}
+	\Constant{LEG\_EN}{}
+	\Constant{LEG\_ES}{}
+	\Constant{WN2}{}
+	\Constant{WN3}{}
+	\Constant{WN4}{}
+	\Constant{WS2}{}
+	\Constant{WS3}{}
+	\Constant{WS4}{}
+	\Constant{EN2}{}
+	\Constant{EN3}{}
+	\Constant{EN4}{}
+	\Constant{ES2}{}
+	\Constant{ES3}{}
+	\Constant{ES4}{}
+	\Constant{legSeq}{}
+	\Constant{sideLeg}{}
+	\Constant{North}{}
+	\Constant{South}{}
+	\Constant{sideTMA}{}
+	\Constant{TMAToLeg}{}
+	\Constant{entryToWaypoint}{}
+	\Constant{pmRunway}{}
+	\Constant{legFL}{}
+}
+\AXIOMS{
+	\Axiom{axm2}{false}{$Minute = 0\upto{}59 \land{} Minute \subseteq{} \nat{} $}{}
+	\Axiom{axm3}{false}{$Hours = 0\upto{}23 \land{} Hours \subseteq{} \nat{} $}{}
+	\Axiom{axm5}{false}{$Seconds = 0\upto{}59 \land{} Seconds \subseteq{} \nat{}  $}{}
+	\Axiom{axm72}{false}{$partition(BRAND, \{Small\}, \{Large\},\{Heavy\})$}{}
+	\Axiom{axm6}{false}{$Separation\_time \in{} BRAND \cprod{} BRAND \tfun{} \nat{}$}{}
+	\Axiom{axm71}{false}{$\\Separation\_time(Small \mapsto{} Small) = 82 \land{}\\Separation\_time(Small \mapsto{} Large) = 69 \land{}\\Separation\_time(Small \mapsto{} Heavy) = 60 \land{}\\Separation\_time(Large \mapsto{} Small) = 131 \land{}\\Separation\_time(Large \mapsto{} Large) = 69 \land{}\\Separation\_time(Large \mapsto{} Heavy) = 60 \land{}\\Separation\_time(Heavy \mapsto{} Small) = 196 \land{}\\Separation\_time(Heavy \mapsto{} Large) = 157 \land{}\\Separation\_time(Heavy \mapsto{} Heavy) = 96$}{}
+	\Axiom{axm74}{false}{$speed\_aircraft \in{} BRAND \tfun{} \natn{}$}{}
+	\Axiom{axm73}{false}{$speed\_aircraft(Small)=110 $}{}
+	\Axiom{axm76}{false}{$speed\_aircraft(Large)=130 $}{}
+	\Axiom{axm75}{false}{$speed\_aircraft(Heavy)=150 $}{}
+	\Axiom{axm114}{false}{$finite(PMS) \land{} card(PMS)=2 \land{} partition(PMS, \{PMS\_W\}, \{PMS\_E\})$}{}
+	\Axiom{axm116}{false}{$finite(PM) \land{} card(PM)=2$}{}
+	\Axiom{axm115}{false}{$PmsMerge \in{} PMS \tsur{} PM $}{}
+	\Axiom{axm119}{false}{$finite(SLEGS) \land{} card(SLEGS)= 2 * card(PM)$}{}
+	\Axiom{axm118}{false}{$legPMS \in{} SLEGS \tfun{} PMS \land{} (\forall{}p\qdot{}p \in{} PMS \limp{} card(legPMS\converse{}[\{p\}]) = 2)$}{}
+	\Axiom{axm120}{false}{$distanceLegMerge \in{} SLEGS \tfun{} 15\upto{}20$}{}
+	\Axiom{axm121}{false}{$\\\forall{} l1,l2 \qdot{}\\~ l1 \in{} SLEGS \land{} l2 \in{} SLEGS\\~ \land{} l1 \neq{} l2\\~ \land{} legPMS(l1) = legPMS(l2)\\~ \limp{}\\~ (\\~   distanceLegMerge(l1) \in{} 15\upto{}20\\~   \land{}\\~   distanceLegMerge(l2)\\~   \in{}\\~   (distanceLegMerge(l1)+1)\upto{}(distanceLegMerge(l1)+2)\\~   \land{}\\~   distanceLegMerge(l2) \in{} 15\upto{}20\\~ )\\~ \lor{}\\~ (\\~   distanceLegMerge(l2) \in{} 15\upto{}20\\~   \land{}\\~   distanceLegMerge(l1)\\~   \in{}\\~   (distanceLegMerge(l2)+1)\upto{}(distanceLegMerge(l2)+2)\\~   \land{}\\~   distanceLegMerge(l1) \in{} 15\upto{}20\\~ )$}{}
+	\Axiom{axm129}{false}{$\\partition(WAYPOINT, \{GM402\}, \{WN2\}, \{WN3\}, \{WN4\},\\~                            \{GM410\}, \{WS2\}, \{WS3\}, \{WS4\},\\~                            \{GM403\}, \{EN2\}, \{EN3\}, \{EN4\},\\~                            \{GM416\}, \{ES2\}, \{ES3\}, \{ES4\})$}{}
+	\Axiom{axm130}{false}{$finite(ENTRYTMA) \land{} partition(ENTRYTMA, \{TMA1\}, \{TMA2\}, \{TMA3\}, \{TMA4\})$}{}
+	\Axiom{axm146}{false}{$partition(PM, \{VALPU\}, \{INSUV\})$}{}
+	\Axiom{axm147}{false}{$partition(SLEGS, \{LEG\_WN\}, \{LEG\_WS\}, \{LEG\_EN\}, \{LEG\_ES\})$}{}
+	\Axiom{axm148}{false}{$legSeq \in{} SLEGS \tfun{} (1\upto{}4 \tinj{} WAYPOINT)$}{}
+	\Axiom{axm149}{false}{$\\\forall{} l1,l2 \qdot{}\\~   l1 \in{} SLEGS\\~   \land{} l2 \in{} SLEGS\\~   \land{} l1 \neq{} l2\\~   \limp{}\\~   ran(legSeq(l1))\\~   \binter{}\\~   ran(legSeq(l2))\\~   =\\~   \emptyset{}$}{}
+	\Axiom{axm150}{false}{$partition(SIDE, \{North\}, \{South\})$}{}
+	\Axiom{axm151}{false}{$sideLeg \in{} SLEGS \tfun{} SIDE$}{}
+	\Axiom{axm152}{false}{$sideTMA \in{} ENTRYTMA \tfun{} SIDE$}{}
+	\Axiom{axm153}{false}{$TMAToLeg \in{} ENTRYTMA \tfun{} SLEGS$}{}
+	\Axiom{axm154}{false}{$\\\forall{} e \qdot{}\\~   e \in{} ENTRYTMA\\~   \limp{}\\~   sideTMA(e) = sideLeg(TMAToLeg(e))$}{}
+	\Axiom{axm155}{false}{$entryToWaypoint \in{} ENTRYTMA \tfun{} WAYPOINT$}{}
+	\Axiom{axm156}{false}{$\\\forall{} e \qdot{}\\~   e \in{} ENTRYTMA\\~   \limp{}\\~   entryToWaypoint(e)\\~   =\\~   legSeq(TMAToLeg(e))(1)$}{}
+	\Axiom{axm157}{false}{$\\\forall{}l1,l2\qdot{}l1 \in{} SLEGS \land{} l2 \in{} SLEGS \land{} l1 \neq{} l2 \land{} legPMS(l1) = legPMS(l2)\\         \limp{} sideLeg(l1) \neq{} sideLeg(l2)$}{}
+	\Axiom{axm158}{false}{$pmRunway \in{} PM \tinj{} RUNWAY$}{}
+	\Axiom{axm159}{false}{$pmRunway = \{VALPU \mapsto{} RWY1, INSUV \mapsto{} RWY2\} $}{}
+	\Axiom{axm160}{false}{$legFL \in{} SLEGS \tfun{} \natn{}$}{}
+	\Axiom{axm161}{false}{$\\\forall{} l1, l2 \qdot{} l1 \in{} SLEGS \land{} l2 \in{} SLEGS \land{} l1 \neq{} l2 \land{} legPMS(l1) = legPMS(l2)\\~                   \land{} distanceLegMerge(l1) < distanceLegMerge(l2)\\~          \limp{} legFL(l1) > legFL(l2)$}{}
+	\Axiom{axm162}{false}{$\\\forall{} x, y, z \qdot{} x \in{} BRAND \land{} y \in{} BRAND \land{} z \in{} BRAND\\~           \limp{} Separation\_time(x \mapsto{} z) \leq{} Separation\_time(x \mapsto{} y) + Separation\_time(y \mapsto{} z)$}{}
+}
+\END
+\end{document}

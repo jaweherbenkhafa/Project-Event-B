@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.newOperatorDefinition name="'" org.eventb.core.label="curTimeMin" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℕ " org.eventb.core.identifier="curM"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="curM+curH∗60"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="ℕ " org.eventb.core.identifier="curH"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="curM∈0‥59 ∧ curH≥0"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="abs" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℕ " org.eventb.core.identifier="x"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℕ  " org.eventb.core.identifier="y"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{TRUE↦x−y,FALSE↦ y−x}(bool(x≥y))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="curTimeSec" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℕ " org.eventb.core.identifier="curS"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℕ  " org.eventb.core.identifier="curM"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℕ " org.eventb.core.identifier="curH"/>
+        <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="curM∈0‥59 ∧ curH≥0 ∧ curS∈0‥59"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="curTimeMin(curM,curH)∗60+curS"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="isqrt" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℕ " org.eventb.core.identifier="n"/>
+        <org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="n ≥ 0"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="max({k · k ∈ ℕ ∧ k∗k ≤ n ∣ k})"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="+" org.eventb.core.label="thm1" org.eventb.core.predicate="∀ x,y · x∈ℕ  ∧ y∈ℕ  ⇒ abs(x,y) ≥ 0"/>
+    <org.eventb.theory.core.theorem name="," org.eventb.core.label="thm2" org.eventb.core.predicate="∀x,y · x∈ℕ ∧ y∈ℕ ⇒ (x∗x)+(y∗y) ∈ ℕ"/>
+    <org.eventb.theory.core.theorem name="-" org.eventb.core.label="thm3" org.eventb.core.predicate="∀x,y · x∈ℕ ∧ y∈ℕ ∧ x≥y ⇒ x−y∈ℕ"/>
+    <org.eventb.theory.core.theorem name="." org.eventb.core.label="thm4" org.eventb.core.predicate="∀x,y · x∈ℕ ∧ y∈ℕ ⇒ abs(x,y)∈ℕ"/>
+</org.eventb.theory.core.theoryRoot>

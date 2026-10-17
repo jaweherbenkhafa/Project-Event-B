@@ -1,0 +1,439 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{M4}
+\MACHINE{M4}{M3}{C1}{}
+\VARIABLES{
+	\Variable{aircrafts\_in\_airport}{}
+	\Variable{statusof}{}
+	\Variable{curr\_RW\_status}{}
+	\Variable{curr\_RWL\_status}{}
+	\Variable{active\_aircrafts}{}
+	\Variable{aircraft\_runway}{}
+	\Variable{clearance}{}
+	\Variable{aircrafts\_ReadyL}{}
+	\Variable{deadline}{}
+	\Variable{ArrivalM}{}
+	\Variable{ArrivalS}{}
+	\Variable{ArrivalH}{}
+	\Variable{at}{}
+	\Variable{current\_time}{}
+	\Variable{last\_landing\_time}{}
+	\Variable{brandof}{}
+	\Variable{EnterH}{}
+	\Variable{EnterM}{}
+	\Variable{EnterS}{}
+	\Variable{RTakH}{}
+	\Variable{RTakM}{}
+	\Variable{RTakS}{}
+	\Variable{RequestToTake}{}
+	\Variable{aircrafts\_ReadyT}{}
+	\Variable{clearanceT}{}
+	\Variable{arrival\_seq}{}
+	\Variable{DepS}{}
+	\Variable{DepM}{}
+	\Variable{DepH}{}
+	\Variable{previousaircraftrunway}{}
+	\Variable{Dep\_Seq}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$deadline \in{} aircrafts\_in\_airport \pfun{} \nat{} $}{}
+	\Invariant{inv2}{false}{$ArrivalM \in{} aircrafts\_ReadyL \tfun{} Minute$}{}
+	\Invariant{inv3}{false}{$ArrivalH \in{} aircrafts\_ReadyL \tfun{} Hours$}{}
+	\Invariant{inv4}{false}{$ArrivalS \in{} aircrafts\_ReadyL \tfun{} Seconds$}{}
+	\Invariant{inv5}{false}{$current\_time \in{} \nat{} $}{}
+	\Invariant{inv6}{false}{$at \subseteq{} \nat{}$}{}
+	\Invariant{inv25}{false}{$at \neq{} \emptyset{} \limp{} current\_time \leq{} min(at)$}{}
+	\Invariant{inv8}{false}{$last\_landing\_time \in{} RUNWAY \tfun{} \nat{}$}{}
+	\Invariant{inv9}{false}{$brandof \in{} aircrafts\_in\_airport \tinj{} BRAND$}{}
+	\Invariant{inv10}{false}{$dom(ArrivalM) = aircrafts\_ReadyL$}{}
+	\Invariant{inv11}{false}{$dom(ArrivalH) = aircrafts\_ReadyL$}{}
+	\Invariant{inv12}{false}{$dom(ArrivalS) = aircrafts\_ReadyL$}{}
+	\Invariant{inv13}{false}{$EnterH \in{} aircrafts\_in\_airport \pfun{} Hours $}{}
+	\Invariant{inv14}{false}{$EnterM \in{} aircrafts\_in\_airport \pfun{} Minute $}{}
+	\Invariant{inv19}{false}{$RequestToTake \subseteq{} aircrafts\_in\_airport $}{}
+	\Invariant{inv15}{false}{$EnterS \in{} aircrafts\_in\_airport \pfun{} Seconds $}{}
+	\Invariant{inv16}{false}{$RTakH \in{} RequestToTake  \pfun{} Hours $}{}
+	\Invariant{inv17}{false}{$RTakS \in{} RequestToTake  \pfun{}Seconds$}{}
+	\Invariant{inv18}{false}{$RTakM \in{} RequestToTake  \pfun{} Minute $}{}
+	\Invariant{inv20}{false}{$aircrafts\_ReadyT \subseteq{} aircrafts\_in\_airport $}{}
+	\Invariant{inv21}{false}{$clearanceT \in{} aircrafts\_ReadyT \tfun{} RUNWAY$}{}
+	\Invariant{inv22}{false}{$dom(clearanceT)= aircrafts\_ReadyT$}{}
+	\Invariant{inv23}{false}{$aircrafts\_ReadyL \binter{}  aircrafts\_ReadyT= \emptyset{}$}{}
+	\Invariant{inv24}{false}{$arrival\_seq \in{} aircrafts\_in\_airport \pfun{}  \nat{}$}{}
+	\Invariant{inv26}{false}{$DepM \in{} aircrafts\_ReadyT \tfun{} Minute$}{}
+	\Invariant{inv27}{false}{$DepS \in{} aircrafts\_ReadyT \tfun{} Seconds$}{}
+	\Invariant{inv28}{false}{$DepH \in{}  aircrafts\_ReadyT \tfun{} Hours$}{}
+	\Invariant{inv29}{false}{$previousaircraftrunway \in{} RUNWAY \pinj{}  aircrafts\_in\_airport$}{}
+	\Invariant{inv30}{false}{$Dep\_Seq \in{} RequestToTake \pfun{}  \nat{}$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act13}{$aircrafts\_in\_airport \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act16}{$statusof \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act17}{$curr\_RW\_status \bcmeq{} RUNWAY \cprod{} \{Available\}$}{true}{}
+		\Action{act18}{$curr\_RWL\_status \bcmeq{} RUNWAY \cprod{} \{OFF\}$}{true}{}
+		\Action{act19}{$active\_aircrafts\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act20}{$aircraft\_runway \bcmeq{}\emptyset{}$}{true}{}
+		\Action{act21}{$aircrafts\_ReadyL\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act22}{$clearance\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act24}{$clearanceT\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act23}{$aircrafts\_ReadyT\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act40}{$deadline\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act41}{$at \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act25}{$current\_time\bcmeq{}1$}{true}{}
+		\Action{act26}{$ArrivalM\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act27}{$ArrivalH\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act28}{$ArrivalS\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act29}{$last\_landing\_time\bcmeq{} RUNWAY \cprod{} \{0\}$}{true}{}
+		\Action{act30}{$brandof\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act37}{$RequestToTake \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act31}{$EnterH \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act32}{$EnterM \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act33}{$EnterS \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act34}{$RTakS \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act35}{$RTakH \bcmeq{}\emptyset{}$}{true}{}
+		\Action{act36}{$RTakM \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act42}{$arrival\_seq\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act43}{$DepH\bcmeq{} \emptyset{}$}{true}{}
+		\Action{act44}{$DepS \bcmeq{} \emptyset{}$}{true}{}
+		\Action{act45}{$DepM\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act46}{$previousaircraftrunway\bcmeq{}RUNWAY \cprod{} \emptyset{}$}{true}{}
+		\Action{act47}{$Dep\_Seq\bcmeq{} \emptyset{}$}{true}{}
+	}
+}
+\EVT{Landing\_Preparing}{false}{ordinary}{Landing\_Preparing}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{previous}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd4}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd5}{false}{$statusof(aircraft) = Blocked$}{true}{}
+		\Guard{grd7}{false}{$aircraft \notin{} active\_aircrafts$}{true}{}
+		\Guard{grd10}{false}{$runway \in{} RUNWAY \land{} curr\_RW\_status(runway) = Available \land{} curr\_RWL\_status(runway) = OFF \land{} runway \notin{} ran(clearance) $}{true}{}
+		\Guard{grd11}{false}{$aircraft \notin{} aircrafts\_ReadyL$}{true}{}
+		\Guard{grd12}{false}{$\forall{} A\qdot{}A\in{} aircrafts\_in\_airport \land{} statusof(A) = Blocked \limp{} deadline(A) \geq{} deadline(aircraft)$}{true}{}
+		\Guard{grd21}{false}{$\\\forall{} A \qdot{} A \in{} aircrafts\_in\_airport \land{} A \neq{} aircraft \land{} statusof(A) = Blocked \\~         \land{} deadline(A) = deadline(aircraft)\\~         \land{} curTimeSec(EnterS(aircraft),EnterM(aircraft),EnterH(aircraft)) \neq{} curTimeSec(EnterS(A),EnterM(A),EnterH(A))\\~         \limp{} curTimeSec(EnterS(aircraft),EnterM(aircraft),EnterH(aircraft)) < curTimeSec(EnterS(A),EnterM(A),EnterH(A))$}{true}{}
+		\Guard{grd28}{false}{$\\\forall{} A \qdot{} A \in{} aircrafts\_in\_airport \land{} A \neq{} aircraft \land{} statusof(A) = Blocked \\~         \land{} deadline(A) = deadline(aircraft)\\~         \land{} curTimeSec(EnterS(aircraft),EnterM(aircraft),EnterH(aircraft)) = curTimeSec(EnterS(A),EnterM(A),EnterH(A))\\~         \limp{} arrival\_seq(A) > arrival\_seq(aircraft)$}{true}{}
+		\Guard{grd13}{false}{$runway \in{} dom(last\_landing\_time)$}{true}{}
+		\Guard{grd14}{false}{$aircraft \notin{} dom(ArrivalH)$}{true}{}
+		\Guard{grd20}{false}{$last\_landing\_time(runway) + previous \in{} \nat{}$}{true}{}
+		\Guard{grd19}{false}{$ aircraft \notin{} dom(ArrivalM)$}{true}{}
+		\Guard{grd18}{false}{$aircraft \notin{} dom(ArrivalS)$}{true}{}
+		\Guard{grd32}{false}{$ran(previousaircraftrunway)= \emptyset{} \lor{} (ran(previousaircraftrunway)\neq{} \emptyset{} \land{} runway \notin{} dom(previousaircraftrunway))\lor{} (runway \in{} dom(previousaircraftrunway) \land{} previousaircraftrunway(runway) \in{} \emptyset{}) \lor{} current\_time \geq{} last\_landing\_time(runway)+ (Separation\_time(brandof(previousaircraftrunway(runway)))*60)  \limp{} previous=0 $}{true}{}
+		\Guard{grd31}{false}{$ran(previousaircraftrunway)\neq{} \emptyset{}  \lor{}(runway \in{} dom(previousaircraftrunway) \land{} previousaircraftrunway(runway) \notin{} \emptyset{} )\limp{}previous= (Separation\_time(brandof(previousaircraftrunway(runway)))*60)$}{true}{}
+		\Guard{grd15}{false}{$\\ArrivalH \bunion{} \{aircraft \mapsto{} ((current\_time + \\~         previous) / 3600)\} \\~         \in{} (aircrafts\_ReadyL \bunion{} \{aircraft\}) \tfun{} Hours$}{true}{}
+		\Guard{grd16}{false}{$\\ArrivalM \bunion{} \{aircraft \mapsto{} ((current\_time + \\~         previous mod 3600) / 60)\} \\~         \in{} (aircrafts\_ReadyL \bunion{} \{aircraft\}) \tfun{} Minute$}{true}{}
+		\Guard{grd17}{false}{$\\ArrivalS \bunion{} \{aircraft \mapsto{} ((current\_time + \\~         previous mod 3600) mod 60)\} \\~         \in{} (aircrafts\_ReadyL \bunion{} \{aircraft\}) \tfun{} Seconds$}{true}{}
+		\Guard{grd22}{false}{$aircraft \notin{} aircrafts\_ReadyT$}{true}{}
+		\Guard{grd26}{false}{$aircraft\in{}dom(brandof)$}{true}{}
+		\Guard{grd27}{false}{$EnterM(aircraft)\leq{}59$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyL$}{true}{}
+		\Action{act2}{$aircrafts\_ReadyL\bcmeq{} aircrafts\_ReadyL \bunion{} \{aircraft\}$}{true}{}
+		\Action{act3}{$clearance \bcmeq{} clearance \bunion{} \{aircraft \mapsto{} runway\}$}{true}{}
+		\Action{act4}{$\\~ArrivalH \bcmeq{} ArrivalH \bunion{} \{ aircraft \mapsto{} ((current\_time +\\~              previous) / 3600 )\\~          \}$}{true}{}
+		\Action{act5}{$\\~ArrivalM \bcmeq{} ArrivalM \bunion{}\\~          \{ aircraft \mapsto{}\\~            (((current\_time +\\~               previous) mod 3600) / 60)\\~          \}$}{true}{}
+		\Action{act6}{$\\~ArrivalS \bcmeq{} ArrivalS \bunion{}\\~          \{ aircraft \mapsto{}\\~            (((current\_time+\\~               previous) mod 3600) mod 60)\\~          \}$}{true}{}
+		\Action{act8}{$EnterH \bcmeq{} \{aircraft\} \domsub{} EnterH$}{true}{}
+		\Action{act9}{$EnterS \bcmeq{} \{aircraft\} \domsub{} EnterS$}{true}{}
+		\Action{act10}{$EnterM \bcmeq{} \{aircraft\} \domsub{} EnterM$}{true}{}
+		\Action{act11}{$arrival\_seq \bcmeq{} \{aircraft\} \domsub{} arrival\_seq$}{true}{}
+		\Action{act12}{$deadline \bcmeq{} \{aircraft\} \domsub{} deadline$}{true}{}
+	}
+}
+\EVT{Start\_Landing}{false}{ordinary}{Start\_Landing}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd11}{false}{$runway \in{} RUNWAY \land{} runway \in{} ran(clearance)$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = ReadyL$}{true}{}
+		\Guard{grd8}{false}{$runway \notin{} ran(aircraft\_runway)$}{true}{}
+		\Guard{grd9}{false}{$curr\_RW\_status(runway) = Available$}{true}{}
+		\Guard{grd10}{false}{$curr\_RWL\_status(runway) = OFF$}{true}{}
+		\Guard{grd12}{false}{$aircraft \in{} aircrafts\_ReadyL$}{true}{}
+		\Guard{grd13}{false}{$aircraft \notin{} aircrafts\_ReadyT$}{true}{}
+		\Guard{grd15}{false}{$clearance(aircraft) = runway$}{true}{}
+		\Guard{grd14}{false}{$current\_time \geq{} curTimeSec(ArrivalS(aircraft),ArrivalM(aircraft),ArrivalH(aircraft))$}{true}{\\previousaircraftrunway(runway) $\notin{}$ $\emptyset{}$ $\lor{}$  dom(previousaircraftrunway)= $\emptyset{}$ }
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} Landing$}{true}{}
+		\Action{act5}{$curr\_RW\_status(runway) \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} ON$}{true}{}
+		\Action{act4}{$active\_aircrafts \bcmeq{} active\_aircrafts \bunion{} \{aircraft\}$}{true}{}
+		\Action{act6}{$aircraft\_runway(aircraft) \bcmeq{} runway$}{true}{}
+	}
+}
+\EVT{Terminating\_Landing}{false}{ordinary}{Terminating\_Landing}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{d}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd6}{false}{$runway \in{} RUNWAY$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) = Landing$}{true}{}
+		\Guard{grd4}{false}{$curr\_RW\_status(runway) = Unavailable$}{true}{}
+		\Guard{grd5}{false}{$curr\_RWL\_status(runway) = ON$}{true}{}
+		\Guard{grd18}{false}{$aircraft \in{} active\_aircrafts $}{true}{}
+		\Guard{grd20}{false}{$runway \in{} ran(aircraft\_runway)$}{true}{}
+		\Guard{grd14}{false}{$aircraft\in{}aircrafts\_ReadyL$}{true}{}
+		\Guard{grd17}{false}{$runway \in{} ran(clearance)$}{true}{}
+		\Guard{grd8}{false}{$aircraft\in{}dom(clearance)$}{true}{}
+		\Guard{grd9}{false}{$Separation\_time(brandof(aircraft)) \in{} \nat{}$}{true}{}
+		\Guard{grd10}{false}{$current\_time \in{} \nat{}$}{true}{}
+		\Guard{grd16}{false}{$aircraft\notin{}aircrafts\_ReadyT$}{true}{}
+		\Guard{grd22}{false}{$d \in{} 1 \upto{} 6$}{true}{}
+		\Guard{grd21}{false}{$current\_time \geq{} (curTimeSec(ArrivalS(aircraft),ArrivalM(aircraft),ArrivalH(aircraft))+d)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TerminatedL$}{true}{}
+		\Action{act3}{$curr\_RW\_status(runway) \bcmeq{} Available$}{true}{}
+		\Action{act4}{$curr\_RWL\_status(runway) \bcmeq{} OFF$}{true}{}
+		\Action{act5}{$active\_aircrafts \bcmeq{} active\_aircrafts \setminus{} \{aircraft\}$}{true}{}
+		\Action{act6}{$aircraft\_runway \bcmeq{} \{aircraft\} \domsub{} aircraft\_runway$}{true}{}
+		\Action{act7}{$aircrafts\_ReadyL \bcmeq{} aircrafts\_ReadyL \setminus{} \{aircraft\}$}{true}{}
+		\Action{act8}{$clearance \bcmeq{} \{aircraft\} \domsub{} clearance$}{true}{}
+		\Action{act13}{$ArrivalH \bcmeq{} \{aircraft\} \domsub{} ArrivalH$}{true}{}
+		\Action{act12}{$ArrivalM \bcmeq{} \{aircraft\} \domsub{} ArrivalM$}{true}{}
+		\Action{act11}{$ArrivalS \bcmeq{} \{aircraft\} \domsub{} ArrivalS$}{true}{}
+		\Action{act9}{$last\_landing\_time(runway)\bcmeq{} current\_time$}{true}{}
+		\Action{act10}{$at \bcmeq{} at \bunion{} \{current\_time+ Separation\_time(brandof(aircraft))\}$}{true}{}
+		\Action{act14}{$previousaircraftrunway(runway)\bcmeq{} aircraft$}{true}{}
+	}
+}
+\EVT{Takeoff\_Preparing}{false}{ordinary}{Takeoff\_Preparing}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =TerminatedL$}{true}{}
+		\Guard{grd29}{false}{$runway \notin{} ran(clearance) $}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(statusof)$}{true}{}
+		\Guard{grd4}{false}{$aircraft \notin{} active\_aircrafts$}{true}{}
+		\Guard{grd5}{false}{$runway \in{} RUNWAY \land{} curr\_RW\_status(runway) = Available \land{} curr\_RWL\_status(runway) = OFF \land{} runway \notin{} ran(clearanceT) $}{true}{}
+		\Guard{grd6}{false}{$aircraft \notin{} aircrafts\_ReadyT$}{true}{}
+		\Guard{grd7}{false}{$aircraft \notin{} aircrafts\_ReadyL$}{true}{}
+		\Guard{grd23}{false}{$aircraft\in{}RequestToTake$}{true}{}
+		\Guard{grd28}{false}{$aircraft \notin{} dom(ArrivalM)$}{true}{}
+		\Guard{grd27}{false}{$aircraft \notin{} dom(ArrivalH)$}{true}{}
+		\Guard{grd26}{false}{$aircraft \notin{} dom(ArrivalS)$}{true}{}
+		\Guard{grd25}{false}{$aircraft \notin{} dom(clearance)$}{true}{}
+		\Guard{grd8}{false}{$\forall{} A \qdot{} A \in{} aircrafts\_in\_airport \land{} A \neq{} aircraft \land{} statusof(A) = TerminatedL \land{} A \in{} RequestToTake  \limp{} curTimeSec(RTakS(aircraft),RTakM(aircraft),RTakH(aircraft)) \leq{} curTimeSec(RTakS(A),RTakM(A),RTakH(A))$}{true}{}
+		\Guard{grd20}{false}{$\\\forall{} A \qdot{} A \in{} aircrafts\_in\_airport \land{} A \neq{} aircraft \land{} statusof(A) = TerminatedL  \land{} A \in{} RequestToTake\\~         \land{} curTimeSec(RTakS(aircraft),RTakM(aircraft),RTakH(aircraft)) = curTimeSec(RTakS(A),RTakM(A),RTakH(A))\\~         \limp{} Dep\_Seq(A) > Dep\_Seq(aircraft)$}{true}{}
+		\Guard{grd9}{false}{$runway \in{} dom(last\_landing\_time)$}{true}{}
+		\Guard{grd11}{false}{$last\_landing\_time(runway) \in{} \nat{}$}{true}{}
+		\Guard{grd17}{false}{$aircraft\in{}dom(brandof)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} ReadyT$}{true}{}
+		\Action{act2}{$aircrafts\_ReadyT\bcmeq{} aircrafts\_ReadyT \bunion{} \{aircraft\}$}{true}{}
+		\Action{act3}{$clearanceT \bcmeq{} clearanceT \bunion{} \{aircraft \mapsto{} runway\}$}{true}{}
+		\Action{act7}{$last\_landing\_time(runway)\bcmeq{} current\_time$}{true}{}
+		\Action{act4}{$\\DepH \bcmeq{} DepH \bunion{} \{ aircraft \mapsto{} (current\_time\\~              / 3600 )\\~          \}$}{true}{}
+		\Action{act5}{$\\DepM \bcmeq{} DepM \bunion{}\\~          \{ aircraft \mapsto{}\\~            ((current\_time mod 3600) / 60)\\~          \}$}{true}{}
+		\Action{act6}{$\\DepS \bcmeq{} DepS \bunion{}\\~          \{ aircraft \mapsto{}\\~            ((current\_time mod 3600) mod 60)\\~          \}$}{true}{}
+		\Action{act8}{$RTakS \bcmeq{} \{aircraft\} \domsub{} RTakS$}{true}{}
+		\Action{act9}{$RTakM \bcmeq{} \{aircraft\} \domsub{} RTakM$}{true}{}
+		\Action{act10}{$RTakH \bcmeq{} \{aircraft\} \domsub{} RTakH$}{true}{}
+		\Action{act11}{$Dep\_Seq \bcmeq{} \{aircraft\} \domsub{} Dep\_Seq$}{true}{}
+		\Action{act12}{$RequestToTake\bcmeq{} RequestToTake \setminus{} \{aircraft\}$}{true}{}
+	}
+}
+\EVT{Start\_takingoff}{false}{ordinary}{Start\_takingoff}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =ReadyT$}{true}{}
+		\Guard{grd9}{false}{$runway \in{} RUNWAY $}{true}{}
+		\Guard{grd10}{false}{$runway \notin{} ran(aircraft\_runway)$}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(statusof)$}{true}{}
+		\Guard{grd7}{false}{$curr\_RW\_status(runway) = Available$}{true}{}
+		\Guard{grd8}{false}{$curr\_RWL\_status(runway) = OFF$}{true}{}
+		\Guard{grd11}{false}{$aircraft \in{} aircrafts\_ReadyT$}{true}{}
+		\Guard{grd12}{false}{$aircraft\notin{} aircrafts\_ReadyL$}{true}{}
+		\Guard{grd13}{false}{$current\_time \geq{} curTimeSec(DepS(aircraft),DepM(aircraft),DepH(aircraft))$}{true}{}
+		\Guard{grd15}{false}{$aircraft \notin{} RequestToTake$}{true}{}
+		\Guard{grd16}{false}{$runway \in{} ran(clearanceT)$}{true}{}
+		\Guard{grd17}{false}{$aircraft \in{} dom(clearanceT)$}{true}{}
+		\Guard{grd19}{false}{$aircraft \in{} dom(DepS)$}{true}{}
+		\Guard{grd20}{false}{$aircraft \in{} dom(DepH)$}{true}{}
+		\Guard{grd21}{false}{$aircraft \in{} dom (DepM)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{} TakingOff$}{true}{}
+		\Action{act2}{$curr\_RW\_status(runway) \bcmeq{} Unavailable$}{true}{}
+		\Action{act3}{$curr\_RWL\_status(runway) \bcmeq{} ON$}{true}{}
+		\Action{act4}{$active\_aircrafts \bcmeq{} active\_aircrafts \bunion{} \{aircraft\}$}{true}{}
+		\Action{act5}{$aircraft\_runway(aircraft) \bcmeq{} runway$}{true}{}
+	}
+}
+\EVT{Terminating\_takingoff}{false}{ordinary}{Terminating\_takingoff}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{runway}{true}{}
+		\Param{d}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd6}{false}{$runway \in{} RUNWAY$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =TakingOff$}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(statusof)$}{true}{}
+		\Guard{grd4}{false}{$curr\_RW\_status(runway) = Unavailable$}{true}{}
+		\Guard{grd5}{false}{$curr\_RWL\_status(runway) = ON$}{true}{}
+		\Guard{grd7}{false}{$aircraft\in{}aircrafts\_ReadyT$}{true}{}
+		\Guard{grd8}{false}{$aircraft\in{}dom(clearanceT)$}{true}{}
+		\Guard{grd9}{false}{$current\_time \in{} \nat{}$}{true}{}
+		\Guard{grd10}{false}{$aircraft\notin{}aircrafts\_ReadyL$}{true}{}
+		\Guard{grd11}{false}{$d \in{} 1 \upto{} 6$}{true}{}
+		\Guard{grd12}{false}{$current\_time \geq{} curTimeSec(DepS(aircraft),DepM(aircraft),DepH(aircraft))+d$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$statusof(aircraft) \bcmeq{}Departing$}{true}{}
+		\Action{act4}{$curr\_RWL\_status(runway) \bcmeq{} OFF$}{true}{}
+		\Action{act3}{$curr\_RW\_status(runway) \bcmeq{} Available$}{true}{}
+		\Action{act2}{$active\_aircrafts \bcmeq{} active\_aircrafts \setminus{} \{aircraft\}$}{true}{}
+		\Action{act5}{$aircraft\_runway \bcmeq{} \{aircraft\} \domsub{} aircraft\_runway$}{true}{}
+		\Action{act6}{$aircrafts\_ReadyT \bcmeq{} aircrafts\_ReadyT \setminus{} \{aircraft\}$}{true}{}
+		\Action{act7}{$clearanceT \bcmeq{} \{aircraft\} \domsub{} clearanceT$}{true}{}
+		\Action{act8}{$DepH \bcmeq{} \{aircraft\} \domsub{} DepH$}{true}{}
+		\Action{act9}{$DepM \bcmeq{} \{aircraft\} \domsub{} DepM$}{true}{}
+		\Action{act10}{$DepS \bcmeq{} \{aircraft\} \domsub{} DepS$}{true}{}
+		\Action{act11}{$last\_landing\_time(runway) \bcmeq{} current\_time$}{true}{}
+		\Action{act12}{$at \bcmeq{} at \bunion{} \{current\_time\}$}{true}{}
+	}
+}
+\EVT{Airport\_Departing}{false}{ordinary}{Airport\_Departing}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft) =Departing$}{true}{}
+		\Guard{grd3}{false}{$aircraft \in{} dom(statusof)$}{true}{}
+		\Guard{grd4}{false}{$aircraft \notin{} active\_aircrafts$}{true}{}
+		\Guard{grd5}{false}{$aircraft \notin{} aircrafts\_ReadyL $}{true}{}
+		\Guard{grd6}{false}{$aircraft \notin{} RequestToTake$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_airport \bcmeq{}aircrafts\_in\_airport \setminus{} \{aircraft\} $}{true}{}
+		\Action{act2}{$statusof \bcmeq{} \{aircraft\} \domsub{} statusof$}{true}{}
+		\Action{act3}{$deadline \bcmeq{} \{aircraft\} \domsub{} deadline$}{true}{}
+		\Action{act4}{$brandof \bcmeq{} \{aircraft\} \domsub{} brandof$}{true}{}
+	}
+}
+\EVT{AddAircraft}{false}{ordinary}{AddAircraft}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{d}{true}{}
+		\Param{b}{true}{}
+		\Param{enm}{true}{}
+		\Param{ens}{true}{}
+		\Param{enh}{true}{}
+		\Param{aid}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$aircraft \in{} AIRCRAFTS$}{true}{}
+		\Guard{grd2}{false}{$aircraft \notin{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd3}{false}{$aircraft \notin{} dom(statusof)$}{true}{}
+		\Guard{grd4}{false}{$d \in{} 60\upto{} 180 $}{true}{}
+		\Guard{grd5}{false}{$b \in{} BRAND$}{true}{}
+		\Guard{grd6}{false}{$enm \in{} Minute \land{} enm \in{} \nat{} $}{true}{}
+		\Guard{grd12}{false}{$ens\in{}0\upto{} 59$}{true}{}
+		\Guard{grd11}{false}{$enm\in{}0 \upto{} 59$}{true}{}
+		\Guard{grd7}{false}{$ens \in{} Seconds \land{} ens \in{} \nat{}$}{true}{}
+		\Guard{grd8}{false}{$enh \in{} Hours \land{} enh \in{} \nat{}$}{true}{}
+		\Guard{grd10}{false}{$current\_time \in{} \nat{} $}{true}{}
+		\Guard{grd13}{false}{$aid \in{} 1\upto{} 20$}{true}{}
+		\Guard{grd14}{false}{$b \notin{} ran(brandof)$}{true}{}
+		\Guard{grd15}{false}{$aid \notin{} ran(arrival\_seq) $}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$aircrafts\_in\_airport\bcmeq{} aircrafts\_in\_airport \bunion{} \{aircraft\}$}{true}{}
+		\Action{act2}{$statusof(aircraft) \bcmeq{} Blocked$}{true}{}
+		\Action{act3}{$deadline\bcmeq{} deadline \bunion{} \{aircraft \mapsto{} d\}$}{true}{}
+		\Action{act4}{$brandof \bcmeq{} brandof \bunion{} \{aircraft \mapsto{} b\}$}{true}{}
+		\Action{act5}{$\\EnterS\bcmeq{} EnterS \bunion{} \{aircraft \mapsto{} ( (current\_time mod 3600) mod 60 )\\~          \}$}{true}{}
+		\Action{act6}{$\\EnterH\bcmeq{} EnterH \bunion{} \{aircraft \mapsto{} ( current\_time/ 3600 )\\~          \}$}{true}{}
+		\Action{act7}{$EnterM\bcmeq{} EnterM \bunion{} \{aircraft \mapsto{} (current\_time mod 3600) / 60\}$}{true}{}
+		\Action{act8}{$arrival\_seq\bcmeq{} arrival\_seq \bunion{} \{aircraft \mapsto{} aid\}$}{true}{}
+	}
+}
+\EVT{post\_time}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{tm}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd2}{false}{$tm \in{} \nat{}$}{true}{}
+		\Guard{grd3}{false}{$tm > current\_time$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$at \bcmeq{} at \bunion{} \{tm\}$}{true}{}
+	}
+}
+\EVT{Tick\_tock}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{tm}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$tm \in{} 60\upto{} 900$}{true}{}
+		\Guard{grd2}{false}{$tm > current\_time$}{true}{}
+		\Guard{grd3}{false}{$at \neq{} \emptyset{} \limp{} tm \leq{} min(at)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$current\_time\bcmeq{} tm$}{true}{}
+	}
+}
+\EVT{process\_time}{false}{ordinary}{}{}{
+	\GUARDS{false}{
+		\Guard{grd1}{false}{$current\_time \in{} at$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$at \bcmeq{} at \setminus{} \{current\_time\}$}{true}{}
+	}
+}
+\EVT{RequestTakeoff}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{aircraft}{true}{}
+		\Param{ds}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd15}{false}{$aircraft \in{} aircrafts\_in\_airport$}{true}{}
+		\Guard{grd16}{false}{$aircraft \notin{} RequestToTake$}{true}{}
+		\Guard{grd2}{false}{$statusof(aircraft)= TerminatedL$}{true}{}
+		\Guard{grd8}{false}{$current\_time \in{} \nat{} $}{true}{}
+		\Guard{grd11}{false}{$ds \in{} 1\upto{} 20$}{true}{}
+		\Guard{grd12}{false}{$ds \notin{} ran(Dep\_Seq) $}{true}{}
+		\Guard{grd13}{false}{$aircraft \notin{} aircrafts\_ReadyT$}{true}{}
+		\Guard{grd14}{false}{$aircraft \notin{} aircrafts\_ReadyL$}{true}{}
+		\Guard{grd17}{false}{$aircraft \notin{} active\_aircrafts$}{true}{}
+		\Guard{grd18}{false}{$aircraft \notin{} dom(aircraft\_runway) $}{true}{}
+		\Guard{grd19}{false}{$aircraft \notin{} dom(clearance)$}{true}{}
+		\Guard{grd20}{false}{$aircraft \notin{} dom(ArrivalH)$}{true}{}
+		\Guard{grd21}{false}{$aircraft \notin{} dom(ArrivalM)$}{true}{}
+		\Guard{grd22}{false}{$aircraft \notin{} dom(ArrivalS)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act7}{$RequestToTake\bcmeq{} RequestToTake \bunion{} \{aircraft\}$}{true}{}
+		\Action{act6}{$\\RTakS\bcmeq{} RTakS \bunion{} \{aircraft \mapsto{} ( (current\_time mod 3600) mod 60 )\\~          \}$}{true}{}
+		\Action{act2}{$\\RTakH\bcmeq{} RTakH \bunion{} \{aircraft \mapsto{} ( current\_time/ 3600 )\\~          \}$}{true}{}
+		\Action{act3}{$RTakM\bcmeq{} RTakM \bunion{} \{aircraft \mapsto{} ((current\_time mod 3600) / 60)\}$}{true}{}
+		\Action{act5}{$Dep\_Seq\bcmeq{} Dep\_Seq \bunion{} \{aircraft \mapsto{} ds\}$}{true}{}
+	}
+}
+}
+\END
+\end{document}

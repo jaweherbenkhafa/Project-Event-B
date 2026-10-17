@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="STATUS" org.eventb.core.type="ℙ(STATUS)"/>
+        <org.eventb.core.poIdentifier name="RUNWAY" org.eventb.core.type="ℙ(RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="RW_STATUES" org.eventb.core.type="ℙ(RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="AIRCRAFTS" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="RWL_STATUES" org.eventb.core.type="ℙ(RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="Blocked" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Available" org.eventb.core.type="RW_STATUES"/>
+        <org.eventb.core.poIdentifier name="OFF" org.eventb.core.type="RWL_STATUES"/>
+        <org.eventb.core.poIdentifier name="ON" org.eventb.core.type="RWL_STATUES"/>
+        <org.eventb.core.poIdentifier name="Landing" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Takingoff" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="Unavailable" org.eventb.core.type="RW_STATUES"/>
+        <org.eventb.core.poIdentifier name="ExecutedL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ScheduledL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ExecutedT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ReadyL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="ReadyT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="TerminatedL" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="TerminatedT" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poPredicate name="Unavailablf" org.eventb.core.predicate="finite(AIRCRAFTS)" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#E"/>
+        <org.eventb.core.poPredicate name="Unavailablg" org.eventb.core.predicate="finite(RUNWAY)∧card(RUNWAY)≥1" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#m"/>
+        <org.eventb.core.poPredicate name="Unavailablh" org.eventb.core.predicate="partition(STATUS,{Blocked},{ScheduledL},{ReadyL},{ExecutedL},{Landing},{TerminatedL},{ReadyT},{ExecutedT},{Takingoff},{TerminatedT})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#D"/>
+        <org.eventb.core.poPredicate name="Unavailabli" org.eventb.core.predicate="partition(RW_STATUES,{Available},{Unavailable})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#Q"/>
+        <org.eventb.core.poPredicate name="Unavailablj" org.eventb.core.predicate="partition(RWL_STATUES,{ON},{OFF})" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#R"/>
+        <org.eventb.core.poPredicate name="Unavailablk" org.eventb.core.predicate="∀x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ1⇒x=x mod y+x ÷ y∗y" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#Z"/>
+        <org.eventb.core.poPredicate name="Unavailabll" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ·a∈ℕ∧b∈ℕ∧a≤b⇒a ÷ 60≤b ÷ 60" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#["/>
+        <org.eventb.core.poPredicate name="Unavailablm" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ,c⦂ℤ·a∈ℕ∧b∈ℕ∧c∈ℕ∧a≤b⇒a+c≤b+c" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#\\"/>
+        <org.eventb.core.poPredicate name="Unavailabln" org.eventb.core.predicate="∀a⦂ℤ,b⦂ℤ,c⦂ℤ·a∈ℕ∧b∈ℕ∧c∈ℕ1∧a≤b⇒c∗a≤c∗b" org.eventb.core.source="/SafePM4/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#^"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="aircrafts_in_TMA" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="curr_RW_status" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="clearanceT" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="clearanceL" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="statusof" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMB" org.eventb.core.predicate="aircrafts_in_TMA⊆AIRCRAFTS" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#T"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMC" org.eventb.core.predicate="statusof∈aircrafts_in_TMA → STATUS" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#U"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMD" org.eventb.core.predicate="curr_RW_status∈RUNWAY → RW_STATUES" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#p"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TME" org.eventb.core.predicate="curr_RWL_status∈RUNWAY → RWL_STATUES" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#q"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMF" org.eventb.core.predicate="∀r⦂RUNWAY·r∈RUNWAY⇒(curr_RW_status(r)=Unavailable⇒curr_RWL_status(r)=ON)" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#r"/>
+        <org.eventb.core.poPredicate name="aircrafts_in_TMG" org.eventb.core.predicate="∀r⦂RUNWAY·r∈RUNWAY⇒(curr_RW_status(r)=Available⇒curr_RWL_status(r)=OFF)" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#'*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="inv3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒a∈dom(statusof)∧statusof∈AIRCRAFTS ⇸ STATUS" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒a∈dom(statusof)∧statusof∈AIRCRAFTS ⇸ STATUS" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AIRCRAFTS×RUNWAY))∈(∅ ⦂ ℙ(AIRCRAFTS)) ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'-"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AIRCRAFTS×RUNWAY))∈(∅ ⦂ ℙ(AIRCRAFTS)) ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'-"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈(∅ ⦂ ℙ(AIRCRAFTS))⇒(a∈dom(∅ ⦂ ℙ(AIRCRAFTS×RUNWAY))⇔(∅ ⦂ ℙ(AIRCRAFTS×STATUS))(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'-"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈(∅ ⦂ ℙ(AIRCRAFTS))⇒(a∈dom(∅ ⦂ ℙ(AIRCRAFTS×RUNWAY))⇔(∅ ⦂ ℙ(AIRCRAFTS×STATUS))(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'-"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMB" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="aircrafts_in_TMA'" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="clearanceT'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="clearanceL'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMB" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMB" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="Entry_in_TMA/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMC"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="clearanceL∈aircrafts_in_TMA∪{aircraft} ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'."/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Entry_in_TMA\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Entry_in_TMA/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMC"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="clearanceT∈aircrafts_in_TMA∪{aircraft} ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'."/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Entry_in_TMA\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Entry_in_TMA/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMC"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA∪{aircraft}⇒(a∈dom(clearanceL)⇔(statusof{aircraft ↦ Blocked})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'."/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Entry_in_TMA\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Entry_in_TMA/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMC"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA∪{aircraft}⇒(a∈dom(clearanceT)⇔(statusof{aircraft ↦ Blocked})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'+"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'."/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Entry_in_TMA\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMC" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="aircrafts_in_TMA'" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMC" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMC" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈AIRCRAFTS∧aircraft∉aircrafts_in_TMA" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'.|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∉dom(statusof)" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'.|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Schedule_Arrival/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMD"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔(statusof{aircraft ↦ ScheduledL})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#V"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Schedule_Arrival\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Schedule_Arrival/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMD"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔(statusof{aircraft ↦ ScheduledL})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#V"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Schedule_Arrival\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMD" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMD" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMD" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=Blocked" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'\/|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Ready_Landing/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TME"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔(statusof{aircraft ↦ ReadyL})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'&gt;"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'S"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Ready_Landing\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Ready_Landing/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TME"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔(statusof{aircraft ↦ ReadyL})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'&gt;"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'S"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Ready_Landing\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TME" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TME" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TME" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ScheduledL" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'S|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Landing_Verification/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMF"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="clearanceL∪{aircraft ↦ runway}∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'0"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'D"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Landing_Verification\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Landing_Verification/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMF"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL∪{aircraft ↦ runway})⇔(statusof{aircraft ↦ ExecutedL})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'0"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'D"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Landing_Verification\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Landing_Verification/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMF"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔(statusof{aircraft ↦ ExecutedL})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'0"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'D"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Landing_Verification\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMF" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="clearanceL'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMF" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMF" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ReadyL" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'D|org.eventb.core.guard#internal3"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∉dom(clearanceL)∧runway∈RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'D|org.eventb.core.guard#7"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Touchdown/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMG*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="aircraft∈dom(clearanceL)∧clearanceL∈AIRCRAFTS ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'R|org.eventb.core.guard#1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'R|org.eventb.core.guard#1"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMG*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Touchdown/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMG"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔(statusof{aircraft ↦ Landing})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'="/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'R"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Touchdown\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Touchdown/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMG"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔(statusof{aircraft ↦ Landing})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'="/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'R"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Touchdown\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMG" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPaircrafts_in_TMG*" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMG" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ExecutedL" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'R|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="runway∈RUNWAY∧curr_RW_status(runway)=Available∧curr_RWL_status(runway)=OFF" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'R|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(clearanceL)" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'R|org.eventb.core.guard#internal2"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMG" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMG*" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="runway=clearanceL(aircraft)" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'R|org.eventb.core.guard#1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Terminating_Landing/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMH*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="aircraft∈dom(clearanceL)∧clearanceL∈AIRCRAFTS ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMH*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Terminating_Landing/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMH"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{aircraft} ⩤ clearanceL∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#X"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Terminating_Landing\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Terminating_Landing/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMH"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom({aircraft} ⩤ clearanceL)⇔(statusof{aircraft ↦ TerminatedL})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#X"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Terminating_Landing\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Terminating_Landing/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMH"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔(statusof{aircraft ↦ TerminatedL})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#X"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Terminating_Landing\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMH" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="clearanceL'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPaircrafts_in_TMH*" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMH" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=Landing" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="runway∈RUNWAY∧curr_RW_status(runway)=Unavailable∧curr_RWL_status(runway)=ON" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1|org.eventb.core.guard#4"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(clearanceL)" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1|org.eventb.core.guard#internal4"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMH" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMH*" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="runway=clearanceL(aircraft)" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'1|org.eventb.core.guard#\/"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Takeoff_Preparing/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMI"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔(statusof{aircraft ↦ ReadyT})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'?"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'V"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Takeoff_Preparing\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Takeoff_Preparing/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMI"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔(statusof{aircraft ↦ ReadyT})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'?"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'V"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Takeoff_Preparing\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMI" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMI" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMI" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=TerminatedL" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'V|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Takeoff_Verification/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMJ"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="clearanceT∪{aircraft ↦ runway}∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'C"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Z"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Takeoff_Verification\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Takeoff_Verification/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMJ"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔(statusof{aircraft ↦ ExecutedT})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'C"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Z"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Takeoff_Verification\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Takeoff_Verification/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMJ"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT∪{aircraft ↦ runway})⇔(statusof{aircraft ↦ ExecutedT})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'C"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Z"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Takeoff_Verification\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMJ" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="clearanceT'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMJ" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMJ" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ReadyT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Z|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="aircraft∉dom(clearanceT)∧runway∈RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Z|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Start_takingoff/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMK)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="aircraft∈dom(clearanceT)⇒clearanceT∈AIRCRAFTS ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'W|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'W|org.eventb.core.guard#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMK)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Start_takingoff/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMK"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔(statusof{aircraft ↦ Takingoff})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'@"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'W"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Start_takingoff\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Start_takingoff/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMK"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔(statusof{aircraft ↦ Takingoff})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'@"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'W"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Start_takingoff\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMK" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPaircrafts_in_TMK)" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMK" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=ExecutedT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'W|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="runway∈RUNWAY∧curr_RW_status(runway)=Available∧curr_RWL_status(runway)=OFF" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'W|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMK" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TMK)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(clearanceT)∧runway=clearanceT(aircraft)" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'W|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Terminating_takingoff/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TML)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="aircraft∈dom(clearanceT)⇒clearanceT∈AIRCRAFTS ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'X|org.eventb.core.guard#'"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'X|org.eventb.core.guard#'"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TML)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Terminating_takingoff/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TML"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{aircraft} ⩤ clearanceT∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'A"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'X"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Terminating_takingoff\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Terminating_takingoff/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TML"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔(statusof{aircraft ↦ TerminatedT})(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'A"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'X"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Terminating_takingoff\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Terminating_takingoff/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TML"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom({aircraft} ⩤ clearanceT)⇔(statusof{aircraft ↦ TerminatedT})(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'A"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'X"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Terminating_takingoff\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TML" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="curr_RW_status'" org.eventb.core.type="ℙ(RUNWAY×RW_STATUES)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="curr_RWL_status'" org.eventb.core.type="ℙ(RUNWAY×RWL_STATUES)"/>
+        <org.eventb.core.poIdentifier name="clearanceT'" org.eventb.core.type="ℙ(AIRCRAFTS×RUNWAY)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+        <org.eventb.core.poIdentifier name="runway" org.eventb.core.type="RUNWAY"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPaircrafts_in_TML)" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TML" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=Takingoff" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'X|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="runway∈RUNWAY∧curr_RW_status(runway)=Unavailable∧curr_RWL_status(runway)=ON" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'X|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TML" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPaircrafts_in_TML)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="aircraft∈dom(clearanceT)∧runway=clearanceT(aircraft)" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'X|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Departing/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMM"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="clearanceL∈aircrafts_in_TMA ∖ {aircraft} ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'B"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Y"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Departing\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Departing/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMM"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="clearanceT∈aircrafts_in_TMA ∖ {aircraft} ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'B"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Y"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Departing\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Departing/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMM"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA ∖ {aircraft}⇒(a∈dom(clearanceL)⇔({aircraft} ⩤ statusof)(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'B"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Y"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Departing\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Departing/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPaircrafts_in_TMM"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA ∖ {aircraft}⇒(a∈dom(clearanceT)⇔({aircraft} ⩤ statusof)(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SafePM4/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'B"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Y"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#Departing\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTaircrafts_in_TMM" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="aircrafts_in_TMA'" org.eventb.core.type="ℙ(AIRCRAFTS)"/>
+        <org.eventb.core.poIdentifier name="statusof'" org.eventb.core.type="ℙ(AIRCRAFTS×STATUS)"/>
+        <org.eventb.core.poIdentifier name="aircraft" org.eventb.core.type="AIRCRAFTS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPaircrafts_in_TMM" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTaircrafts_in_TMM" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="aircraft∈aircrafts_in_TMA∧statusof(aircraft)=TerminatedT" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'Y|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC8" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="clearanceL∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'="/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="clearanceT∈aircrafts_in_TMA ⇸ RUNWAY" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'\\"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC9" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC8" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceL)⇔statusof(a)∈{ExecutedL,Landing})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'^"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SafePM4/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#HYPC9" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀a⦂AIRCRAFTS·a∈aircrafts_in_TMA⇒(a∈dom(clearanceT)⇔statusof(a)∈{ExecutedT,Takingoff})" org.eventb.core.source="/SafePM4/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#'_"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
